@@ -20,23 +20,44 @@ namespace OP;
 /** Blacklist
  *
  * @created   2020-05-12
- * @param     boolean      $add
- * @return    boolean      $io
+ * @param     boolean      $register
+ * @return    boolean      $result
  */
-function Blacklist($add=null)
+function Blacklist(bool $register=false)
 {
-	//	...
-	if( $add ){
-		//	...
-		$_SESSION[_OP_DENY_IP_] = true;
+	//	Generate key by client ip-address.
+	$key = md5($_SERVER['REMOTE_ADDR']);
 
+	//	true is add blacklist.
+	//	false is, Is blacklist?
+	if( $register ){
 		//	...
-		$key = md5($_SERVER['REMOTE_ADDR']);
+		$io = true;
 
-		//	...
+		//	Save blacklist to apcu.
 		apcu_add($key, true);
+	}else{
+		//	Fetch saved blacklist from apcu.
+		$io = apcu_fetch($key);
 	}
 
-	//	...
-	return $_SESSION[_OP_DENY_IP_] ?? null;
+	//	Set deny ip flag.
+	if( $io ){
+		$_SESSION[_OP_DENY_IP_] = true;
+		Cookie::Set($key, true);
+	}
+
+	//	Check from SESSION
+	if( $result = $_SESSION[_OP_DENY_IP_] ?? null ){
+		//	Found
+	}else
+	//	Check from Cookie
+	if( $result = Cookie::Get($key) ){
+		//	Found
+	}else{
+		$result = false;
+	}
+
+	//	Return result.
+	return $result;
 }
