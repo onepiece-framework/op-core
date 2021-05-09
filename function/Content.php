@@ -19,24 +19,30 @@ namespace OP;
  * @param     string       $function
  * @param     array        $args
  * @throws   \Exception
- * @return    string
+ * @return   ?string       $hash of $_content
  */
-function Content(?string $path=null, array $args=[])
+function Content(?string $path=null, array $args=[]) : ?string
 {
 	//	...
 	static $_content;
 
-	//	...
-	if( $path ){
-		$_content .= GetTemplate($path, $args);
-		return;
+	//	$path if empty, echo $_content.
+	if( empty($path) ){
+		//	...
+		echo $_content;
+
+		//	...
+		$_content = null;
+
+		//	...
+		return null;
 	}
 
-	//	...
-	echo $_content;
+	//	Append conent.
+	$_content .= GetTemplate($path, $args);
 
-	//	...
-	$_content = null;
+	//	For ETag.
+	return $_content ? md5($_content): null;
 }
 
 /** If it is not called from anywhere, it will be output here.
