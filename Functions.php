@@ -34,6 +34,7 @@ require(__DIR__.'/function/ConvertURL-2.php');
 require(__DIR__.'/function/Template.php');
 require(__DIR__.'/function/GetTemplate.php');
 require(__DIR__.'/function/Content.php');
+require(__DIR__.'/function/Charset.php');
 
 /** Compress to meta path from local file path.
  *
