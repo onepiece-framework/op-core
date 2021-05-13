@@ -20,13 +20,6 @@ namespace OP;
  */
 function Canonical($url=null)
 {
-	$config = Env::Get('canonical');
-
 	//	...
-	$scheme = $config['scheme'] ?? empty($_SERVER['HTTPS']) ? 'http':'https';
-	$domain = $config['domain'] ?? $_SERVER['HTTP_HOST'];
-	$uri    = $url              ?? $_SERVER['REQUEST_URI'];
-
-	//	...
-	return "{$scheme}://{$domain}{$uri}";
+	return Config::Get('app')['canonical'] ?? null;
 }
