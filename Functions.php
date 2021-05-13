@@ -23,6 +23,7 @@ namespace OP;
  * @created   2020-01-01
  */
 require(__DIR__.'/function/D.php');
+require(__DIR__.'/function/Args.php');
 require(__DIR__.'/function/Load.php');
 require(__DIR__.'/function/Unit.php');
 require(__DIR__.'/function/Encode.php');
