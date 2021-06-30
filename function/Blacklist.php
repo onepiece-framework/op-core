@@ -23,7 +23,7 @@ namespace OP;
  * @param     boolean      $register
  * @return    boolean      $result
  */
-function Blacklist(bool $register=false)
+function Blacklist(bool $register=true)
 {
 	//	Generate key by client ip-address.
 	$key = md5($_SERVER['REMOTE_ADDR']);
