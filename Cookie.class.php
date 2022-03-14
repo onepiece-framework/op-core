@@ -142,7 +142,7 @@ class Cookie
 	 *  Not suitable for permanent use.
 	 *
 	 * @created   2020-02-26
-	 * @param     boolean      $init was create the first time UserID.
+	 * @param     boolean      $init stored at create the first time UserID.
 	 * @return    string       $user_id
 	 */
 	static function UserID(&$init=null)
