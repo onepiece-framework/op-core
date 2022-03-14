@@ -52,7 +52,7 @@ function Template(string $file, array $args=[], $throw_exception=true)
 	}else if( file_exists($path = RootPath('asset') . 'template/' . $file) ){
 		//	Template path.
 	}else{
-		throw new \Exception("There are no files in this path. ($file)");
+		throw new \Exception("File is not found. ($file)");
 	}
 
 	//	Check if directory include.
@@ -62,6 +62,12 @@ function Template(string $file, array $args=[], $throw_exception=true)
 
 		//	Chenge direcotry.
 		chdir(dirname($path));
+	}
+
+	//	Check args.
+	if( isset($args[0]) ){
+		Notice::Set('The args is array. Not assoc.');
+		return false;
 	}
 
 	//	Load file.
@@ -77,7 +83,7 @@ function Template(string $file, array $args=[], $throw_exception=true)
 			//	If variables passed.
 			if(!empty($args) ){
 				//	Extract passed variables.
-				extract($args, null, null);
+				extract($args, EXTR_SKIP);
 			};
 
 			//	Flush arguments.
@@ -85,6 +91,7 @@ function Template(string $file, array $args=[], $throw_exception=true)
 
 			//	Execute file.
 			return include(${$md5});
+
 		},$path, $args);
 
 	}catch(\Throwable $e){
