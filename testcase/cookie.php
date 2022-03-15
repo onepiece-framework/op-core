@@ -13,11 +13,16 @@
  */
 namespace OP;
 
+/*  @var $init boolean */
+$user_id = Cookie::UserID($init);
+
 //	...
 $count = Cookie::Get('count', 0);
 $count++;
 Cookie::Set('count', $count);
+
 ?>
 <section>
+	<p>UserID : <?= $user_id ?> (Initialization? <?= $init ? 'true':'false' ?>)</p>
 	<p>Count up : <?= $count ?></p>
 </section>
