@@ -143,7 +143,7 @@ class Config
 		//	...
 		if( $fail ?? null ){
 			$message = "This config file is not exists. ($name)";
-			E('file', $message);
+			Notice::Set('file', $message);
 		}
 	}
 
