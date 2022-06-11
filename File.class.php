@@ -15,7 +15,7 @@
  */
 namespace OP;
 
-/** Browser
+/** File
  *
  * @created   2019-06-26
  * @version   1.0
