@@ -41,7 +41,7 @@ class Env
 	 */
 	const _ADMIN_IP_	 = _OP_DEVELOPER_IP_;
 	const _ADMIN_MAIL_	 = _OP_DEVELOPER_MAIL_;
-	const _MAIL_FROM_	 = 'mail-from';
+	const _ADMIN_FROM_	 = 'mail-from';
 
 	/** Private static values.
 	 *
