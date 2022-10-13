@@ -136,7 +136,7 @@ trait OP_DEBUG
 		}
 
 		//	...
-		if(!$debug = Request('debug') ){
+		if(!$debug = Env::Request('debug') ){
 			return;
 		}
 
