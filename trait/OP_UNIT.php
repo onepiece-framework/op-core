@@ -25,32 +25,6 @@ namespace OP;
 trait OP_UNIT
 {
 
-	/** Testcase
-	 *
-	 * @created   2019-12-13
-	 * @param     array        $args
-	 */
-	/*
-	static function Testcase($args)
-	{
-		//	Get class name.
-		$name = self::_ClassName();
-
-		//	Generate testcase controlloer path.
-		$path = ConvertPath('unit:/') . $name . '/testcase/index.php';
-
-		//	Check if exists.
-		if(!file_exists($path) ){
-			throw new \Exception("index.php file does not exists. ($path)");
-		}
-
-		//	include controlloer.
-		call_user_func(function($path, $args){
-			include($path);
-		}, $path, $args);
-	}
-	*/
-
 	/** Already instantiated object.
 	 *
 	 * @var IF_UNIT
