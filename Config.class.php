@@ -44,7 +44,7 @@ class Config
 	 * @param     string       $name
 	 * @return    string       $name
 	 */
-	static private function _Init($name)
+	static private function _Init(string $name)
 	{
 		//	Force lower case.
 		$name = strtolower($name);
@@ -64,7 +64,7 @@ class Config
 	 * @created   2021-05-12
 	 * @param     string       $name
 	 */
-	static private function _Fetch($name)
+	static private function _Fetch(string $name)
 	{
 		//	Static variable.
 		static $_asset_root, $_config_dir;
