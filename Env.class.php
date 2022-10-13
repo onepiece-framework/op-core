@@ -339,7 +339,8 @@ class Env
 			/* @var $file null */
 			/* @var $line null */
 			if( headers_sent($file, $line) ){
-				$message = "Header has already sent. ($file, $line)";
+				$meta    =  OP::MetaFromPath($file);
+				$message = "Header has already sent. ($meta, $line)";
 				Notice::Set($message);
 			}
 
