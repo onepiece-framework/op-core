@@ -36,36 +36,7 @@ require(__DIR__.'/function/Template.php');
 require(__DIR__.'/function/GetTemplate.php');
 require(__DIR__.'/function/Content.php');
 require(__DIR__.'/function/Charset.php');
-
-/** Compress to meta path from local file path.
- *
- * <pre>
- * print CompressPath(__FILE__); // -> App:/index.php
- * </pre>
- *
- * @param  string $file_path
- * @return string
- */
-function CompressPath($path)
-{
-	//	...
-	foreach( array_reverse(RootPath()) as $meta => $root ){
-		//	...
-		$pos = strpos($path, $root);
-
-		//	...
-		if( $pos === 0 ){
-			//	...
-			$path = substr($path, strlen($root));
-
-			//	...
-			return "{$meta}:/{$path}";
-		};
-	};
-
-	//	...
-	return false;
-}
+require(__DIR__.'/function/CompressPath.php');
 
 /** Decode can decode nested array transparent.
  *
