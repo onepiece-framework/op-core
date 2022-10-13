@@ -20,8 +20,16 @@ namespace OP;
 //	...
 $_request = [];
 
-//	...
-foreach( array_slice($_SERVER['argv'], 2) as $arg ){
+/** Arguments
+ *
+ * //  0       1       2
+ * php app.php foo/bar test=1 // arg is 3.
+ * //  0               1
+ * php app.php         test=1 // arg is 2.
+ *
+ */
+foreach( array_slice($_SERVER['argv'], 1) as $arg ){
+
 	if( $pos = strpos($arg, '=') ){
 		$key = substr($arg, 0, $pos);
 		$var = substr($arg, $pos+1);
