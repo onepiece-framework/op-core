@@ -25,4 +25,23 @@ namespace OP;
 trait OP_UNIT
 {
 
+	/** Load from each unit's template directory.
+	 *
+	 * @created   2022-10-04
+	 * @return
+	 */
+	function Template(string $file_path, array $args=[])
+	{
+		//	...
+		if( strpos($file_path, '..') !== false ){
+			throw new \Exception("Deny upper directory specification.");
+		}
+
+		//	...
+		$unit_name = substr(get_class($this), 8);
+		$meta_path = "unit:/{$unit_name}/template/{$file_path}";
+
+		//	...
+		return OP::Template($meta_path, $args);
+	}
 }
