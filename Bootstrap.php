@@ -99,3 +99,10 @@ if( $_SERVER['SHELL'] ?? null ){ // Check if CLI.
 }else{
 	require_once(__DIR__.'/include/meta_root_web.php');
 }
+
+/** MIME
+ *
+ */
+if( \OP\Env::isShell() ){
+	\OP\Env::Mime('text/plain');
+}
