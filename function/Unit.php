@@ -25,7 +25,7 @@ namespace OP;
  * @param     string       $unit_name
  * @return    IF_UNIT
  */
-function & Unit($name):IF_UNIT
+function & Unit(string $name):IF_UNIT
 {
 	//	...
 	static $_unit;
