@@ -26,6 +26,11 @@ namespace OP;
  */
 class Config
 {
+	/** trait
+	 *
+	 */
+	use OP_CORE;
+
 	/** Config
 	 *
 	 * @created   2019-12-27
