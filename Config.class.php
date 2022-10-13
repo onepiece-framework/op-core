@@ -29,7 +29,7 @@ class Config
 	/** trait
 	 *
 	 */
-	use OP_CORE;
+	use OP_CORE, OP_CI;
 
 	/** Config
 	 *
