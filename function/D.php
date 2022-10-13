@@ -1,8 +1,8 @@
 <?php
-/** op-core:/Dump.php
+/** op-core:/D.php
  *
  * Separate from Functions.php.
- * The "D" function has out of need namespace.
+ * The "D" is a being that transcends at namespace.
  *
  * @created   2019-02-21
  * @version   1.0
