@@ -24,16 +24,6 @@ namespace OP;
  */
 trait OP_UNIT
 {
-	/** App
-	 *
-	 * @deprecated 2020-10-31
-	 * @created   2019-12-13
-	 * @return    UNIT\App
-	 */
-	function App()
-	{
-		return $this->Unit('App');
-	}
 
 	/** Unit
 	 *
