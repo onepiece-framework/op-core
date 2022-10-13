@@ -25,9 +25,22 @@ namespace OP;
  */
 function ConvertPath(string $path, bool $throw_exception=true):string
 {
+	//	Trim
+	$path = trim($path);
+
+	//	Root path
+	if( $path[0] === '/' ){
+		if( strpos($path, OP::MetaRoot('app')) === 0 ){
+			$meta = OP::MetaFromPath($path);
+		}else{
+			$meta = 'app:/xxx';
+		}
+		throw new \Exception("Root path cannot be specified. Use meta path. ($path --> $meta)");
+	}
+
 	//	Parent path.
 	if( strpos($path, '..') !== false ){
-		throw new \Exception("Passed parent path. ($path)");
+		throw new \Exception("Upper directory cannot be specified. ($path)");
 	}
 
 	//	Check meta label
