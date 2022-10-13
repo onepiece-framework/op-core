@@ -25,29 +25,6 @@ namespace OP;
 trait OP_UNIT
 {
 
-	/** Unit
-	 *
-	 *  Always return instantiated instance.
-	 *  That so-called "Singleton" or "Factory method".
-	 *
-	 * @deprecated 2020-10-09
-	 * @param     string       $name
-	 * @return    object       IF_UNIT
-	 */
-	static function Unit($name)
-	{
-		//	...
-		return Unit($name);
-
-		/*
-		//	...
-		Notice::Set('This method will obsolete. Please usage following method.'.PHP_EOL."Unit::Singleton({$name})");
-
-		//	...
-		return Unit::Singleton($name);
-		*/
-	}
-
 	/** Testcase
 	 *
 	 * @created   2019-12-13
