@@ -27,7 +27,7 @@ class Browser
 	/** trait.
 	 *
 	 */
-	use OP_CORE;
+	use OP_CORE, OP_CI;
 
 	/** SmartPhone
 	 *
@@ -62,7 +62,9 @@ class Browser
 	 */
 	static function Mac()
 	{
-		return null;
+		/* @var $output array */
+		exec('sw_vers', $output);
+		return strpos($output[0], 'macOS') ? true: false;
 	}
 
 	/** Win
