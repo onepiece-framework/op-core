@@ -60,7 +60,16 @@ trait OP_CI
 				$expect = $config['result'] ?? null;
 				$arg    = $config['args']   ?? null;
 				$args   = is_array($arg) ? $arg: [$arg];
-				$result = $this->$method(...$args);
+
+				//	...
+				try {
+					//	...
+					$result = $this->$method(...$args);
+
+				}catch( \Exception $e ){
+					//	...
+					$result = 'Exception: '.$e->getMessage();
+				}
 
 				//	...
 				if( $result !== $expect ){
