@@ -60,6 +60,7 @@ trait OP_CI
 				$expect = $config['result'] ?? null;
 				$arg    = $config['args']   ?? null;
 				$args   = is_array($arg) ? $arg: [$arg];
+				$debug  = null;
 
 				//	...
 				try {
@@ -67,12 +68,19 @@ trait OP_CI
 					$result = $this->$method(...$args);
 
 				}catch( \Exception $e ){
+
+					//	For debug
+					$debug[$method] = $config ?? '(empty)';
+
 					//	...
 					$result = 'Exception: '.$e->getMessage();
 				}
 
 				//	...
 				if( $result !== $expect ){
+					if( $debug ){
+						var_dump($debug);
+					}
 					var_dump( ['expect' => $expect, 'result' => $result] );
 					throw new \Exception("$method: Unmatch result.");
 				}
