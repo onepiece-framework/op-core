@@ -86,6 +86,11 @@ include_once(__DIR__.'/Functions.php');
  */
 include_once(__DIR__.'/trait/OP_CORE.php');
 
+/** Include OP function.
+ *
+ */
+include_once(__DIR__.'/function/OP.php');
+
 /** Include JSON submitted process.
  *
  */
