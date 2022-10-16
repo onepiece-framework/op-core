@@ -1,5 +1,5 @@
 <?php
-/** op-core:/Config.php
+/** op-core:/Config.class.php
  *
  * Purpose: Want to combine Env::Get()/Set() and Unit::Config().
  *
