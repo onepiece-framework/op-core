@@ -46,7 +46,7 @@ class MetaPath
 	 * @param     string     $meta
 	 * @param     string     $path
 	 */
-	static function Set(string $meta, string $path) : ?bool
+	static function Set(string $meta, string $path)
 	{
 		//	Check if full path. Does the path start at the route?
 		if( $path[0] !== '/' ){
