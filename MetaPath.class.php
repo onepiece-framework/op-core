@@ -28,7 +28,12 @@ namespace OP;
  */
 class MetaPath
 {
-	/**
+	/** trait
+	 *
+	 */
+	use OP_CORE;
+
+	/** Meta root path list.
 	 *
 	 * @created   2022-06-11
 	 * @var array
