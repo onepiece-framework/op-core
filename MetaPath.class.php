@@ -31,7 +31,7 @@ class MetaPath
 	/** trait
 	 *
 	 */
-	use OP_CORE;
+	use OP_CORE, OP_CI;
 
 	/** Meta root path list.
 	 *
