@@ -48,19 +48,33 @@ class MetaPath
 	 */
 	static function Set(string $meta, string $path)
 	{
+		//	...
+		require_once(__DIR__.'/function/RootPath.php');
+		return RootPath($meta, $path);
+
 		//	Check if full path. Does the path start at the route?
+		/* Why? Path start is root always.
 		if( $path[0] !== '/' ){
 			return false;
 		}
+		*/
+
+		//	Deny upper directory specify.
+		if( strpos($path, '../') !== false ){
+			throw new \Exception("Deny upper directory specify.");
+		}
 
 		//	Replace duplicate slash.
-		$path = preg_replace('//*', '/', $path);
+		$path = preg_replace('|//|', '/', $path);
+
+		//	Add slash to head and tail.
+		$path = '/'.trim($path, '/').'/';
 
 		//	Save the meta label and root path.
 		self::$_ROOTS[$meta] = $path;
 
 		//	Succeeded.
-		return true;
+		return self::$_ROOTS[$meta];
 	}
 
 	/** Get path by meta label.
@@ -71,6 +85,11 @@ class MetaPath
 	 */
 	static function Get(string $meta) : ?string
 	{
+		//	...
+		require_once(__DIR__.'/function/RootPath.php');
+		return RootPath($meta);
+
+		//	...
 		return self::$_ROOTS[$meta] ?? null;
 	}
 
@@ -81,6 +100,11 @@ class MetaPath
 	 */
 	static function List() : array
 	{
+		//	...
+		require_once(__DIR__.'/function/RootPath.php');
+		return RootPath();
+
+		//	...
 		return self::$_ROOTS;
 	}
 
@@ -92,8 +116,12 @@ class MetaPath
 	 */
 	static function Encode(string $path)
 	{
+		//	...
+		require_once(__DIR__.'/function/CompressPath.php');
+		return CompressPath($path);
+
 		//	Replace duplicate slash.
-		$path = preg_replace('//*', '/', $path);
+		$path = preg_replace('|//|', '/', $path);
 
 		//	...
 		foreach( self::$_ROOTS as $label => $root ){
@@ -121,11 +149,15 @@ class MetaPath
 	/** Restore to the full-path from the meta-path.
 	 *
 	 * @created   2022-06-11
-	 * @param     string $path
+	 * @param     string     $path
 	 * @return    string|boolean|null
 	 */
 	static function Decode(string $path)
 	{
+		//	...
+		require_once(__DIR__.'/function/ConvertPath.php');
+		return ConvertPath($path);
+
 		//	Replace duplicate slash.
 		$path = preg_replace('//*', '/', $path);
 
@@ -148,5 +180,17 @@ class MetaPath
 
 		//	...
 		return $root . substr($path, $len);
+	}
+
+	/** Convert to Document root URL from meta path and full path.
+	 *
+	 * @created    2022-10-16
+	 * @param      string     $path
+	 * @return     string     $URL
+	 */
+	static function URL($path)
+	{
+		require_once(__DIR__.'/function/ConvertURL-2.php');
+		return ConvertURL($path);
 	}
 }
