@@ -13,5 +13,17 @@
  */
 namespace OP;
 
-//	...
+//	Result is false.
+D( Notice::Has() );
+
+//	Register Notice message.
 Notice("<h1>This is test.</h1>\nSub message.");
+
+//	Result is true.
+D( Notice::Has() );
+
+//	Instanceate.
+$notice = new Notice();
+
+//	Result is true.
+D( $notice->Has() );
