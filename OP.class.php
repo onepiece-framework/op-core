@@ -90,6 +90,31 @@ trait OP_OBJECT
 		return Unit('Layout');
 	}
 
+	/** Notice
+	 *
+	 * @created    2022-10-06
+	 * @param      string     $message
+	 * @return     \OP\Notice
+	 */
+	static function Notice($message=null)
+	{
+		//	...
+		static $_notice;
+
+		//	...
+		if( $message ){
+			return Notice::Set($message);
+		}
+
+		//	...
+		if(!$_notice ){
+			$_notice = new Notice();
+		}
+
+		//	...
+		return $_notice;
+	}
+
 	/** Meta path
 	 *
 	 * <pre>
@@ -204,16 +229,6 @@ trait OP_FUNCTION
 	static function Request($key=null)
 	{
 		return Env::Request($key);
-	}
-
-	/** Notice
-	 *
-	 * @created   2022-10-06
-	 * @return    void
-	 */
-	static function Notice()
-	{
-		return self::_Function(__FUNCTION__);
 	}
 
 	/** Return unit instance (Singleton)
