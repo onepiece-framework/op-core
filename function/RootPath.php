@@ -31,6 +31,11 @@ function RootPath(string $meta='', string $path='')
 			throw new \Exception("This meta path already set. ($meta, $path)");
 		}
 
+		//	Deny upper directory specify.
+		if( strpos($path, '../') !== false ){
+			throw new \Exception("Deny upper directory specify.");
+		}
+
 		//	Register.
 		$root[$meta] = $path;
 	};
