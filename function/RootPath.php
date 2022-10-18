@@ -41,6 +41,9 @@ function RootPath(string $meta='', string $path='')
 			throw new \Exception("This directory not exists. ($path)");
 		}
 
+		//	Replace duplicate slash.
+		$path = preg_replace('|//|', '/', $path);
+
 		//	Register.
 		$root[$meta] = $path;
 	};
