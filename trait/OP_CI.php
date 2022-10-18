@@ -67,6 +67,11 @@ trait OP_CI
 					//	...
 					$result = $this->$method(...$args);
 
+					//	...
+					if( OP()->Notice()->Has() ){
+						$result = OP()->Notice()->Pop()['message'];
+					}
+
 				}catch( \Exception $e ){
 
 					//	For debug
