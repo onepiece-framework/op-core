@@ -44,6 +44,9 @@ function RootPath(string $meta='', string $path='')
 		//	Replace duplicate slash.
 		$path = preg_replace('|//|', '/', $path);
 
+		//	Add slash to head and tail.
+		$path = '/'.trim($path, '/').'/';
+
 		//	Register.
 		$root[$meta] = $path;
 	};
