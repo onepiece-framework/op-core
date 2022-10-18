@@ -20,13 +20,12 @@ namespace OP;
  */
 RootPath('op', dirname(__DIR__));
 
-/** app:/
- *
- */
-$_SERVER['DOCUMENT_ROOT'] = rtrim(getcwd().'/'.$_SERVER['SCRIPT_FILENAME'], 'app.php');
-RootPath('app', $_SERVER['DOCUMENT_ROOT']);
-
 /** doc:/
  *
  */
-RootPath('doc', $_SERVER['DOCUMENT_ROOT']);
+RootPath('doc', getcwd());
+
+/** app:/
+ *
+ */
+RootPath('app', getcwd() .'/'. dirname($_SERVER['SCRIPT_FILENAME']));
