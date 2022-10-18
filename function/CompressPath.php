@@ -25,6 +25,21 @@ namespace OP;
  */
 function CompressPath($path)
 {
+	/** I think so, more better to increase the number of operations
+	 *  than to increase memory usage.
+	static $_root, $_count;
+	$root = RootPath();
+	if( $_count !== count($root) ){
+		$_count  =  count($root);
+		$_root = array_reverse($root);
+	}
+	 */
+
+	//	...
+	if( is_dir($path) ){
+		$path = rtrim($path, '/').'/';
+	}
+
 	//	...
 	foreach( array_reverse(RootPath()) as $meta => $root ){
 		//	...
