@@ -36,6 +36,11 @@ function RootPath(string $meta='', string $path='')
 			throw new \Exception("Deny upper directory specify.");
 		}
 
+		//	Check directory exists.
+		if(!is_dir($path) ){
+			throw new \Exception("This directory not exists. ($path)");
+		}
+
 		//	Register.
 		$root[$meta] = $path;
 	};
