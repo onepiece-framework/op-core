@@ -29,6 +29,7 @@ function RootPath(string $meta='', string $path='')
 		//	Check if exists.
 		if( $root[$meta] ?? null ){
 			Notice::Set("This meta path already set. ($meta, $path)");
+			return false;
 		}
 
 		//	Init
