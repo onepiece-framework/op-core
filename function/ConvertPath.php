@@ -16,7 +16,7 @@ namespace OP;
 /** Convert to local file path from meta path.
  *
  * <pre>
- * print ConvertPath('app:/index.php'); // -> /www/localhost/index.php
+ * ConvertPath('app:/index.php'); -> /www/localhost/index.php
  * </pre>
  *
  * @param  string $meta_path
@@ -30,12 +30,7 @@ function ConvertPath(string $path, bool $throw_exception=true):string
 
 	//	Root path
 	if( $path[0] === '/' ){
-		if( strpos($path, OP::MetaRoot('app')) === 0 ){
-			$meta = OP::MetaFromPath($path);
-		}else{
-			$meta = 'app:/xxx';
-		}
-		throw new \Exception("Root path cannot be specified. Use meta path. ($path --> $meta)");
+		throw new \Exception("Root path is specify meta path. Not meta path --> {$path}");
 	}
 
 	//	Parent path.
