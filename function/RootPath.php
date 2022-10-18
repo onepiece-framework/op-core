@@ -31,8 +31,8 @@ function RootPath(string $meta='', string $path='')
 			throw new \Exception("This meta path already set. ($meta, $path)");
 		}
 
-		//	Init
-		$root[$meta] = rtrim($path,'/').'/';
+		//	Register.
+		$root[$meta] = $path;
 	};
 
 	//	Return meta root path.
