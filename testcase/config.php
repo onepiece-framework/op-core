@@ -8,10 +8,21 @@
  * @copyright Tomoaki Nagahara All right reserved.
  */
 
+/** Declare strict
+ *
+ */
+declare(strict_types=1);
+
 /** namespace
  *
  */
 namespace OP;
 
 //	...
-D( Config::Get('Hoge') );
+if(!$target = $_GET['target'] ?? null ){
+	Html('target is empty.');
+	return;
+}
+
+//	...
+D( Config::Get($target) );
