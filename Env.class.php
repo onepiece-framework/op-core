@@ -166,7 +166,7 @@ class Env
 		}
 
 		//	...
-		Config::Set($key, $var);
+		return Config::Set($key, $var);
 	}
 
 	/** Get/Set language code.
