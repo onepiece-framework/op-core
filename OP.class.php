@@ -137,7 +137,7 @@ trait OP_OBJECT
 	 * @throws    \Exception
 	 * @return    \OP\MetaPath
 	 */
-	static function MetaPath(?string $path, ?bool $url)
+	static function MetaPath(?string $path=null, ?bool $url=null)
 	{
 		//	...
 		static $_meta_path;
