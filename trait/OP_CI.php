@@ -34,6 +34,9 @@ trait OP_CI
 	 */
 	function CI()
 	{
+		//	Set AppID.
+		Env::AppID('self-check');
+
 		//	...
 		$display = OP::Request('display') ?? true;
 
