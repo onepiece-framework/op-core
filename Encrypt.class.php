@@ -26,8 +26,9 @@ class Encrypt
 {
 	/** trait.
 	 *
+	 * @updated   2022-10-20 OP_CI
 	 */
-	use OP_CORE;
+	use OP_CORE, OP_CI;
 
 	/** Cipher method
 	 *
