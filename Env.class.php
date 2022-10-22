@@ -151,8 +151,18 @@ class Env
 		switch( $key ){
 			case self::_ADMIN_IP_:
 			case self::_ADMIN_MAIL_:
+
+				/* Not work
 				self::$_env[$key] = $var;
-			return;
+				*/
+
+				//	...
+				Config::Set('admin',[$key => $var]);
+
+				//	...
+				D('This feature will deprecate. Set by asset:/config/admin.php file.');
+
+			return true;
 		}
 
 		//	...
