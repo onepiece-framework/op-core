@@ -97,7 +97,7 @@ class Notice
 
 		//	...
 		$key         = substr(md5($message), 0, 8);
-		$timestamp   = Env::Timestamp();
+		$timestamp   = date('Y-m-d H:i:s');
 
 		/*
 		$key		 = Hasha1($message);
