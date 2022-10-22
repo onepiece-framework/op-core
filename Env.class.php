@@ -316,7 +316,7 @@ class Env
 	 * @param     string       $ext
 	 * @return    string       $mime
 	 */
-	static function Ext($ext)
+	static function Ext(string $ext)
 	{
 		//	...
 		switch($ext = strtolower($ext)){
