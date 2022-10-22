@@ -37,8 +37,11 @@ trait OP_CI
 		//	Set AppID.
 		Env::AppID('self-check');
 
+		//	CLI arguments
+		$request = OP::Request();
+
 		//	...
-		$display = OP::Request('display') ?? true;
+		$display = $request['display'] ?? true;
 
 		//	...
 		if( $display ){ echo get_class($this).' - '; }
@@ -47,7 +50,14 @@ trait OP_CI
 		$configs = self::__GetConfig();
 
 		//	...
-		foreach( get_class_methods($this) as $method ){
+		if( $method  = $request['method'] ?? null ){
+			$methods = [$method];
+		}else{
+			$methods = get_class_methods($this);
+		}
+
+		//	...
+		foreach( $methods as $method ){
 			//	...
 			if( $method == 'CI' ){
 				continue;
