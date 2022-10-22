@@ -320,22 +320,22 @@ class Env
 	{
 		//	...
 		switch($ext = strtolower($ext)){
-			//	...
 			case 'php':
 			case 'html':
 			case 'phtml':
 				$mime = 'text/html';
 				break;
 
-			//	...
 			case 'js':
 				$mime = 'text/javascript';
 				break;
 
-				//	...
 			case 'css':
 				$mime = 'text/css';
 				break;
+
+			default:
+				$mime = 'text/plain';
 		}
 
 		//	...
@@ -392,7 +392,7 @@ class Env
 	 * @param  string  $time
 	 * @return integer $time
 	 */
-	static function Time(bool $utc=false, string $time=''):int
+	static function Time(?bool $utc=false, ?string $time=''):int
 	{
 		//	...
 		if( $time ){
@@ -434,7 +434,7 @@ class Env
 	 * @param    string      $offset
 	 * @return   string      $timestamp
 	 */
-	static function Timestamp(bool $utc=false, $offset=null):string
+	static function Timestamp(?bool $utc=false, $offset=null):string
 	{
 		//	...
 		$time = self::Time($utc);
@@ -460,11 +460,20 @@ class Env
 		if( $app_id ){
 			//	...
 			if( isset(self::$_env[_OP_APP_ID_]) ){
-				Notice::Set("AppID is already set.");
+				//	...
+				if( self::$_env[_OP_APP_ID_] !== $app_id ){
+					throw new \Exception('AppID is already set. ('.self::$_env[_OP_APP_ID_].')');
+				}
 			}
 
 			//	...
 			self::$_env[_OP_APP_ID_] = $app_id;
+		}
+
+		//	If not set app_id.
+		if( empty(self::$_env[_OP_APP_ID_]) ){
+			// Set by config file.
+			self::$_env[_OP_APP_ID_] = Config::Get('app_id')['app_id'] ?? null;
 		}
 
 		//	...
