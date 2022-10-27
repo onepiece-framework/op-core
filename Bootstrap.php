@@ -105,9 +105,20 @@ if( $_SERVER['SHELL'] ?? null ){ // Check if CLI.
 	require_once(__DIR__.'/include/meta_root_web.php');
 }
 
-/** MIME
+/** Set MIME
  *
  */
 if( \OP\Env::isShell() ){
-	\OP\Env::Mime('text/plain');
+	$mime = 'text/plain';
+}else{
+	if(!$ext = \OP\OP::ParseURL($_SERVER['REQUEST_URI'])['ext']){
+		$ext = \OP\OP::ParseURL($_SERVER['SCRIPT_NAME'])['ext'];
+	}
+
+	//	...
+	if( $ext ){
+		$mime = \OP\Env::Ext($ext);
+	}
 }
+//	...
+\OP\Env::Mime($mime);
