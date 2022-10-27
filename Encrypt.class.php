@@ -44,7 +44,7 @@ class Encrypt
 	/** Generate Initial vector.
 	 *
 	 */
-	static function _iv()
+	static private function _iv()
 	{
 		$source = $_SERVER["_OP_OPENSSL_IV_"] ?? Env::AppID();
 		$source = md5($source);
