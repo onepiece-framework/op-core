@@ -346,6 +346,17 @@ trait OP_FUNCTION
 		//	...
 		return $result;
 	}
+
+	/** Parse URL
+	 *
+	 * @created    2022-10-23
+	 * @param      string     $string
+	 * @return     array
+	 */
+	static function ParseURL(string $url)
+	{
+		return include(__DIR__.'/include/ParseURL.php');
+	}
 }
 
 /** OP_ENV
