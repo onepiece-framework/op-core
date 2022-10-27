@@ -64,7 +64,14 @@ class Browser
 	{
 		/* @var $output array */
 		exec('sw_vers', $output);
-		return strpos($output[0], 'macOS') ? true: false;
+
+		//	...
+		if(!$pos = strpos($output[0], 'macOS') ){
+			$pos = strpos($output[0], 'Mac OS X');
+		}
+
+		//	...
+		return $pos ? true: false;
 	}
 
 	/** Win
