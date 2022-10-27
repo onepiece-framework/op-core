@@ -66,7 +66,7 @@ class Encrypt
 	 * @param string $str
 	 * @param string $str
 	 */
-	static function Dec($str)
+	static function Dec(string $str)
 	{
 		//	...
 		$iv       = self::_iv();
