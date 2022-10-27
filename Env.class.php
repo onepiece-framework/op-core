@@ -160,7 +160,15 @@ class Env
 				Config::Set('admin',[$key => $var]);
 
 				//	...
-				D('This feature will deprecate. Set by asset:/config/admin.php file.');
+				if( $key === self::_ADMIN_IP_ ){
+					$label = '_ADMIN_IP_';
+				}
+				if( $key === self::_ADMIN_MAIL_ ){
+					$label = '_ADMIN_MAIL_';
+				}
+
+				//	...
+				D('Set(self::'.$label.') feature will deprecate. Set by asset:/config/admin.php file.');
 
 			return true;
 		}
