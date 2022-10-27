@@ -54,7 +54,7 @@ class Encrypt
 	/** Generate password.
 	 *
 	 */
-	static function _password()
+	static private function _password()
 	{
 		$source = $_SERVER["_OP_OPENSSL_PASSWORD_"] ?? Env::AppID();
 		$source = md5($source);
