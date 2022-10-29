@@ -361,6 +361,8 @@ trait OP_FUNCTION
 
 /** OP_ENV
  *
+ *  Move from Env.
+ *
  * @created   2022-10-05
  * @version   1.0
  * @package   op-core
@@ -369,5 +371,14 @@ trait OP_FUNCTION
  */
 trait OP_ENV
 {
-
+	/** Return GET/POST method or
+	 *
+	 * @created    2022-10-28
+	 * @param      string     $key
+	 * @return
+	 */
+	static function Request(?string $key=null)
+	{
+		return Env::Request($key);
+	}
 }
