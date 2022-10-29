@@ -495,6 +495,11 @@ class Env
 
 	/** Get request value.
 	 *
+	 * <pre>
+	 * Use to OP::Request().
+	 * </pre>
+	 *
+	 * @deprecated 2022-10-28
 	 * @created   2020-05-04
 	 * @param     string       $_key
 	 * @param     mixed        $_default
