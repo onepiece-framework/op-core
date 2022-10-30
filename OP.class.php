@@ -220,17 +220,6 @@ trait OP_FUNCTION
 		return $function( ...$args );
 	}
 
-	/** Request
-	 *
-	 * @created   2022-10-05
-	 * @param     string     $key
-	 * @return    null|boolean|string|array
-	 */
-	static function Request($key=null)
-	{
-		return Env::Request($key);
-	}
-
 	/** Return unit instance (Singleton)
 	 *
 	 * @created   2022-10-07
