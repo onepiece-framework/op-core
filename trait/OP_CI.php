@@ -91,7 +91,7 @@ trait OP_CI
 					}
 					ob_end_clean();
 
-					//	...
+					//	Overwrite result by Notice.
 					if( OP()->Notice()->Has() ){
 						$result = OP()->Notice()->Pop()['message'];
 					}
