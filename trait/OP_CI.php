@@ -82,8 +82,14 @@ trait OP_CI
 
 				//	...
 				try {
-					//	...
-					$result = $this->$method(...$args);
+					//	If empty return value, evaluate contents.
+					ob_start();
+					if(!$result = $this->$method(...$args) ){
+						if( $contents = ob_get_contents() ){
+							$result   = $contents;
+						}
+					}
+					ob_end_clean();
 
 					//	...
 					if( OP()->Notice()->Has() ){
