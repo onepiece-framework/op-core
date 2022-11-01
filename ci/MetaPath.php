@@ -16,14 +16,19 @@ namespace OP;
 //	...
 $ci = new CI();
 
+//	Set - Not exists directory
+$result = 'Exception: This directory not exists. (/foo/bar/)';
+$args   = ['www', '/foo/bar/'];
+$ci->Set('Set', $result, $args);
+
 //	Set
-$result = __DIR__.'/';
-$args   = ['ci', '//'.__DIR__];
+$result = '/etc/';
+$args   = ['etc', '//etc//'];
 $ci->Set('Set', $result, $args);
 
 //	Set - Duplicate entry
-$result = 'Exception: This meta path already set. (ci, '.__DIR__.')';
-$args   = ['ci', __DIR__];
+$result = 'Exception: This meta path already set. (etc, /etc/)';
+$args   = ['etc', '/etc/'];
 $ci->Set('Set', $result, $args);
 
 //	Set - Not exists
@@ -37,8 +42,8 @@ $args   = ['upper', '../up'];
 $ci->Set('Set', $result, $args);
 
 //	Get
-$result = __DIR__.'/';
-$args   = ['ci'];
+$result = '/etc/';
+$args   = ['etc'];
 $ci->Set('Get', $result, $args);
 
 //	Get - Not registered.
@@ -47,34 +52,63 @@ $args   = ['not'];
 $ci->Set('Get', $result, $args);
 
 //	List
-$result = [
-	'op'    => RootPath('op'),
-	'doc'   => RootPath('doc'),
-	'app'   => RootPath('app'),
-	'asset' => RootPath('asset'),
-	'ci'    => __DIR__.'/',
-];
 $args   = [];
+$result = [
+	'real'     => RootPath('real'),
+	'doc'      => RootPath('doc'),
+	'app'      => RootPath('app'),
+	'asset'    => RootPath('asset'),
+	'op'       => RootPath('op'),
+	'core'     => RootPath('core'),
+	'unit'     => RootPath('unit'),
+	'template' => RootPath('template'),
+	'etc'      => '/etc/',
+];
 $ci->Set('List', $result, $args);
 
 //	Encode
-$result = 'ci:/';
-$args   = __DIR__;
+$args   = '/etc/';
+$result = 'etc:/';
 $ci->Set('Encode', $result, $args);
 
 //	Encode - Not registered.
-$result = false;
 $args   = 'not:/';
+$result = false;
 $ci->Set('Encode', $result, $args);
 
 //	Decode
-$result = __DIR__.'/';
-$args   = 'ci:/';
+$args   = 'etc://';
+$result = '/etc/';
+$ci->Set('Decode', $result, $args);
+
+//	Decode - Current directory
+$args   = './README.md';
+$result = OP::MetaPath('core:/').$args;
+$ci->Set('Decode', $result, $args);
+
+//	Decode - Upper directory
+$args   = '../index.php';
+$result = 'Exception: Upper directory cannot be specified. (../index.php)';
+$ci->Set('Decode', $result, $args);
+
+//	Decode - Relative by current directory.
+$args   = 'MetaPath.php';
+$result = 'Exception: This file does not exist. ('.OP::MetaPath('core:/').'MetaPath.php)';
+$ci->Set('Decode', $result, $args);
+
+//	Decode - has query string
+$args   = 'etc:/?foo=bar';
+$result = '/etc/?foo=bar';
+$ci->Set('Decode', $result, $args);
+
+//	Decode - Does not exists
+$args   = 'etc:/foo/bar';
+$result = 'Exception: This file does not exist. (/etc/foo/bar)';
 $ci->Set('Decode', $result, $args);
 
 //	URL
-$result = __DIR__.'/';
-$args   = 'ci:/';
+$args   = 'etc:/';
+$result = 'Exception: This path has not been document root path. (/Volumes/RAMDisk/www/localhost/op/skeleton/2022 !== /etc/)';
 $ci->Set('URL', $result, $args);
 
 //	...
