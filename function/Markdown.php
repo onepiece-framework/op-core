@@ -32,7 +32,11 @@ function Markdown($file, $throw_exception=true)
 	}
 
 	//	...
-	echo '<div class="markdown"><pre><code>';
-	Template($file);
-	echo '</code></pre></div>';
+	if( Env::isShell() ){
+		OP::Template($file);
+	}else{
+		echo '<div class="markdown"><pre><code>';
+		OP::Template($file);
+		echo '</code></pre></div>';
+	}
 }
