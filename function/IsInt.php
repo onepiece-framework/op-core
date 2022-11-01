@@ -8,6 +8,11 @@
  * @copyright Tomoaki Nagahara All right reserved.
  */
 
+ /** namespace
+ *
+ */
+namespace OP;
+
 /** Check is integer.
  *
  * @created   2020-10-31
