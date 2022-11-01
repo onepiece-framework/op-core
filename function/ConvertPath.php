@@ -28,6 +28,12 @@ function ConvertPath(string $path, bool $throw_exception=true):string
 	//	Trim
 	$path = trim($path);
 
+	//	URL Query
+	if( $pos   = strpos($path, '?') ){
+		$query = substr($path, $pos);
+		$path  = substr($path, 0, $pos);
+	}
+
 	//	Root path
 	if( $path[0] === '/' ){
 		throw new \Exception("Root path is specify meta path. Not meta path --> {$path}");
@@ -74,5 +80,5 @@ function ConvertPath(string $path, bool $throw_exception=true):string
 	}
 
 	//	Return calculated value.
-	return $path;
+	return $path . ($query ?? null);
 }
