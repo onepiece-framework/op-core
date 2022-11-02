@@ -103,13 +103,19 @@ trait OP_DEBUG
 		};
 
 		//	...
-		$trace = debug_backtrace(null, 2)[1];
+		$trace = debug_backtrace(DEBUG_BACKTRACE_IGNORE_ARGS, 2)[1];
+		$args  = OP::DebugBacktraceToString($trace);
+
+		/*
+		var_dump( $trace );
+
 		$args  = $trace['class']. $trace['type']. $trace['function']."(".join(',', $trace['args']).")";
 
 		//	...
 		if(!$trace['file'] = CompressPath(($file = $trace['file'] ?? null))){
 			$trace['file'] = $file;
 		}
+		*/
 
 		//	...
 		$trace['args'] = [$args];
