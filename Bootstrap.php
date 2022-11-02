@@ -9,6 +9,11 @@
  * @copyright Tomoaki Nagahara All right reserved.
  */
 
+/** declare
+ *
+ */
+declare(strict_types=1);
+
 /** Checking PHP version.
  *
  */
