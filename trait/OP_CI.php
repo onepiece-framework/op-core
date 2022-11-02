@@ -107,10 +107,17 @@ trait OP_CI
 
 				//	...
 				if( $result !== $expect ){
+					//	...
 					if( $debug ){
 						var_dump($debug);
 					}
-					var_dump( ['expect' => $expect, 'result' => $result] );
+
+					//	...
+					echo PHP_EOL.get_class($this).'->'.$method.PHP_EOL;
+					var_dump([
+						'expect' => $expect,
+						'result' => $result,
+					]);
 					throw new \Exception("$method: Unmatch result.");
 				}
 			}
