@@ -105,10 +105,16 @@ trait OP_CI
 					$result = 'Exception: '.$e->getMessage();
 				}
 
+				//	If result is object.
+				if( is_object($result) ){
+					$result = get_class($result);
+				}
+
 				//	...
 				if( $result !== $expect ){
 					//	...
 					if( $debug ){
+						echo PHP_EOL;
 						var_dump($debug);
 					}
 
