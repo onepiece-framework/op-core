@@ -31,7 +31,7 @@ class OP
 	/** trait.
 	 *
 	 */
-	use OP_CORE, OP_OBJECT, OP_FUNCTION, OP_ENV {
+	use OP_CORE, OP_OBJECT, OP_FUNCTION, OP_ENV, OP_CI {
 		OP_FUNCTION::__callstatic insteadof OP_CORE;
 	}
 }
