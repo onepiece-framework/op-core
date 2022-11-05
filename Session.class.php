@@ -34,7 +34,7 @@ class Session
 	/** trait.
 	 *
 	 */
-	use OP_CORE, OP_SESSION;
+	use OP_CORE, OP_SESSION, OP_CI;
 
 	/** Get session value.
 	 *
