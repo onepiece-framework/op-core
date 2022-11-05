@@ -8,6 +8,11 @@
  * @copyright Tomoaki Nagahara All right reserved.
  */
 
+/** Declare strict
+ *
+ */
+declare(strict_types=1);
+
 /** namespace
  *
  */
@@ -17,18 +22,18 @@ namespace OP;
 $ci = new CI();
 
 //	Touch
-$result = null;
 $args   = '/tmp/self-check.txt';
+$result = null;
 $ci->Set('Touch', $result, $args);
 
 //	Create
-$result = null;
 $args   = '/tmp/self-check/test.txt';
+$result = null;
 $ci->Set('Create', $result, $args);
 
 //	Mkdir
-$result = null;
 $args   = '/tmp/self-check-test';
+$result = null;
 $ci->Set('Mkdir', $result, $args);
 
 //	...
