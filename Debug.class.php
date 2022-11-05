@@ -29,7 +29,7 @@ class Debug
 	/** trait.
 	 *
 	 */
-	use OP_CORE, OP_DEBUG;
+	use OP_CORE, OP_DEBUG, OP_CI;
 
 	/** Set debug info.
 	 *
