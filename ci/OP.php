@@ -8,6 +8,11 @@
  * @copyright Tomoaki Nagahara All right reserved.
  */
 
+/** Declare strict
+ *
+ */
+declare(strict_types=1);
+
 /** namespace
  *
  */
@@ -18,32 +23,32 @@ $ci = new CI();
 
 //	Router
 $args   = null;
-$result = Unit('Router');
+$result = 'OP\UNIT\Router';
 $ci->Set('Router', $result, $args);
 
 //	Template
 $args   = null;
-$result = Unit('Template');
+$result = 'OP\UNIT\Template';
 $ci->Set('Template', $result, $args);
 
 //	Layout
 $args   = null;
-$result = Unit('Layout');
+$result = 'OP\UNIT\Layout';
 $ci->Set('Layout', $result, $args);
 
 //	Notice
 $args   = null;
-$result = OP::Notice();
+$result = 'OP\Notice';
 $ci->Set('Notice', $result, $args);
 
 //	MetaPath
 $args   = null;
-$result = OP::MetaPath();
+$result = 'OP\MetaPath';
 $ci->Set('MetaPath', $result, $args);
 
 //	Config
 $args   = null;
-$result = OP::Config();
+$result = 'OP\Config';
 $ci->Set('Config', $result, $args);
 
 //	_Function
@@ -53,7 +58,7 @@ $ci->Set('_Function', $result, $args);
 
 //	Unit
 $args   = 'Dump';
-$result = Unit('Dump');
+$result = 'OP\UNIT\Dump';
 $ci->Set('Unit', $result, $args);
 
 //	RootPath
