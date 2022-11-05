@@ -38,7 +38,7 @@ class EMail
 	/** trait.
 	 *
 	 */
-	use \OP\OP_CORE;
+	use OP_CORE, OP_CI;
 
 	//	...
 	private $_head	 = [];
