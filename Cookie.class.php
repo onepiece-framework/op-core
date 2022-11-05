@@ -35,7 +35,7 @@ class Cookie
 	/** trait.
 	 *
 	 */
-	use OP_CORE;
+	use OP_CORE, OP_CI;
 
 	/** Get cookie value of key.
 	 *
