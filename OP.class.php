@@ -338,7 +338,7 @@ trait OP_FUNCTION
 	 * @param     mixed      ...$args
 	 * @return    mixed
 	 */
-	static function Sandbox($path, ...$args)
+	static function Sandbox(string $path, ...$args)
 	{
 		//	...
 		$path = (function($path){
