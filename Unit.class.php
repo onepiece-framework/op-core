@@ -102,7 +102,7 @@ class Unit
 	 * @param   string      $name
 	 * @return  boolean     true is successful.
 	 */
-	static function Load($name)
+	static function Load(string $name)
 	{
 		//	...
 		if( class_exists("\OP\UNIT\{$name}", false) ){
