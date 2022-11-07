@@ -346,7 +346,7 @@ trait OP_FUNCTION
 	{
 		return include(__DIR__.'/include/ParseURL.php');
 	}
-}
+} // OP_FUNCTION
 
 /** OP_ENV
  *
@@ -370,4 +370,4 @@ trait OP_ENV
 	{
 		return Env::Request($key);
 	}
-}
+} // OP_ENV
