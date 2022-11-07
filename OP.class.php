@@ -342,13 +342,13 @@ trait OP_FUNCTION
 	{
 		//	...
 		$path = (function($path){
-			$path = OP::MetaToPath($path);
+			$path = OP::MetaPath($path);
 			return $path;
 		})($path);
 		return include($path);
 
 		//	...
-		$path = OP::MetaToPath($path);
+		$path = OP::MetaPath($path);
 
 		//	...
 		$curd = getcwd();
