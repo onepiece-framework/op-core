@@ -158,15 +158,20 @@ class MetaPath
 		require_once(__DIR__.'/function/ConvertPath.php');
 		return ConvertPath($path);
 
+		/*
 		//	Replace duplicate slash.
 		$path = preg_replace('//*', '/', $path);
+		*/
 
 		/* @var $m array */
+		/*
 		if(!preg_match('|^(\w+):/|', $path, $m)){
 			E("Does not match meta label --> `$path`");
 			return false;
 		}
+		*/
 
+		/*
 		//	Get the meta-label.
 		$label = $m[1];
 
@@ -180,6 +185,7 @@ class MetaPath
 
 		//	...
 		return $root . substr($path, $len);
+		*/
 	}
 
 	/** Convert to Document root URL from meta path and full path.
