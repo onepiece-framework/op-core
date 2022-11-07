@@ -396,7 +396,12 @@ class EMail
 	{
 		static $boundary;
 		if(!$boundary){
+			/*
 			$boundary = "--onepiece-framework--Boundary--" . uniqid("b");
+			*/
+			$subject  = $this->_get_subject();
+			$unique   = md5($subject);
+			$boundary = "--onepiece-framework--Boundary--" . $unique;
 		}
 		return $boundary;
 	}
