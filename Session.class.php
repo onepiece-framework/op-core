@@ -43,7 +43,7 @@ class Session
 	 * @param     mixed        $default
 	 * @return    mixed
 	 */
-	static function Get(string $key, $default)
+	static function Get(string $key, $default=null)
 	{
 		return self::Session()[$key] ?? $default;
 	}
