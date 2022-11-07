@@ -48,12 +48,12 @@ class Unit
 	 */
 	use OP_CORE;
 
-	/** Return new instance.
+	/** Return always new instance.
 	 *
 	 * @param  string $name
 	 * @return object
 	 */
-	static function Instantiate($name)
+	static function Instantiate(string $name)
 	{
 		//	Automatically load unit.
 		if(!self::Load($name)){
