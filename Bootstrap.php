@@ -101,15 +101,6 @@ include_once(__DIR__.'/function/OP.php');
  */
 include_once(__DIR__.'/include/json.php');
 
-/** Include meta root setting.
- *
- */
-if( $_SERVER['SHELL'] ?? null ){ // Check if CLI.
-	require_once(__DIR__.'/include/meta_root_cli.php');
-}else{
-	require_once(__DIR__.'/include/meta_root_web.php');
-}
-
 /** Set MIME
  *
  */
