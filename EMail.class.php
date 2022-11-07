@@ -228,7 +228,7 @@ class EMail
 	 */
 	function Debug()
 	{
-		D($this->_debug);
+	//	D($this->_debug);
 	}
 
 	/** Use PHP's mail function.
