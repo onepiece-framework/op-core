@@ -368,7 +368,7 @@ class EMail
 	 */
 	static function GetLocalAddress()
 	{
-		return get_current_user().'@'.gethostbyaddr($_SERVER['SERVER_ADDR']);
+		return get_current_user().'@'.gethostbyaddr($_SERVER['SERVER_ADDR'] ?? '127.0.0.1');
 	}
 
 	/** Get php sendmail function's parameters.
