@@ -174,7 +174,7 @@ trait OP_OBJECT
 		//	...
 		return $_meta_path;
 	}
-}
+} // OP_OBJECT
 
 /** OP_FUNCTION
  *
