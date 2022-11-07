@@ -346,6 +346,17 @@ trait OP_FUNCTION
 	{
 		return include(__DIR__.'/include/ParseURL.php');
 	}
+
+	/** DebugBacktrace array is convert to string.
+	 *
+	 * @created    2022-10-31
+	 * @param      array
+	 * @return     string
+	 */
+	static function DebugBacktraceToString(array $traces) : string
+	{
+		return include(__DIR__.'/include/DebugBacktraceToString.php');
+	}
 } // OP_FUNCTION
 
 /** OP_ENV
