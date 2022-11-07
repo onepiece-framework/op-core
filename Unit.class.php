@@ -128,12 +128,16 @@ class Unit
 
 	/** Singleton
 	 *
-	 * @created  2019-09-18
+	 * <pre>
+	 * $unit = OP::Unit('unit_name');
+	 * </pre>
+	 *
 	 * @deprecated
+	 * @created  2019-09-18
 	 * @param    string      $name
 	 * @return   object      $unit
 	 */
-	static function Singleton($name)
+	static function Singleton(string $name)
 	{
 		return Unit($name);
 	}
