@@ -53,6 +53,11 @@ class File
 		umask(0);
 
 		//	...
+		if( file_exists($path) ){
+			return;
+		}
+
+		//	...
 		if(!mkdir($path, 0755, true) ){
 			throw new \Exception("Create directory has failure. ($path)");
 		};
