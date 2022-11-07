@@ -22,17 +22,14 @@ use Exception;
 /** Unit
  *
  * <pre>
- * //	Set unit directory.
- * Unit::Director('app:/asset/unit');
- *
  * //	Get instance.
  * $obj = Unit::Instance('UnitName');
  *
  * //	Load static class.
- * Unit::Load('unitname');
+ * \OP\Unit::Load('unitname');
  *
  * //	Use static class.
- * $val = OP\UNIT\NAME::Get();
+ * $val = \OP\UNIT\NAME::Get();
  * </pre>
  *
  * @created   2016-11-28
