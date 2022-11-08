@@ -340,12 +340,14 @@ trait OP_FUNCTION
 	 */
 	static function Sandbox(string $path, ...$args)
 	{
+		/*
 		//	...
 		$path = (function($path){
 			$path = OP::MetaPath($path);
 			return $path;
 		})($path);
 		return include($path);
+		*/
 
 		//	...
 		$path = OP::MetaPath($path);
