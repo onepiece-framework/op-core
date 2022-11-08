@@ -465,9 +465,8 @@ class Env
 	static function AppID($app_id=null)
 	{
 		//	...
-		return Config::Get( strtolower(_OP_APP_ID_) );
+	//	return Config::Get( strtolower(_OP_APP_ID_) )['app_id'];
 
-		/*
 		//	...
 		if( $app_id ){
 			//	...
@@ -490,7 +489,6 @@ class Env
 
 		//	...
 		return self::$_env[_OP_APP_ID_] ?? null;
-		*/
 	}
 
 	/** Get request value.
