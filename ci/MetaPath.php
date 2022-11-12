@@ -114,8 +114,9 @@ $result = 'Exception: This file does not exist. (/etc/foo/bar)';
 $ci->Set('Decode', $result, $args);
 
 //	URL
+$doc    = OP::MetaPath('doc:/');
 $args   = 'etc:/';
-$result = 'Exception: This path has not been document root path. (/Volumes/RAMDisk/www/localhost/op/skeleton/2022 !== /etc/)';
+$result = 'Exception: This path is not the document root path. ('.$doc.' !== /etc/)';
 $ci->Set('URL', $result, $args);
 
 //	...
