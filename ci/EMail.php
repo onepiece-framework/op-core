@@ -181,7 +181,7 @@ Content-Transfer-Encoding: 7bit
  # @author    Tomoaki Nagahara <tomoaki.nagahara@gmail.com>
  # @copyright Tomoaki Nagahara All right reserved.
 
-php81 ../../ci.php display=0
+php ../../ci.php display=0
 
 ----onepiece-framework--Boundary--63ab23b20281aa288d47352f732f1c59--
 ";
@@ -217,7 +217,7 @@ Content-Transfer-Encoding: 7bit
  # @author    Tomoaki Nagahara <tomoaki.nagahara@gmail.com>
  # @copyright Tomoaki Nagahara All right reserved.
 
-php81 ../../ci.php display=0
+php ../../ci.php display=0
 
 ----onepiece-framework--Boundary--63ab23b20281aa288d47352f732f1c59--
 ";
