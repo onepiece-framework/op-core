@@ -19,6 +19,10 @@ declare(strict_types=1);
 namespace OP;
 
 //	...
+$core = OP::MetaPath('core:/');
+$core = str_replace('/', '\\/', $core);
+
+//	...
 $ci = new CI();
 
 //	Get
@@ -32,19 +36,19 @@ $args   = ['self-check','test'];
 $ci->Set('Set', $result, $args);
 
 //	Out not key
-$result = '<div class=\'OP_MARK\'>{"file":"\/Volumes\/RAMDisk\/www\/localhost\/op\/skeleton\/2022\/asset\/core\/trait\/OP_CI.php","line":87,"function":"Out","class":"OP\\\\Debug","type":"::","args":["\/Volumes\/RAMDisk\/www\/localhost\/op\/skeleton\/2022\/asset\/core\/trait\/OP_CI.php #87 - OP\\\Debug::Out()"]}</div>
+$result = '<div class=\'OP_MARK\'>{"file":"'.$core.'trait\/OP_CI.php","line":87,"function":"Out","class":"OP\\\\Debug","type":"::","args":["'.$core.'trait\/OP_CI.php #87 - OP\\\Debug::Out()"]}</div>
 <div class=\'OP_DUMP\'>{"self-check":["test"]}</div>'."\n";
 $args   = null;
 $ci->Set('Out', $result, $args);
 
 //	Out has key
-$result = '<div class=\'OP_MARK\'>{"file":"\/Volumes\/RAMDisk\/www\/localhost\/op\/skeleton\/2022\/asset\/core\/trait\/OP_CI.php","line":87,"function":"Out","class":"OP\\\\Debug","type":"::","args":["\/Volumes\/RAMDisk\/www\/localhost\/op\/skeleton\/2022\/asset\/core\/trait\/OP_CI.php #87 - OP\\\Debug::Out()"]}</div>
+$result = '<div class=\'OP_MARK\'>{"file":"'.$core.'trait\/OP_CI.php","line":87,"function":"Out","class":"OP\\\\Debug","type":"::","args":["'.$core.'trait\/OP_CI.php #87 - OP\\\Debug::Out()"]}</div>
 <div class=\'OP_DUMP\'>["test"]</div>'."\n";
 $args   = ['self-check','hoge'];
 $ci->Set('Out', $result, $args);
 
 //	Debug
-$result = '<div class=\'OP_MARK\'>{"file":"\/Volumes\/RAMDisk\/www\/localhost\/op\/skeleton\/2022\/asset\/core\/trait\/OP_CI.php","line":87,"function":"Debug","class":"OP\\\\Debug","type":"::","args":["\/Volumes\/RAMDisk\/www\/localhost\/op\/skeleton\/2022\/asset\/core\/trait\/OP_CI.php #87 - OP\\\Debug::Debug()"]}</div>
+$result = '<div class=\'OP_MARK\'>{"file":"'.$core.'trait\/OP_CI.php","line":87,"function":"Debug","class":"OP\\\\Debug","type":"::","args":["'.$core.'trait\/OP_CI.php #87 - OP\\\Debug::Debug()"]}</div>
 <div class=\'OP_DUMP\'>{"self-check":["test"]}</div>'."\n";
 $args   = null;
 $ci->Set('Debug', $result, $args);
