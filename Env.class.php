@@ -119,6 +119,16 @@ class Env
 		return isset($_SERVER['SHELL']);
 	}
 
+	/** Is CI
+	 *
+	 * @created    2022-11-11
+	 * @return     boolean
+	 */
+	static function isCI() : bool
+	{
+		return ( basename($_SERVER['SCRIPT_NAME']) === 'ci.php' ) ? true: false;
+	}
+
 	/** Get environment value.
 	 *
 	 * @param  string $key
