@@ -46,6 +46,11 @@ $result = true;
 $args   = null;
 $ci->Set('isShell', $result, $args);
 
+//	isCI
+$result = true;
+$args   = null;
+$ci->Set('isCI', $result, $args);
+
 //	Get(Config)
 $result = [];
 $args   = 'env';
