@@ -61,21 +61,6 @@ class Encrypt
 		return $source;
 	}
 
-	/** Dec is Decoding.
-	 *
-	 * @param string $str
-	 * @param string $str
-	 */
-	static function Dec(string $str)
-	{
-		//	...
-		$iv       = self::_iv();
-		$password = self::_password();
-
-		//	...
-		return openssl_decrypt($str, self::algorithm, $password, 0, $iv);
-	}
-
 	/** Enc is Encoding.
 	 *
 	 * @param string $str
@@ -89,5 +74,20 @@ class Encrypt
 
 		//	...
 		return openssl_encrypt($str, self::algorithm, $password, 0, $iv);
+	}
+
+	/** Dec is Decoding.
+	 *
+	 * @param string $str
+	 * @param string $str
+	 */
+	static function Dec(string $str)
+	{
+		//	...
+		$iv       = self::_iv();
+		$password = self::_password();
+
+		//	...
+		return openssl_decrypt($str, self::algorithm, $password, 0, $iv);
 	}
 }
