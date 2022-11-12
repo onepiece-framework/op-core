@@ -263,6 +263,17 @@ trait OP_FUNCTION
 		return self::_Function(__FUNCTION__, $value);
 	}
 
+	/** Decode from html entities.
+	 *
+	 * @created    2022-11-12
+	 * @param      mixed      $value
+	 * @return     mixed
+	 */
+	static function Decode($value)
+	{
+		return self::_Function(__FUNCTION__, $value);
+	}
+
 	/** Return unit instance (Singleton)
 	 *
 	 * @created   2022-10-07
