@@ -119,13 +119,13 @@ $ci->Set('Mime', $result, $args);
 //	Time - Ice Age
 $timestamp = '2020-10-10 12:00:01';
 $time   = strtotime($timestamp);
+$args   = [false, $timestamp];
 $result = $time;
-$args   = [true, $timestamp];
 $ci->Set('Time', $result, $args);
 
 //	Timestamp - Ice Age
-$result = $timestamp;
 $args   = null;
+$result = $timestamp;
 $ci->Set('Timestamp', $result, $args);
 
 //	AppID
