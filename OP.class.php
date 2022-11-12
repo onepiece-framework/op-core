@@ -252,6 +252,17 @@ trait OP_FUNCTION
 		return $function( ...$args );
 	}
 
+	/** Encode to html entities.
+	 *
+	 * @created    2022-11-12
+	 * @param      mixed      $value
+	 * @return     mixed
+	 */
+	static function Encode($value)
+	{
+		return self::_Function(__FUNCTION__, $value);
+	}
+
 	/** Return unit instance (Singleton)
 	 *
 	 * @created   2022-10-07
