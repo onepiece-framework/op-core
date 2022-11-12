@@ -474,10 +474,11 @@ class Env
 	 */
 	static function AppID($app_id=null)
 	{
-		//	...
+	//	There can not initialize AppID.
+	//	return OP::Sandbox('asset:/config/app_id.php')['app_id'];
 	//	return Config::Get( strtolower(_OP_APP_ID_) )['app_id'];
 
-		//	...
+		//	Can initialize AppID only 1st call.
 		if( $app_id ){
 			//	...
 			if( isset(self::$_env[_OP_APP_ID_]) ){
