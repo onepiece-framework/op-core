@@ -109,5 +109,10 @@ $args   = null;
 $result = OP::Request();
 $ci->Set('Request', $result, $args);
 
+//	AppID
+$args   = null;
+$result = 'self-check';
+$ci->Set('AppID', $result, $args);
+
 //	...
 return $ci->GenerateConfig();
