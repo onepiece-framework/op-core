@@ -237,6 +237,14 @@ class EMail
 	 */
 	private function _mail()
 	{
+		//	CI
+		$app_id = OP::AppID();
+		switch( strtolower($app_id) ){
+			case 'ci':
+			case 'self-check':
+				return true;
+		}
+
 		//	init
 		$to		 = $this->_get_to();
 		$subject = $this->_get_subject();
@@ -261,6 +269,7 @@ class EMail
 		$this->_debug['head'] = $this->_head;
 		$this->_debug['body'] = $this->_body;
 
+		//	...
 		return $io;
 	}
 
