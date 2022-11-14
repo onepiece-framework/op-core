@@ -118,9 +118,12 @@ $ci->Set('Mime', $result, $args);
 
 //	Time - Ice Age
 $timestamp = '2020-10-10 12:00:01';
-$time   = strtotime($timestamp);
-$args   = [false, $timestamp];
-$result = $time;
+$time      = strtotime($timestamp);
+$result    = $time;
+$args      = [
+	false,      // timezone support.
+	$timestamp, // timestamp can local timezone.
+];
 $ci->Set('Time', $result, $args);
 
 //	Timestamp - Ice Age
