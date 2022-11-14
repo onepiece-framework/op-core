@@ -437,4 +437,15 @@ trait OP_ENV
 	{
 		return Env::Request($key);
 	}
+
+	/** Get AppID and Can set AppID only 1st time.
+	 *
+	 * @created    2022-11-14
+	 * @param      string     $app_id
+	 * @return     string
+	 */
+	static function AppID(?string $app_id=null)
+	{
+		return Env::AppID($app_id);
+	}
 } // OP_ENV
