@@ -65,10 +65,9 @@ $result = [
 	'asset'    => RootPath('asset'),
 	'op'       => RootPath('op'),
 	'core'     => RootPath('core'),
-	/*
 	'unit'     => RootPath('unit'),
+	'layout'   => RootPath('layout'),
 	'template' => RootPath('template'),
-	*/
 	'etc'      => '/etc/',
 ];
 $ci->Set('List', $result, $args);
