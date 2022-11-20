@@ -39,7 +39,3 @@ The onepiece-framework's Core for PHP7
     It is because does not get in the way with input completion.
  1. We use tabs at the beginning of the line.<br/>
     It will not collapse at the beginning of the line.
-
-## License
-
- What would be good? Please tell me!!
