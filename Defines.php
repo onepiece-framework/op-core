@@ -63,7 +63,7 @@ define('_OP_DENY_IP_', substr(md5(__FILE__), 0, 10), false);
 /** If is shell not do blacklist check.
  *
  */
-if( isset($_SERVER['SHELL']) ){
+if( empty($_SERVER['REQUEST_SCHEME']) ){
 	return;
 }
 
