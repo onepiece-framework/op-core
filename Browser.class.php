@@ -63,6 +63,7 @@ class Browser
 	static function Mac()
 	{
 		/* @var $output array */
+		/* An error occurs in environments other than Mac.
 		exec('sw_vers', $output);
 
 		//	...
@@ -72,6 +73,8 @@ class Browser
 
 		//	...
 		return $pos ? true: false;
+		*/
+		return false;
 	}
 
 	/** Win
