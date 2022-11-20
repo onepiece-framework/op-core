@@ -62,7 +62,9 @@ if(!session_id() and isset($_SERVER['REQUEST_SCHEME']) ){
 
 	//	Start session.
 	if(!session_start() ){
-		exit("<p>Session start was failed.</p>");
+		$line = __LINE__;
+		echo "asset:/core/Bootstrap.php #{$line} - Session start was failed.\n";
+		exit($line);
 	}
 }
 
