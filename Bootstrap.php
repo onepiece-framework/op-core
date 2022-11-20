@@ -28,7 +28,7 @@ if( version_compare(PHP_VERSION, '7.0.0') < 0 ){
  *  3. SameSite support.
  *
  */
-if(!session_id() and empty($_SERVER['SHELL']) ){
+if(!session_id() and isset($_SERVER['REQUEST_SCHEME']) ){
 
 	/** For SameSite
 	 *
