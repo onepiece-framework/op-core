@@ -9,6 +9,7 @@ The onepiece-framework's Core for PHP7
 
  * PHP version 4 and 5 code.
  * Mobile Phone.
+ * Windows
 
 ## The NewWorld is a new world.
 
