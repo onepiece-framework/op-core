@@ -22,7 +22,7 @@ namespace OP;
 $config = [];
 
 //	...
-$config['Mac'][] = ['result' => true];
+$config['Mac'][] = ['result' => false];
 
 //	...
 return $config;
