@@ -79,6 +79,6 @@ if( empty($_SERVER['HTTP_HOST']) or empty($_SERVER['HTTP_USER_AGENT']) ){
  * @created   2020-05-11
  */
 if( $_SESSION[_OP_DENY_IP_] ?? null ){
-	var_dump($_SESSION[_OP_DENY_IP_]);
-	exit("Your IP-Adderss in blacklist.");
+	echo "Your IP-Adderss in blacklist. ({$_SERVER['REMOTE_ADDR']})\n";
+	exit(__LINE__);
 }
