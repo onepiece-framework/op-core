@@ -23,7 +23,7 @@ $config = [];
 
 //	...
 $config['_Init'][]  = ['result' => 'ci', 'args' => 'CI'];
-$config['_Fetch'][] = ['result' => null, 'args' => 'CI'];
+$config['_Fetch'][] = ['result' => null, 'args' => 'ci'];
 $config['Get'][]    = ['result' => ['execute' => true],  'args' => 'CI'];
 $config['Set'][]    = ['result' => ['execute' => false], 'args' => ['CI', ['execute'=>false]]];
 
