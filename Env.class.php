@@ -116,7 +116,11 @@ class Env
 	 */
 	static function isShell()
 	{
+		/*
 		return isset($_SERVER['SHELL']);
+		*/
+		//	Correspond to GitHub action.
+		return empty($_SERVER['REQUEST_SCHEME']);
 	}
 
 	/** Is CI
