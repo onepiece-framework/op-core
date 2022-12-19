@@ -14,12 +14,14 @@
 namespace OP;
 
 //	...
-$int  =  1;
-$str  = '1';
-$bool = true;
+$int   =  1 ;
+$str   = '1';
+$arr[] = null;
+$arr[] = true;
+$arr[] = false;
 
 //	...
-$result = OP::Sandbox('sandbox.phtml', $int, $str, $bool, null);
+$result = OP::Sandbox('sandbox.phtml', $int, $str, $arr, null);
 
 //	...
 D($result);
