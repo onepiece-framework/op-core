@@ -98,8 +98,8 @@ $result = 'Exception: Upper directory cannot be specified. (../index.php)';
 $ci->Set('Decode', $result, $args);
 
 //	Decode - Relative by current directory.
-$args   = 'MetaPath.php';
-$result = 'Exception: This file does not exist. ('.OP::MetaPath('core:/').'MetaPath.php)';
+$args   = 'not_exist.php';
+$result = '';
 $ci->Set('Decode', $result, $args);
 
 //	Decode - has query string
@@ -109,7 +109,7 @@ $ci->Set('Decode', $result, $args);
 
 //	Decode - Does not exists
 $args   = 'etc:/foo/bar';
-$result = 'Exception: This file does not exist. (/etc/foo/bar)';
+$result = '';
 $ci->Set('Decode', $result, $args);
 
 //	URL

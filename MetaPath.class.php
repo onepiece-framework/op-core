@@ -156,7 +156,7 @@ class MetaPath
 	{
 		//	...
 		require_once(__DIR__.'/function/ConvertPath.php');
-		return ConvertPath($path);
+		return ConvertPath($path, false);
 
 		/*
 		//	Replace duplicate slash.
