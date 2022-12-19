@@ -138,4 +138,19 @@ class Unit
 	{
 		return Unit($name);
 	}
+
+	/** Check if that unit is installed.
+	 *
+	 * @created    2022-11-22
+	 * @param      string     $name
+	 * @return     boolean
+	 */
+	static function isInstall(string $name)
+	{
+		//	Generate target path.
+		$path = OP::MetaPath('unit:/').strtolower($name).'/index.php';
+
+		//	Return result.
+		return file_exists($path);
+	}
 }
