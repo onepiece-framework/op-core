@@ -36,5 +36,15 @@ $args   = 'Dump';
 $result = 'OP\UNIT\Dump';
 $ci->Set('Singleton', $result, $args);
 
+//	isInstall
+$args   = 'Dump';
+$result =  true;
+$ci->Set('isInstall', $result, $args);
+
+//	isInstall - fail
+$args   = 'Failllll';
+$result =  false;
+$ci->Set('isInstall', $result, $args);
+
 //	...
 return $ci->GenerateConfig();
