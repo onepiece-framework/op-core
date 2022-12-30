@@ -368,10 +368,10 @@ trait OP_FUNCTION
 	 *
 	 * @created   2022-10-10
 	 * @param     string     $path
-	 * @param     mixed      ...$args
+	 * @param     mixed      $args
 	 * @return    mixed
 	 */
-	static function Sandbox(string $path, ...$args)
+	static function Sandbox(string $path, array $args=[])
 	{
 		/*
 		//	...
@@ -382,19 +382,37 @@ trait OP_FUNCTION
 		return include($path);
 		*/
 
-		//	...
-		$path = OP::MetaPath($path);
+		//	Check relative path.
+		if( strpos($path, '../') !== false ){
+			D("Does not support relative path. ($path)");
+			return;
+		}
+
+		//	Current file path.
+		if(!file_exists($path) ){
+			//	...
+			$_path = getcwd() .'/'. $path;
+
+			//	Decode from meta path to full path.
+			if(!$path = OP::MetaPath($path) ){
+				D("This file does not exist. ($_path)");
+				return;
+			}
+		}
 
 		//	...
 		$curd = getcwd();
 
 		//	...
-		chdir(dirname($path));
+		chdir( dirname($path) );
 
 		//	...
-		$result = (function($path, ...$args){
-			return include($path);
-		})($path, ...$args);
+		self::SandboxArgs($args);
+
+		//	...
+		$result = (function($_path){
+			return include($_path);
+		})($path);
 
 		//	...
 		chdir($curd);
