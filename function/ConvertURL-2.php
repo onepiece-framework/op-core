@@ -47,7 +47,8 @@ function ConvertURL($url)
 		}
 
 		//	...
-		throw new \Exception("This full path is not document root path. ($url)");
+		OP::Notice("This full path is not document root path. ($url)");
+		return false;
 	}
 
 	//	Separate URL Query.
@@ -72,14 +73,18 @@ function ConvertURL($url)
 	};
 
 	//	Convert to full path.
-	$full_path = ConvertPath($url);
+	if(!$full_path = ConvertPath($url, false, false) ){
+		OP::Notice("ConvertPath() is return false.");
+		return;
+	}
 
 	//	Document root.
 	$doc_root = rtrim($_SERVER['DOCUMENT_ROOT'], '/');
 
 	//	Check whether document root path.
 	if( strpos($full_path, $doc_root) !== 0 ){
-		throw new \Exception("This path is not the document root path. ({$doc_root}/ !== {$full_path})");
+		OP::Notice("This path is not the document root path. ({$full_path} !== {$doc_root})");
+		return false;
 	};
 
 	//	Generate document root path.
