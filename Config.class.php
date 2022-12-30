@@ -147,7 +147,7 @@ class Config
 
 		//	...
 		if( $fail ?? null ){
-			Notice::Set("This config file is not exists. ($name)");
+			Notice::Set("This config file does not exists. ($name)");
 		}
 	}
 
