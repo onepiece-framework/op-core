@@ -421,6 +421,26 @@ trait OP_FUNCTION
 		return $result;
 	}
 
+	/** Sandbox args
+	 *
+	 * @created    2022-12-17
+	 * @param      array       $args
+	 * @return     array
+	 */
+	static function SandboxArgs(array $args=[])
+	{
+		//	...
+		static $_args = [];
+
+		//	...
+		if( $args ){
+			$_args = $args;
+		}
+
+		//	...
+		return $_args;
+	}
+
 	/** Parse URL
 	 *
 	 * @created    2022-10-23

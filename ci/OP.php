@@ -86,6 +86,11 @@ $args   = 'core:/function/AppID.php';
 $result =  1;
 $ci->Set('Sandbox', $result, $args);
 
+//	SandboxArgs
+$args   = [[]];
+$result = [];
+$ci->Set('SandboxArgs', $result, $args);
+
 //	ParseURL
 $args   = '//localhost/index.html?1';
 $result = [
@@ -101,7 +106,7 @@ $ci->Set('ParseURL', $result, $args);
 
 //	DebugBacktraceToString
 $args   = debug_backtrace(DEBUG_BACKTRACE_PROVIDE_OBJECT, 1);
-$result = OP::MetaPath('core:/OP.class.php').' #385 - include()';
+$result = OP::MetaPath('core:/OP.class.php').' #414 - include()';
 $ci->Set('DebugBacktraceToString', $result, $args);
 
 //	Request
