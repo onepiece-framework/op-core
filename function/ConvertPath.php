@@ -21,9 +21,10 @@ namespace OP;
  *
  * @param  string $meta_path
  * @param  bool   $throw_exception
+ * @param  bool   $file_exists
  * @return string
  */
-function ConvertPath(string $path, bool $throw_exception=true):string
+function ConvertPath(string $path, bool $throw_exception=true, $file_exists=true):string
 {
 	//	Trim
 	$path = trim($path);
@@ -69,7 +70,7 @@ function ConvertPath(string $path, bool $throw_exception=true):string
 	};
 
 	// Check if file exists.
-	if(!file_exists($path) ){
+	if( $file_exists and !file_exists($path) ){
 		//	...
 		if( $throw_exception === false ){
 			//	Return false.
