@@ -155,6 +155,7 @@ trait OP_OBJECT
 				return MetaPath::Encode($path);
 			}
 
+			/*
 			//	Meta path to full path
 			if( strpos($path, ':/') ){
 				//	If URL
@@ -162,6 +163,16 @@ trait OP_OBJECT
 					return MetaPath::URL($path);
 				}
 				//	to Full path.
+				return MetaPath::Decode($path);
+			}
+			*/
+
+			//	Decode meta path.
+			if( $url ){
+				// to URL
+				return MetaPath::URL($path);
+			}else{
+				// to File path.
 				return MetaPath::Decode($path);
 			}
 		}
