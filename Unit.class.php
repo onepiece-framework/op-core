@@ -107,12 +107,12 @@ class Unit
 		}
 
 		//	...
-		if(!$dir = RootPath('asset') . 'unit/' ){
-			throw new Exception('Has not been set meta root of unit.');
-		};
+		if(!$asset_root = RootPath('asset') ){
+			throw new \Exception("The asset:/ is empty.");
+		}
 
 		//	...
-		$path = $dir . strtolower($name) . '/index.php';
+		$path = $asset_root . 'unit/' . strtolower($name) . '/index.php';
 
 		//	...
 		if(!file_exists($path) ){
