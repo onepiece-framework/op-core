@@ -58,7 +58,7 @@ $ci->Set('Get', $result, $args);
 
 //	Get(Config)
 $args   = 'hoge';
-$result = 'This config file is not exists. (hoge)';
+$result = 'This config file does not exists. (hoge)';
 $ci->Set('Get', $result, $args);
 
 //	Set(Config)
