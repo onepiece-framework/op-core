@@ -113,9 +113,9 @@ $result = '';
 $ci->Set('Decode', $result, $args);
 
 //	URL
-$doc    = OP::MetaPath('doc:/');
+$doc    = rtrim(OP::MetaPath('doc:/'),'/');
 $args   = 'etc:/';
-$result = 'Exception: This path is not the document root path. ('.$doc.' !== /etc/)';
+$result = 'This path is not the document root path. (/etc/ !== '.$doc.')';
 $ci->Set('URL', $result, $args);
 
 //	...

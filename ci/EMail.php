@@ -23,7 +23,7 @@ $ci = new CI();
 
 //	init
 $user_name = get_current_user();
-$file_name = OP::MetaPath('op:/ci.sh');
+$file_name = OP::MetaPath('core:/testcase/email.txt');
 
 //	From
 $result =  null;
@@ -170,19 +170,7 @@ Content-Transfer-Encoding: 7bit
 Content-Type: text/plain; charset=\"utf-8\"
 Content-Transfer-Encoding: 7bit
 
-
- ## op-core:/ci.sh
- #
- # Call from git pre-push
- #
- # @created   2022-10-31
- # @version   1.0
- # @package   op-core
- # @author    Tomoaki Nagahara <tomoaki.nagahara@gmail.com>
- # @copyright Tomoaki Nagahara All right reserved.
-
-php ../../ci.php display=0
-
+email.txt
 ----onepiece-framework--Boundary--63ab23b20281aa288d47352f732f1c59--
 ";
 $ci->Set('_get_content', $result, $args);
@@ -206,19 +194,7 @@ Content-Transfer-Encoding: 7bit
 Content-Type: text/plain; charset=\"utf-8\"
 Content-Transfer-Encoding: 7bit
 
-
- ## op-core:/ci.sh
- #
- # Call from git pre-push
- #
- # @created   2022-10-31
- # @version   1.0
- # @package   op-core
- # @author    Tomoaki Nagahara <tomoaki.nagahara@gmail.com>
- # @copyright Tomoaki Nagahara All right reserved.
-
-php ../../ci.php display=0
-
+email.txt
 ----onepiece-framework--Boundary--63ab23b20281aa288d47352f732f1c59--
 ";
 $ci->Set('_get_content_multipart', $result, $args);
