@@ -13,8 +13,10 @@
  *
  * To display error log to until startuped of the onepiece-framework.
  */
+/*
 ini_set('display_errors', 1);
 error_reporting(E_ALL);
+*/
 
 /** Catch standard error.
  *
