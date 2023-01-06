@@ -89,7 +89,7 @@ $ci->Set('Decode', $result, $args);
 
 //	Decode - Current directory
 $args   = './README.md';
-$result = OP::MetaPath('core:/').$args;
+$result = substr(__DIR__, 0, -2).$args;
 $ci->Set('Decode', $result, $args);
 
 //	Decode - Upper directory
