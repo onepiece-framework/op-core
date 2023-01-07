@@ -36,37 +36,37 @@ require_once(__DIR__.'/include/bootstrap_blacklist.php');
 /** Register autoloader.
  *
  */
-include_once(__DIR__.'/Autoloader.php');
+require_once(__DIR__.'/Autoloader.php');
 
 /** Include Error hendler.
  *
  */
-include_once(__DIR__.'/Error.php');
+require_once(__DIR__.'/Error.php');
 
 /** Include defines.
  *
  */
-include_once(__DIR__.'/Defines.php');
+require_once(__DIR__.'/Defines.php');
 
 /** Include custome functions.
  *
  */
-include_once(__DIR__.'/Functions.php');
+require_once(__DIR__.'/Functions.php');
 
 /** Include OP CORE.
  *
  */
-include_once(__DIR__.'/trait/OP_CORE.php');
+require_once(__DIR__.'/trait/OP_CORE.php');
 
 /** Include OP function.
  *
  */
-include_once(__DIR__.'/function/OP.php');
+require_once(__DIR__.'/function/OP.php');
 
 /** Include JSON submitted process.
  *
  */
-include_once(__DIR__.'/include/json.php');
+require_once(__DIR__.'/include/json.php');
 
 /** Set MIME
  *
