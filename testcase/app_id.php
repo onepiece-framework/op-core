@@ -19,5 +19,13 @@ declare(strict_types=1);
 namespace OP;
 
 //	...
-D( Env::AppID() );
-D( Env::AppID('testcase') );
+try {
+	D( Env::AppID() );
+	D( Env::AppID('testcase') );
+} catch ( \Throwable $e ){
+	D($e->getMessage());
+	return;
+}
+
+//	...
+Notice("Please correct can duplicate registration of AppID.");
