@@ -28,6 +28,11 @@ if(!session_id() and isset($_SERVER['REQUEST_SCHEME']) ){
 	require_once(__DIR__.'/include/bootstrap_session.php');
 }
 
+/** Include blacklist.
+ *
+ */
+require_once(__DIR__.'/include/bootstrap_blacklist.php');
+
 /** Register autoloader.
  *
  */
