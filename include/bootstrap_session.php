@@ -49,8 +49,10 @@ if( version_compare(PHP_VERSION, '7.3.0') <= 0 ){
 //	Get default session name.
 $name = session_name();
 
-//	Added PHP version for run different versions of PHP-FPM at the same time.
-session_name($name .'_'. PHP_VERSION_ID);
+//	Add PHP version to session name, Because to run different versions of PHP at the same time by PHP-FPM.
+//	OP to hide the PHP version, so hash. But, leave as is for localhost.
+$php_version_id = ($_SERVER['REMOTE_ADDR'] === '::1') ? PHP_VERSION_ID: substr(md5((string)PHP_VERSION_ID), 0, 5);
+session_name($name .'_'. $php_version_id);
 
 //	Start session.
 if(!session_start() ){
