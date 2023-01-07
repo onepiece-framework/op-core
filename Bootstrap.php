@@ -23,49 +23,9 @@ if( version_compare(PHP_VERSION, '7.0.0') < 0 ){
 
 /** Session management.
  *
- *  1. Auto start session.
- *  2. Separate session ID for each PHP version.
- *  3. SameSite support.
- *
  */
 if(!session_id() and isset($_SERVER['REQUEST_SCHEME']) ){
-
-	/** For SameSite
-	 *
-	 */
-	//	Get current values.
-	$params   = session_get_cookie_params();
-	//	Check if https.
-	$secure   = $_SERVER['REQUEST_SCHEME']==='https' ? true: false;
-	//	Always true.
-	$httponly = true;
-	//	None is required for https.
-	$samesite = $secure ? 'None':'Lax';
-
-	//	Branch by PHP version.
-	if( version_compare(PHP_VERSION, '7.3.0') <= 0 ){
-		//	Under 7.3
-		$params['path'] .= "; SameSite={$samesite}";
-		session_set_cookie_params($params['lifetime'], $params['path'], $params['domain'], $secure, $httponly);
-	}else{
-		//	Upper 7.3
-		$params['secure']   = $secure;
-		$params['httponly'] = $httponly;
-		session_set_cookie_params($params);
-	}
-
-	//	Get default session name.
-	$name = session_name();
-
-	//	Added PHP version for run different versions of PHP-FPM at the same time.
-	session_name($name .'_'. PHP_VERSION_ID);
-
-	//	Start session.
-	if(!session_start() ){
-		$line = __LINE__;
-		echo "asset:/core/Bootstrap.php #{$line} - Session start was failed.\n";
-		exit($line);
-	}
+	require_once(__DIR__.'/include/bootstrap_session.php');
 }
 
 /** Register autoloader.
