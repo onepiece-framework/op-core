@@ -68,20 +68,19 @@ require_once(__DIR__.'/function/OP.php');
  */
 require_once(__DIR__.'/include/json.php');
 
-/** Set MIME
+/** Set default MIME
  *
  */
 if( \OP\Env::isShell() ){
 	$mime = 'text/plain';
 }else{
+	//	Get extension by URL. If not extension, to php.
 	if(!$ext = \OP\OP::ParseURL($_SERVER['REQUEST_URI'])['ext']){
-		$ext = \OP\OP::ParseURL($_SERVER['SCRIPT_NAME'])['ext'];
+		$ext = 'php';
 	}
 
 	//	...
-	if( $ext ){
-		$mime = \OP\Env::Ext($ext);
-	}
+	$mime = \OP\Env::Ext($ext);
 }
 //	...
 \OP\Env::Mime($mime);
