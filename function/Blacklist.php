@@ -8,47 +8,46 @@
  * @copyright Tomoaki Nagahara All right reserved.
  */
 
+/** Declare strict
+ *
+ */
+declare(strict_types=1);
+
 /** namespace
  *
  */
 namespace OP;
 
-/** use
- *
- */
-
 /** Blacklist
  *
  * @created   2020-05-12
- * @param     boolean      $register
+ * @param     string       $reason
  * @return    boolean      $result
  */
-function Blacklist(bool $register=true)
+function Blacklist(?string $reason)
 {
 	//	Generate key by client ip-address.
 	$key = md5($_SERVER['REMOTE_ADDR']);
+	$key = substr($key, 0, 10);
 
 	//	true is add blacklist.
 	//	false is, Is blacklist?
-	if( $register ){
-		//	...
-		$io = true;
-
+	if( $reason ){
 		//	Save blacklist to apcu.
-		apcu_add($key, true);
+		apcu_add($key, $reason);
 	}else{
 		//	Fetch saved blacklist from apcu.
-		$io = apcu_fetch($key);
+		$reason = apcu_fetch($key);
 	}
 
-	//	Set deny ip flag.
-	if( $io ){
-		$_SESSION[_OP_DENY_IP_] = true;
-		Cookie::Set($key, true);
+	//	Set deny reason.
+	if( $reason ){
+		$_SESSION[_OP_CORE_BLACKLIST_] = $reason;
+		Cookie::Set($key, $reason);
 	}
 
 	//	Check from SESSION
-	if( $result = $_SESSION[_OP_DENY_IP_] ?? null ){
+	if( $result = $_SESSION[_OP_CORE_BLACKLIST_] ?? null ){
 		//	Found
 	}else
 	//	Check from Cookie
