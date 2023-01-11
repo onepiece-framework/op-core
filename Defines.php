@@ -51,34 +51,3 @@ define('_OP_DEVELOPER_IP_', 'DEVELOPER_IP', false);
  * @var       string
  */
 define('_OP_DEVELOPER_MAIL_', 'DEVELOPER_MAIL', false);
-
-/** Deny access IP-Address
- *
- *  The values are hashed so that they do not duplicate.
- *
- * @var string
- */
-define('_OP_DENY_IP_', substr(md5(__FILE__), 0, 10), false);
-
-/** If is shell not do blacklist check.
- *
- */
-if( empty($_SERVER['REQUEST_SCHEME']) ){
-	return;
-}
-
-/** If empty host name or user agent.
- *
- */
-if( empty($_SERVER['HTTP_HOST']) or empty($_SERVER['HTTP_USER_AGENT']) ){
-	$_SESSION[_OP_DENY_IP_] = true;
-}
-
-/** Deny access.
- *
- * @created   2020-05-11
- */
-if( $_SESSION[_OP_DENY_IP_] ?? null ){
-	echo "Your IP-Adderss in blacklist. ({$_SERVER['REMOTE_ADDR']})\n";
-	exit(__LINE__);
-}
