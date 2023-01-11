@@ -485,6 +485,11 @@ class Env
 		//	Can initialize AppID only 1st call.
 		if( $app_id ){
 			//	...
+			/* Need. CI is in use.
+			Notice("Overwrite AppID is will deprecated.");
+			*/
+
+			//	...
 			if( isset(self::$_env[_OP_APP_ID_]) ){
 				//	...
 				if( self::$_env[_OP_APP_ID_] !== $app_id ){
