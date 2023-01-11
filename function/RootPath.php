@@ -18,7 +18,7 @@ namespace OP;
  * @param string $meta
  * @param string $path
  */
-function RootPath(string $meta='', string $path='')
+function RootPath(string $meta='', string $path='', bool $check_directory_exists=true)
 {
 	//	Stack root list.
 	static $root;
@@ -37,7 +37,7 @@ function RootPath(string $meta='', string $path='')
 		}
 
 		//	Check directory exists.
-		if(!is_dir($path) ){
+		if($check_directory_exists and !is_dir($path) ){
 			throw new \Exception("This directory not exists. ($path)");
 		}
 
