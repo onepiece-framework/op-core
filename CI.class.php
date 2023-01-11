@@ -132,7 +132,7 @@ class CI
 		return $configs;
 	}
 
-	/**
+	/** Check commit ID
 	 *
 	 * @created    2023-01-06
 	 * @param      string      $path
@@ -152,7 +152,7 @@ class CI
 		return ($commit_id === $saved_commit_id) ? true: false;
 	}
 
-	/**
+	/** Save commit ID.
 	 *
 	 * @created    2023-01-06
 	 * @param     ?string      $path
@@ -175,11 +175,21 @@ class CI
 		return true;
 	}
 
+	/** Get current branch name.
+	 *
+	 * @created    2023-01-06
+	 * @return     string
+	 */
 	static function CurrentBranchName()
 	{
 		return substr(`git branch --contains 2>&1`, 2, -1);
 	}
 
+	/** Get current commit ID.
+	 *
+	 * @created    2023-01-06
+	 * @return     string
+	 */
 	static function CurrentCommitID()
 	{
 		return `git show --format='%H' --no-patch 2>&1`;
