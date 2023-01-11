@@ -133,7 +133,18 @@ class Cookie
 		}
 
 		//	...
-		return $io ? date('Y-m-d H:i:s', $expire): false;
+		$result = [
+			'setcookie' => $io,
+			'key'       => $key,
+			'value'     => $val,
+			'expire'    => [
+				'time'  => $expire,
+				'date'  => gmdate('Y-m-d H:i:s', $expire),
+			]
+		];
+
+		//	...
+		return $result;
 	}
 
 	/** User ID
