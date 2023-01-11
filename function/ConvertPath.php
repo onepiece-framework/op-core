@@ -37,7 +37,7 @@ function ConvertPath(string $path, bool $throw_exception=true, $file_exists=true
 
 	//	Root path
 	if( $path[0] === '/' ){
-		throw new \Exception("Root path is specify meta path. Not meta path --> {$path}");
+		throw new \Exception("This path is not meta path. A path from \"/\" can not be specified. ({$path})");
 	}
 
 	//	Parent path.
