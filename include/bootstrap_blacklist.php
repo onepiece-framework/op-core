@@ -53,5 +53,6 @@ if( empty($_SERVER['HTTP_USER_AGENT']) ){
  */
 if( $_SESSION[_OP_CORE_BLACKLIST_] ?? null ){
 	echo "Your IP-Address in blacklist. ({$_SERVER['REMOTE_ADDR']})\n";
+//	echo "{$_SESSION[_OP_CORE_BLACKLIST_]}";
 	exit(__LINE__);
 }
