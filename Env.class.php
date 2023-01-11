@@ -517,7 +517,7 @@ class Env
 	 * Use to OP::Request().
 	 * </pre>
 	 *
-	 * @deprecated 2022-10-28
+	 * @deprecated 2022-10-28 <- Why?
 	 * @created   2020-05-04
 	 * @param     string       $_key
 	 * @param     mixed        $_default
