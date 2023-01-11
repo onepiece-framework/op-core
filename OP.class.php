@@ -478,6 +478,12 @@ trait OP_ENV
 {
 	/** Return GET/POST method or
 	 *
+	 * <pre>
+	 * OP::Request(){
+	 *   return Env::Request();
+	 * }
+	 * </pre>
+	 *
 	 * @created    2022-10-28
 	 * @param      string     $key
 	 * @return
@@ -488,6 +494,12 @@ trait OP_ENV
 	}
 
 	/** Get AppID and Can set AppID only 1st time.
+	 *
+	 * <pre>
+	 * OP::AppID(){
+	 *   return Env::AppID();
+	 * }
+	 * </pre>
 	 *
 	 * @created    2022-11-14
 	 * @param      string     $app_id
