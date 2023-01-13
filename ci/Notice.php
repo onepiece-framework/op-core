@@ -37,8 +37,8 @@ $result = [];
 $ci->Set('Pop', $result, $args);
 
 //	Set
-$args   = ['This is notice message.',['backtrace']];
-$result =  'This is notice message.';
+$args   = ['This is notice message.',[]];
+$result =  'Notice: This is notice message.';
 $ci->Set('Set', $result, $args);
 
 //	Has

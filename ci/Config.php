@@ -22,26 +22,22 @@ namespace OP;
 $config = [];
 
 //	...
+$app_id = '126af685';
+
+//	...
 $config['_Init'][]  = ['result' => 'ci', 'args' => 'CI'];
 $config['_Fetch'][] = ['result' => null, 'args' => 'ci'];
 $config['Get'][]    = [
-	'args'   => 'CI',
+	'args'   => 'app_id',
 	'result' => [
-		'execute' => true,
-		'git' => [
-			'display' => '1',
-			'debug'   => '1',
-		],
+		'app_id' => $app_id,
 	],
 ];
 $config['Set'][]    = [
-	'args'   => ['CI', ['execute'=>false]],
+	'args'   => ['app_id', ['execute'=>false]],
 	'result' => [
+		'app_id'  => $app_id,
 		'execute' => false,
-		'git' => [
-			'display' => '1',
-			'debug'   => '1',
-		],
 	],
 ];
 

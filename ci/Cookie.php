@@ -22,12 +22,12 @@ namespace OP;
 $ci = new CI();
 
 //	Get
-$result = 'Cookie can not be used in the shell environment.';
+$result = 'Notice: Cookie can not be used in the shell environment.';
 $args   =  null;
 $ci->Set('Get', $result, $args);
 
-//	Get
-$result = 'Cookie can not be used in the shell environment.';
+//	Set
+$result = 'Notice: Cookie can not be used in the shell environment.';
 $args   = ['count','1'];
 $ci->Set('Set', $result, $args);
 

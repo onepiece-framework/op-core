@@ -36,19 +36,19 @@ $args   = ['self-check','test'];
 $ci->Set('Set', $result, $args);
 
 //	Out not key
-$result = '<div class=\'OP_MARK\'>{"file":"'.$core.'trait\/OP_CI.php","line":87,"function":"Out","class":"OP\\\\Debug","type":"::","args":["'.$core.'trait\/OP_CI.php #87 - OP\\\Debug::Out()"]}</div>
+$result = '<div class=\'OP_MARK\'>{"file":"'.$core.'trait\/OP_CI.php","line":91,"function":"Out","class":"OP\\\\Debug","type":"::","args":["core:\/trait\/OP_CI.php                91 - OP\\\Debug::Out(N;)"]}</div>
 <div class=\'OP_DUMP\'>{"self-check":["test"]}</div>'."\n";
 $args   = null;
 $ci->Set('Out', $result, $args);
 
 //	Out has key
-$result = '<div class=\'OP_MARK\'>{"file":"'.$core.'trait\/OP_CI.php","line":87,"function":"Out","class":"OP\\\\Debug","type":"::","args":["'.$core.'trait\/OP_CI.php #87 - OP\\\Debug::Out()"]}</div>
+$result = '<div class=\'OP_MARK\'>{"file":"'.$core.'trait\/OP_CI.php","line":91,"function":"Out","class":"OP\\\\Debug","type":"::","args":["core:\/trait\/OP_CI.php                91 - OP\\\Debug::Out(N;)"]}</div>
 <div class=\'OP_DUMP\'>["test"]</div>'."\n";
 $args   = ['self-check','hoge'];
 $ci->Set('Out', $result, $args);
 
 //	Debug
-$result = '<div class=\'OP_MARK\'>{"file":"'.$core.'trait\/OP_CI.php","line":87,"function":"Debug","class":"OP\\\\Debug","type":"::","args":["'.$core.'trait\/OP_CI.php #87 - OP\\\Debug::Debug()"]}</div>
+$result = '<div class=\'OP_MARK\'>{"file":"'.$core.'trait\/OP_CI.php","line":91,"function":"Debug","class":"OP\\\\Debug","type":"::","args":["core:\/trait\/OP_CI.php                91 - OP\\\Debug::Debug(N;)"]}</div>
 <div class=\'OP_DUMP\'>{"self-check":["test"]}</div>'."\n";
 $args   = null;
 $ci->Set('Debug', $result, $args);
