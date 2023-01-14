@@ -128,15 +128,16 @@ trait OP_CI
 					}
 
 					//	...
-					echo PHP_EOL;
-					var_dump([
-						'expect' => $expect,
-						'result' => $result,
-					]);
+					echo "\nConfig:\n";
+					var_dump($config);
+					echo "\nExpect:\n";
+					var_dump($expect);
+					echo "\nResult:\n";
+					var_dump($result);
 
 					//	...
 					$class = get_class($this);
-					throw new \Exception("{$class}->{$method}: Unmatch result.");
+					throw new \Exception("{$class}->{$method}(): Unmatch result.");
 				}
 			}
 		}
