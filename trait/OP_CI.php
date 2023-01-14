@@ -78,12 +78,11 @@ trait OP_CI
 
 			//	...
 			foreach( $configs[$method] ?? [null] as $config ){
-
 				//	...
 				$expect = $config['result'] ?? null;
 				$arg    = $config['args']   ?? null;
 				$args   = is_array($arg) ? $arg: [$arg];
-				$debug  = null;
+				$traces = null;
 
 				//	...
 				try {
@@ -98,16 +97,15 @@ trait OP_CI
 
 					//	Overwrite result by Notice.
 					if( OP()->Notice()->Has() ){
-						$result = OP()->Notice()->Pop()['message'];
+						$notice = OP()->Notice()->Pop();
+						$result = 'Notice: '.$notice['message'];
+						$traces = $notice['backtrace'];
 					}
 
 				}catch( \Exception $e ){
-
-					//	For debug
-					$debug[$method] = $config ?? '(empty)';
-
 					//	...
 					$result = 'Exception: '.$e->getMessage();
+					$traces = $e->getTrace();
 				}
 
 				//	If result is object.
@@ -118,13 +116,15 @@ trait OP_CI
 				//	...
 				if( $result !== $expect ){
 					//	...
-					echo PHP_EOL;
-
-					//	...
-					if( $debug ){
-						//	...
-						echo PHP_EOL;
-						var_dump($debug);
+					if( $traces ){
+						$i = count($traces);
+						echo "\n{$result}\n\n";
+						foreach( $traces as $trace){
+							$i--;
+							$n = str_pad((string)$i, 2, ' ', STR_PAD_LEFT);
+							echo "$n: ".OP::DebugBacktraceToString($trace)."\n";
+						}
+						echo "\n";
 					}
 
 					//	...
