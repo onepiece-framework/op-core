@@ -84,7 +84,7 @@ foreach( $list as $full_path ){
 
 	//	URL
 	$url = "{$testcase}{$kind}/" . substr($file, 0, -4);
-	echo "$file: $url\n";
+	echo str_pad($file, 15, ' ', STR_PAD_RIGHT) . ": $url\n";
 }
 
 return true;
