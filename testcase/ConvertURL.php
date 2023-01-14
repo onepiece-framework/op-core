@@ -13,6 +13,9 @@
  */
 namespace OP;
 
+$doc_root = ConvertURL('doc:/');
+Html("doc:/ --> $doc_root");
+
 //	...
 $app_root = ConvertURL('app:/');
 Html("app:/ --> $app_root");
@@ -24,14 +27,32 @@ Html("testcase:/ --> $testcase_root");
 //	...
 $asset_root = ConvertURL('asset:/');
 Html("asset:/ --> $asset_root");
+if(!Notice::Has() ){
+	throw new \Exception('ConvertURL(asset:/) is broken.');
+}else{
+	$notice = Notice::Get();
+	Html($notice['message']);
+}
 
 //	...
 $core_root = ConvertURL('core:/');
 Html("core:/ --> $core_root");
+if(!Notice::Has() ){
+	throw new \Exception('ConvertURL(core:/) is broken.');
+}else{
+	$notice = Notice::Get();
+	Html($notice['message']);
+}
 
 //	...
 $op_root = ConvertURL('op:/');
 Html("op:/ --> $op_root");
+if(!Notice::Has() ){
+	throw new \Exception('ConvertURL(op:/) is broken.');
+}else{
+	$notice = Notice::Get();
+	Html($notice['message']);
+}
 
 //	...
 return;
