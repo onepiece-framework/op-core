@@ -143,6 +143,7 @@ class CI
 		//	...
 		$branch    = self::CurrentBranchName();
 		$commit_id = self::CurrentCommitID();
+		$commit_id = trim($commit_id);
 		$file_name = ".ci_commit_id_{$branch}";
 
 		//	...
