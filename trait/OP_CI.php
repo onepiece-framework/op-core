@@ -34,6 +34,9 @@ trait OP_CI
 	 */
 	function CI()
 	{
+		//	...
+		require_once(__DIR__.'/../function/CI.php');
+
 		//	Set AppID.
 		Env::AppID('self-check');
 
@@ -46,8 +49,8 @@ trait OP_CI
 		//	...
 		if( $display ){ echo get_class($this).' - '; }
 
-		//	...
-		$configs = self::__GetConfig();
+		//	CI Config for that class.
+		$configs = CIConfig($this);
 
 		//	...
 		if( $method  = $request['method'] ?? null ){
@@ -138,49 +141,5 @@ trait OP_CI
 
 		//	...
 		if( $display ){ echo "\n"; }
-	}
-
-	/** Get config.
-	 *
-	 * @created   2022-10-12
-	 * @throws    \Exception
-	 * @return    array
-	 */
-	function __GetConfig()
-	{
-		//	...
-		$class_path  = get_class($this);
-		$class_parse = explode('\\', $class_path);
-
-		//	...
-		switch( count($class_parse) ){
-			//	OP
-			case '2':
-				$io   = true;
-				$meta = 'op';
-				$name = $class_parse[1];
-				break;
-
-			//	UNIT
-			case '3':
-				$io = $class_parse[1] === 'UNIT' ? true: false;
-				$meta = 'unit';
-				$name = $class_parse[2];
-				break;
-
-			default:
-				$io = false;
-		}
-
-		//	...
-		if(!$io ){
-			throw new \Exception("Illigal namespace. ($class_path)");
-		}
-
-		//	...
-		$path = "{$meta}:/ci/{$name}.php";
-
-		//	...
-		return OP::Sandbox($path);
 	}
 }
