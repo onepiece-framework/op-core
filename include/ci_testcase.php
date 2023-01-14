@@ -24,7 +24,7 @@ static $app_root, $testcase;
 //	...
 if(!$app_root ){
 	$app_root = RootPath('app');
-	//	...
+	$display  = OP::Request('display') ?? 1;
 	$config   = Config::Get('ci');
 	$execute  = $config['testcase']['execute'];
 	$testcase = $config['testcase']['root'];
@@ -84,7 +84,9 @@ foreach( $list as $full_path ){
 
 	//	URL
 	$url = "{$testcase}{$kind}/" . substr($file, 0, -4);
-	echo str_pad($file, 15, ' ', STR_PAD_RIGHT) . ": $url\n";
+	if( $display ){
+		echo str_pad($file, 15, ' ', STR_PAD_RIGHT) . ": $url\n";
+	}
 }
 
 return true;
