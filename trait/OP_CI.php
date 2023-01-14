@@ -62,6 +62,9 @@ trait OP_CI
 		}
 
 		//	...
+		$lenght = 0;
+
+		//	...
 		foreach( $methods as $method ){
 			//	...
 			if( $method == 'CI' ){
@@ -74,7 +77,14 @@ trait OP_CI
 			}
 
 			//	...
-			if( $display ){ echo $method.'(), '; }
+			if( $display ){
+				$lenght += strlen($method);
+				if( $lenght > 100 ){
+					$lenght = 0;
+					echo "\n" . str_pad("", 13, ' ', STR_PAD_LEFT);
+				}
+				echo $method.'(), ';
+			}
 
 			//	...
 			foreach( $configs[$method] ?? [null] as $config ){
