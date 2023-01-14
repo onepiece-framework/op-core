@@ -56,12 +56,12 @@ $ci->Set('SaveCommitID', $result, $args);
 
 //	CurrentBranchName
 $args   = '';
-$result = substr(`git branch --contains 2>&1`, 2, -1);
+$result = trim(substr(`git branch --contains 2>&1`, 2, -1));
 $ci->Set('CurrentBranchName', $result, $args);
 
 //	CurrentCommitID
 $args   = '';
-$result = `git show --format='%H' --no-patch 2>&1`;
+$result = trim(`git show --format='%H' --no-patch 2>&1`);
 $ci->Set('CurrentCommitID', $result, $args);
 
 //	...
