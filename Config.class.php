@@ -136,9 +136,6 @@ class Config
 				if( $file_name[0] === '_'  ){
 					continue;
 				}
-
-				//	Flags
-				$fail = true;
 			}
 		}
 
@@ -146,8 +143,11 @@ class Config
 		chdir($save_directory);
 
 		//	...
-		if( $fail ?? null ){
-			Notice::Set("This config file does not exists. ($name)");
+		if( empty(self::$_config[$name]) ){
+			//	...
+			if(!file_exists( RootPath('asset')."config/{$name}.php") ){
+				Notice::Set("This config file does not exists. ($name)");
+			}
 		}
 	}
 
