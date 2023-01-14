@@ -56,7 +56,15 @@ trait OP_OBJECT
 		return Unit('Router');
 	}
 
-	/** Template unit.
+	/** Template is Sandbox.
+	 *
+	 * <pre>
+	 * //  Passed path is execute core Template function.
+	 * OP::Template($path);
+	 *
+	 * //  No argument is return the Unit of Template.
+	 * OP::Template()->Get($path);
+	 * </pre>
 	 *
 	 * @created   2022-10-04
 	 * @return    UNIT\Template
