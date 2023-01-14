@@ -87,7 +87,7 @@ function Template(string $file, array $args=[], $throw_exception=true)
 			};
 
 			//	Flush arguments.
-			unset($path, $args);
+		//	unset($path, $args);
 
 			//	Execute file.
 			return include(${$md5});
