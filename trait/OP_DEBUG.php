@@ -18,6 +18,7 @@ namespace OP;
  *
  *  Put together debug information.
  *
+ * @deprecated 2023-01-13
  * @created   2019-03-20
  * @version   1.0
  * @package   op-core
@@ -34,6 +35,7 @@ trait OP_DEBUG
 
 	/** Destruct
 	 *
+	 * @deprecated 2023-01-13
 	 * @created   2019-04-29
 	 */
 	function __destruct()
@@ -46,6 +48,7 @@ trait OP_DEBUG
 
 	/** Set
 	 *
+	 * @deprecated 2023-01-13
 	 * @param string $key
 	 * @param mixed  $val
 	 */
@@ -62,6 +65,7 @@ trait OP_DEBUG
 
 	/** Get
 	 *
+	 * @deprecated 2023-01-13
 	 * @param  string $key
 	 * @return array  $info
 	 */
@@ -93,6 +97,7 @@ trait OP_DEBUG
 
 	/** Out
 	 *
+	 * @deprecated 2023-01-13
 	 * @param string $key
 	 */
 	static function __DebugOut($key=null)
@@ -130,6 +135,7 @@ trait OP_DEBUG
 
 	/** Calculator is debug.
 	 *
+	 * @deprecated 2023-01-13
 	 * @created   2020-03-02
 	 * @param     string       $class
 	 * @return    boolean      $io
@@ -170,6 +176,7 @@ trait OP_DEBUG
 
 	/** Debug
 	 *
+	 * @deprecated 2023-01-13
 	 * @param string $key
 	 */
 	static function Debug($key=null)
