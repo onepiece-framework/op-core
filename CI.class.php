@@ -193,6 +193,6 @@ class CI
 	 */
 	static function CurrentCommitID()
 	{
-		return `git show --format='%H' --no-patch 2>&1`;
+		return trim(`git show --format='%H' --no-patch 2>&1`);
 	}
 }
