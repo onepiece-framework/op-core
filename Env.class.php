@@ -499,6 +499,9 @@ class Env
 
 			//	...
 			self::$_env[_OP_APP_ID_] = $app_id;
+
+			//	...
+			Config::Set('app_id', ['app_id'=>$app_id]);
 		}
 
 		//	If not set app_id.
