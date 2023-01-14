@@ -18,6 +18,7 @@ namespace OP;
  *
  *  Put together debug information.
  *
+ * @deprecated 2023-01-13
  * @created   2019-03-19
  * @version   1.0
  * @package   core
@@ -33,6 +34,7 @@ class Debug
 
 	/** Set debug info.
 	 *
+	 * @deprecated 2023-01-13
 	 * @param  string  $key
 	 * @param  mixed   $val
 	 */
@@ -43,6 +45,7 @@ class Debug
 
 	/** Display debug info.
 	 *
+	 * @deprecated 2023-01-13
 	 * @param  string  $key
 	 */
 	static function Out($key='')
