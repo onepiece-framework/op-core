@@ -38,7 +38,9 @@ trait OP_UNIT
 		}
 
 		//	...
-		$unit_name = substr(get_class($this), 8);
+		$unit_name = get_class($this);
+		$unit_name = substr($unit_name, 8);
+		$unit_name = strtolower($unit_name);
 		$meta_path = "unit:/{$unit_name}/template/{$file_path}";
 
 		//	...
