@@ -42,12 +42,14 @@ trait OP_CI
 
 		//	CLI arguments
 		$request = OP::Request();
-
-		//	...
 		$display = $request['display'] ?? true;
+		$class   = get_class($this);
 
 		//	...
-		if( $display ){ echo get_class($this).' - '; }
+		if( $display ){
+			echo str_pad($class, 10, ' ');
+			echo ' - ';
+		}
 
 		//	CI Config for that class.
 		$configs = CIConfig($this);
