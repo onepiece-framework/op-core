@@ -49,7 +49,10 @@ switch( $_SERVER['REQUEST_METHOD'] ?? null ){
 foreach( getallheaders() as $key => $var ){
 	//	Save is specify only.
 	switch($key){
+		case 'User-Agent':
+		case 'content-type':
 		case 'X-Hub-Signature':
+		case 'X-Hub-Signature-256':
 		case 'sec-ch-ua-platform':
 			$_request[$key] = $var;
 		break;
