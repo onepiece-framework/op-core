@@ -27,7 +27,7 @@ if( $remote_addr === ($_SERVER['ADMIN_IP'] ?? null) ){
 }
 
 //	...
-if( $remote_addr === (self::$_env[self::_ADMIN_IP_] ?? null) ){
+if( $remote_addr === (Config::Get('admin')[Env::_ADMIN_IP_] ?? null) ){
 	return true;
 }
 
