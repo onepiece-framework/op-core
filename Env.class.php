@@ -520,7 +520,7 @@ class Env
 	 * Use to OP::Request().
 	 * </pre>
 	 *
-	 * @deprecated 2022-10-28 <- Why?
+	 * @deprecated 2022-10-28 <- Why? <- Move to OP::Request()
 	 * @created   2020-05-04
 	 * @param     string       $_key
 	 * @param     mixed        $_default
@@ -535,15 +535,19 @@ class Env
 		if( $_request === null ){
 			//	In case of shell.
 			if( isset($_SERVER['argv']) ){
+				//	CLI
 				$_request = require_once(__DIR__.'/include/request_cli.php');
 			}else{
+				//	GET, POST, JSON, HTTP request headers.
 				$_request = require_once(__DIR__.'/include/request_web.php');
 			}
 
+			/* Does not need.
 			//	Why? --> Suppresses duplicate processing.
 			if( $_request === null ){
 				Notice('Returned $_request value is null. (Useless processing is repeated.)', debug_backtrace());
 			}
+			*/
 
 			//	...
 			$_request = Encode($_request);
