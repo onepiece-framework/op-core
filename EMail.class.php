@@ -20,9 +20,10 @@ namespace OP;
  * <pre>
 	$mail = new EMail();
 	$mail->From( $mail->GetLocalAddress(), 'From name');
-	$mail->To('To address', 'To name');
+	$mail->To('info@example.com', 'To name');
 	$mail->Subject('Title');
-	$mail->Content('Message');
+	$mail->Content($content, $mime='text/plain');
+	$mail->Attachment($file_path='app:/test.jpg', $mime='image/jpeg', $file_name='TEST.JPG');
 	$mail->Send();
  * </pre>
  *
