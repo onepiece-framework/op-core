@@ -38,8 +38,9 @@ foreach( array_slice($_SERVER['argv'], 1) as $arg ){
 		$var = null;
 	};
 
-	//	...
-	$_request[$key] = $var;
+	//	https://www.php.net/manual/ja/function.escapeshellarg.php
+	//	https://www.php.net/manual/ja/function.escapeshellcmd.php
+	$_request[$key] = escapeshellcmd($var);
 }
 
 //	...
