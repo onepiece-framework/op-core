@@ -26,6 +26,7 @@ switch( $_SERVER['REQUEST_METHOD'] ?? null ){
 		if( $_POST ){
 			$_request = $_POST;
 		}else{
+			//	JSON
 			switch( $_SERVER['CONTENT_TYPE'] ?? null ){
 				case 'application/json':
 					$_content = file_get_contents("php://input");
@@ -42,6 +43,17 @@ switch( $_SERVER['REQUEST_METHOD'] ?? null ){
 		break;
 
 	default:
+}
+
+//	Request headers
+foreach( getallheaders() as $key => $var ){
+	//	Save is specify only.
+	switch($key){
+		case 'X-Hub-Signature':
+		case 'sec-ch-ua-platform':
+			$_request[$key] = $var;
+		break;
+	}
 }
 
 //	...
