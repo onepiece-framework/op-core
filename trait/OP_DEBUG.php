@@ -107,6 +107,15 @@ trait OP_DEBUG
 			return;
 		};
 
+		//	CI
+		$app_id = OP::AppID();
+		switch( strtolower($app_id) ){
+			case 'ci':
+			case 'self-check':
+				return true;
+			default:
+		}
+
 		//	...
 		$trace = debug_backtrace(DEBUG_BACKTRACE_IGNORE_ARGS, 2)[1];
 		$args  = OP::DebugBacktraceToString($trace);
