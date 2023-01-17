@@ -9,5 +9,6 @@
  # @author    Tomoaki Nagahara <tomoaki.nagahara@gmail.com>
  # @copyright Tomoaki Nagahara All right reserved.
 
+rm .ci_commit_id_*
 php ../../ci.php $@
 # sh ../../ci.sh display=0
