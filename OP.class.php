@@ -374,6 +374,7 @@ trait OP_FUNCTION
 
 	/** Sandbox
 	 *
+	 * @deprecated 2023-01-16
 	 * @created   2022-10-10
 	 * @param     string     $path
 	 * @param     mixed      $args
