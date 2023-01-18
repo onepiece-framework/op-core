@@ -31,12 +31,13 @@ function Markdown($file, $throw_exception=true)
 		return;
 	}
 
+	//	Get plain text.
+	$text = OP::Encode( file_get_contents( OP::MetaPath($file) ) );
+
 	//	...
 	if( Env::isShell() ){
-		OP::Template($file);
+		echo $text;
 	}else{
-		echo '<div class="markdown"><pre><code>';
-		OP::Template($file);
-		echo '</code></pre></div>';
+		echo '<div class="markdown">'.$text.'</div>';
 	}
 }
