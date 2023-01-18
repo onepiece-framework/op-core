@@ -18,13 +18,13 @@ declare(strict_types=1);
  */
 namespace OP;
 
-/* @var array $traces */
-$file     = $traces['file']     ?? null;
-$line     = $traces['line']     ?? null;
-$class    = $traces['class']    ?? null;
-$type     = $traces['type']     ?? null;
-$function = $traces['function'] ?? null;
-$args     = $traces['args']     ?? null;
+/* @var $trace array */
+$file     = $trace['file']     ?? null;
+$line     = $trace['line']     ?? null;
+$class    = $trace['class']    ?? null;
+$type     = $trace['type']     ?? null;
+$function = $trace['function'] ?? null;
+$args     = $trace['args']     ?? null;
 
 //	...
 $file = CompressPath($file);

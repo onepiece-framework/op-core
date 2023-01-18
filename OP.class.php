@@ -467,7 +467,7 @@ trait OP_FUNCTION
 	 * @param      array
 	 * @return     string
 	 */
-	static function DebugBacktraceToString(array $traces) : string
+	static function DebugBacktraceToString(array $trace) : string
 	{
 		return include(__DIR__.'/include/DebugBacktraceToString.php');
 	}
