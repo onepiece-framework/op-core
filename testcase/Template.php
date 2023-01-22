@@ -14,14 +14,5 @@
 namespace OP;
 
 //	...
-if( $_GET['hoge'] ?? true ){
-	Template('hoge.phtml');
-}
-
-//	...
-if( $_GET['array'] ?? true ){
-	Template('template.phtml', ['foo','bar']);
-}
-
-//	...
-Template('template.phtml', ['_GET'=>false]);
+OP::Template('template.phtml');
+OP::Template('template.phtml',['path'=>'overwrite']);

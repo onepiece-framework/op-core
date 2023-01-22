@@ -13,8 +13,24 @@
  */
 namespace OP;
 
+/* @var $args array  */
+/* @var $path string */
+/* @var $template_path string */
+//
+$test = $path ?? '(empty)';
 ?>
-<div>
-	<p>template.phtml</p>
-	<?php D($_GET) ?>
-</div>
+<section>
+	<h1>template.phtml</h1>
+	<p>$template_path=<?= $template_path ?></p>
+	<p>$path=<?= $test ?></p>
+</section>
+<?php
+if( $args ){
+	if( $test !== 'overwrite' ){
+		OP::Notice('Template() is wrong.');
+	}
+}else{
+	if( $test !== '(empty)' ){
+		OP::Notice('Template() is wrong.');
+	}
+}
