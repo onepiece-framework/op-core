@@ -106,7 +106,7 @@ $ci->Set('ParseURL', $result, $args);
 
 //	DebugBacktraceToString
 $args   = debug_backtrace(DEBUG_BACKTRACE_PROVIDE_OBJECT, 1);
-$result = 'core:/function/Template.php          93 - include(N;)';
+$result = 'core:/function/Template.php          95 - include(N;)';
 $ci->Set('DebugBacktraceToString', $result, $args);
 
 //	Request
