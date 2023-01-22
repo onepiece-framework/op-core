@@ -74,11 +74,11 @@ function Template(string $file, array $args=[], $throw_exception=true)
 	try {
 
 		//	Seal to sandbox.
-		$result = call_user_func(function($path, $args){
+		$result = call_user_func(function($template_path, $args){
 
 			//	Swap file name. Because avoid conflicts. --> $args['path']
 			$md5 = 'file_' . md5(microtime());
-			${$md5} = $path;
+			${$md5} = $template_path;
 
 			//	If variables passed.
 			if(!empty($args) ){
