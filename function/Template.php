@@ -26,6 +26,9 @@ namespace OP;
  */
 function Template(string $file, array $args=[], $throw_exception=true)
 {
+	//	...
+	$result = null;
+
 	//	Trim white space.
 	$file = trim($file);
 
@@ -72,8 +75,7 @@ function Template(string $file, array $args=[], $throw_exception=true)
 
 	//	Load file.
 	try {
-
-		//	Seal to sandbox.
+		//	Seal to the SandBox.
 		$result = call_user_func(function($template_path, $args){
 
 			//	Swap file name. Because avoid conflicts. --> $args['path']
@@ -105,5 +107,5 @@ function Template(string $file, array $args=[], $throw_exception=true)
 	}
 
 	//	Return result.
-	return $result ?? null;
+	return ($result === 1) ? null : $result;
 }
