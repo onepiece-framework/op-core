@@ -1,10 +1,3 @@
-"Template" function.
-===
-
-```
-?hoge=0
-```
-
-```
-?hoge=0&array=0
-```
+`Template.php` is two times load.
+No arguments are passed the first time.
+The second time, `['path'=>'overwrite']` is passed.
