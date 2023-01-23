@@ -15,4 +15,4 @@ namespace OP;
 
 //	...
 ?>
-<p data-i18n="true" data-i18n-locale="en">This is i18n test.</p>
+<p data-i18n="true" data-i18n-locale="en">This string should be translated automatically.</p>
