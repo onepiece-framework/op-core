@@ -14,5 +14,5 @@
 namespace OP;
 
 //	...
-OP::Template('template.phtml');
-OP::Template('template.phtml',['path'=>'overwrite']);
+OP::Template('Template.phtml');
+OP::Template('Template.phtml',['path'=>'overwrite']);
