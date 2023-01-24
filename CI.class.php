@@ -143,8 +143,15 @@ class CI
 		//	...
 		$branch    = self::CurrentBranchName();
 		$commit_id = self::CurrentCommitID();
-		$commit_id = trim($commit_id);
 		$file_name = ".ci_commit_id_{$branch}";
+
+
+		if( strpos($file_name, '*') ){
+			var_dump($file_name);
+			__FILE__.', #'.__LINE__.PHP_EOL;
+			exit(1);
+		}
+
 
 		//	...
 		$saved_commit_id = file_exists($file_name) ? file_get_contents($file_name): null;
