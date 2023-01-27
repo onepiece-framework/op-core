@@ -261,7 +261,13 @@ trait OP_FUNCTION
 	{
 		//	...
 		if(!function_exists('OP\\'.$function) ){
-			require_once(__DIR__."/function/{$function}.php");
+			$path = __DIR__."/function/{$function}.php";
+			if( file_exists( $path) ){
+				require_once($path);
+			}else{
+				Notice("This function is not implemented. ($function)");
+				return;
+			}
 		}
 
 		//	...
