@@ -56,7 +56,7 @@ $ci->Set('SaveCommitID', $result, $args);
 
 //	CurrentBranchName
 $args   = '';
-$result = trim(substr(`git branch --contains 2>&1`, 2, -1));
+$result = trim(`git rev-parse --abbrev-ref HEAD`);
 $ci->Set('CurrentBranchName', $result, $args);
 
 //	CurrentCommitID

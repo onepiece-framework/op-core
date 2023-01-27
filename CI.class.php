@@ -190,7 +190,7 @@ class CI
 	 */
 	static function CurrentBranchName()
 	{
-		return trim(substr(`git branch --contains 2>&1`, 2, -1));
+		return trim(`git rev-parse --abbrev-ref HEAD`);
 	}
 
 	/** Get current commit ID.
