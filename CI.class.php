@@ -147,8 +147,8 @@ class CI
 
 
 		if( strpos($file_name, '*') ){
+			echo __FILE__.', #'.__LINE__.PHP_EOL;
 			var_dump($file_name);
-			__FILE__.', #'.__LINE__.PHP_EOL;
 			exit(1);
 		}
 
