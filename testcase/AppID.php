@@ -24,28 +24,36 @@ if( Env::AppID() !== OP::AppID() ){
 }
 
 //	...
+$test = [];
+
+//	...
 try {
-	//	...
-	D( Env::AppID() );
-	D( Env::AppID('testcase') );
+	//	Get AppID.
+	$test[__LINE__] = Env::AppID();
+	//	Overwrite AppID.
+	$test[__LINE__] = Env::AppID('testcase');
 } catch ( \Throwable $e ){
 	//	...
-	D($e->getMessage());
+	$test[__LINE__] = $e->getMessage();
 
 	//	...
 	if( Notice::Has() ){
-		D( Notice::Get()['message'] );
+		$test[__LINE__] = Notice::Get()['message'];
 	}else{
 		/* CI is in used.
 		Notice::Set("Feature of set AppID by argument will deprecated.");
 		*/
 	}
 
-
+	//	...
+	D($test);
 
 	//	...
 	return;
 }
+
+//	...
+D($test);
 
 //	...
 Notice("Please correct can duplicate registration of AppID.");
