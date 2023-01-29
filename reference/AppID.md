@@ -12,6 +12,3 @@ OP::AppID(){
     }
 }
 ```
-
-In onepiece-framework’s session is following structure. AppID is "<?php echo \OP\Env::AppID() ?>".
-<?php D($_SESSION); ?>
