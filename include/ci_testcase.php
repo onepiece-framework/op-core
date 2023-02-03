@@ -45,7 +45,7 @@ if( empty($dirs[1]) ){
 	//	In case of skeleton.
 }else if( $dirs[1] === 'unit' ){
 	$kind = $dirs[2];
-	$unit = $dirs[2];
+//	$unit = $dirs[2];
 }else{
 	$kind = $dirs[1];
 }
@@ -55,6 +55,7 @@ if(!chdir($app_root.$path) ){
 	throw new \Exception("Change directory failed. ({$app_root}{$path})");
 }
 
+/*
 //	...
 if( $unit ?? null ){
 	//	...
@@ -65,6 +66,7 @@ if( $unit ?? null ){
 		return;
 	}
 }
+*/
 
 //	Do each testcase.
 $list = glob('testcase/*.php');
