@@ -437,6 +437,7 @@ trait OP_FUNCTION
 
 	/** Sandbox args
 	 *
+	 * @deprecated 2023-02-01
 	 * @created    2022-12-17
 	 * @param      array       $args
 	 * @return     array
