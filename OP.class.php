@@ -320,7 +320,6 @@ trait OP_FUNCTION
 	 * $path = OP::RootPath('foo');
 	 * </pre>
 	 *
-	 * @deprecated 2022-10-16
 	 * @created    2022-10-10
 	 * @param      string     $meta_label
 	 * @return     string     $full_path
