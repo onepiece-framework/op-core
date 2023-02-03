@@ -325,7 +325,7 @@ trait OP_FUNCTION
 	 * @param      string     $meta_label
 	 * @return     string     $full_path
 	 */
-	static function MetaRoot($meta_label='', $full_path='')
+	static function MetaRoot(string $meta_label='', string $full_path='')
 	{
 		return self::_Function('RootPath', $meta_label, $full_path);
 	}
