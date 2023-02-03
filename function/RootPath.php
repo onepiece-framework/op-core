@@ -23,6 +23,11 @@ function RootPath(string $meta='', string $path='', bool $check_directory_exists
 	//	Stack root list.
 	static $root;
 
+	//	Remove meta flag.
+	if( $meta ){
+		$meta = rtrim($meta, ':/');
+	}
+
 	//	Register root path.
 	if( $meta and $path ){
 
