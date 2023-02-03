@@ -61,6 +61,7 @@ $args   = [];
 $result = [
 	'real'     => RootPath('real'),
 	'doc'      => RootPath('doc'),
+	'git'      => RootPath('git'),
 	'app'      => RootPath('app'),
 	'asset'    => RootPath('asset'),
 	'op'       => RootPath('op'),
