@@ -59,20 +59,6 @@ OP()->Template()->Get('index.phtml');
  * Mobile Phone.
  * Windows
 
-## The NewWorld is a new world.
-
- * Intuitive file structure
- * Html path through
-
-### Intuitive file structure
-
- You will not hesitate.
-
-### Html path through
-
- HTML file does not need a controller (endpoint).
- Of course it will be layout.
-
 ## Developers friendly
 
  Very easy to develop.
