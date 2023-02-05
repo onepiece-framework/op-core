@@ -1,6 +1,52 @@
 The onepiece-framework's Core for PHP7
 ===
 
+# A lot has changed in 2022
+
+ * CI
+ * OP
+
+## CI
+
+ If the code does not pass the inspection, Can not be PUSH!
+
+## OP
+
+ 1. The OP is dynamically load the function!
+ 2. All functions can be called cross the Namespace!
+
+### Example
+
+ Functions are dynamically loaded.
+
+```php
+//	...
+namespace OP;
+
+//	...
+OP::Template('index.phtml');
+```
+
+ Can use cross the Namespace.
+
+```php
+//	...
+namespace OP\UNIT;
+
+//	...
+OP()->Template('index.phtml');
+```
+
+ Can call the Unit directly.
+
+```php
+//	...
+namespace OP\UNIT;
+
+//	...
+OP()->Template()->Get('index.phtml');
+```
+
 # README 2016
 
 ## The generations as changed.
