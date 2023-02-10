@@ -19,10 +19,22 @@ declare(strict_types=1);
 namespace OP;
 
 //	...
-$config = [];
+$ci = OP::Unit('CI');
+
+//	_Init
+$args   = '';
+$result = "core:/Browser.class.php # 34 - (empty)\n";
+$ci->Set('_Init', $result, $args);
+
+//	Init
+$args   = '';
+$result = "core:/Browser.class.php # 39 - (empty)\n";
+$ci->Set('Init', $result, $args);
+
+//	Mac
+$args   = '';
+$result = false;
+$ci->Set('Mac', $result, $args);
 
 //	...
-$config['Mac'][] = ['result' => false];
-
-//	...
-return $config;
+return $ci->GenerateConfig();
