@@ -27,8 +27,10 @@ $function = $trace['function'] ?? null;
 $args     = $trace['args']     ?? null;
 
 //	...
-$file = CompressPath($file);
-$file = str_pad($file, 35, ' ', STR_PAD_RIGHT);
+if( $file ){
+	$file = CompressPath($file);
+	$file = str_pad($file, 35, ' ', STR_PAD_RIGHT);
+}
 
 //	...
 $line = (string)$line;
