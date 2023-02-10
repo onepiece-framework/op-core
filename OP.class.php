@@ -307,7 +307,7 @@ trait OP_FUNCTION
 	 */
 	static function Unit(string $unit_name)
 	{
-		return self::_Function(__FUNCTION__, $unit_name);
+		return Unit($unit_name);
 	}
 
 	/** Set / Get meta root path.
