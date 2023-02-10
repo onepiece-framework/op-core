@@ -30,6 +30,10 @@ $args     = $trace['args']     ?? null;
 if( $file ){
 	$file = CompressPath($file);
 	$file = str_pad($file, 35, ' ', STR_PAD_RIGHT);
+	//	...
+	$args = serialize($args);
+}else{
+	$args = '';
 }
 
 //	...
@@ -43,8 +47,6 @@ if( $type ){
 	$bulk = $function;
 }
 
-//	...
-$args = serialize($args);
 
 //	...
 $trace = "{$file} {$line} - {$bulk}({$args})";
