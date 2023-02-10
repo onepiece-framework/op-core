@@ -42,8 +42,8 @@ $result = CI::SubmoduleConfig();
 $ci->Set('SubmoduleConfig', $result, $args);
 
 //	CheckCommitID
-$file_name   = '.ci_commit_id_'.CI::CurrentBranchName();
-$commit_id_1 = CI::CurrentCommitID();
+$file_name   = '.ci_commit_id_'.OP()->Unit('Git')->CurrentBranch();
+$commit_id_1 = OP()->Unit('Git')->CurrentCommitID();
 $commit_id_2 = file_exists($file_name) ? file_get_contents($file_name) : null;
 $args   = '';
 $result = ($commit_id_1 === $commit_id_2) ? true: false;
