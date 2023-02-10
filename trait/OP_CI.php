@@ -53,4 +53,16 @@ trait OP_CI
 	{
 		return get_class_methods($this);
 	}
+
+	/** Inspection target method.
+	 *
+	 * @created    2023-02-10
+	 * @param      string      $method
+	 * @param      array    ...$args
+	 * @return     mixed
+	 */
+	function Inspection(string $method, ...$args)
+	{
+		return $this->{$method}(...$args);
+	}
 }
