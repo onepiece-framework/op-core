@@ -43,4 +43,14 @@ trait OP_CI
 		require(__DIR__.'/../include/CI.php');
 		*/
 	}
+
+	/** Return all method names that the instance has.
+	 *
+	 * @created    2023-02-10
+	 * @return array
+	 */
+	function AllMethods():array
+	{
+		return get_class_methods($this);
+	}
 }
