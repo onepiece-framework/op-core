@@ -30,14 +30,17 @@ trait OP_CI
 {
 	/** CI
 	 *
-	 * @created   2022-10-12
+	 * @deprecated 2023-02-10
+	 * @created    2022-10-12
 	 */
 	function CI()
 	{
+		/*
 		//	...
 		require_once(__DIR__.'/../function/CI.php');
 
 		//	...
 		require(__DIR__.'/../include/CI.php');
+		*/
 	}
 }
