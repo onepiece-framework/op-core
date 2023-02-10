@@ -27,7 +27,7 @@ fi
 
 # Set CI saved commit id file name
 CI_FILE=".ci_commit_id_"$BRANCH
-echo $CI_FILE
+#echo $CI_FILE
 
 # Check if file exists
 if [ ! -f $CI_FILE ]; then
@@ -37,11 +37,11 @@ fi
 
 # Get commit id
 CI_COMMIT_ID=`cat $CI_FILE`
-echo $CI_COMMIT_ID
+#echo $CI_COMMIT_ID
 
 # Get correct commit id
 COMMIT_ID=`git rev-parse $BRANCH`
-echo $COMMIT_ID
+#echo $COMMIT_ID
 
 #
 if [ $COMMIT_ID != $CI_COMMIT_ID ]; then
