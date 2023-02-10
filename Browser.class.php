@@ -29,6 +29,16 @@ class Browser
 	 */
 	use OP_CORE, OP_CI;
 
+	static private function _Init()
+	{
+		D();
+	}
+
+	static public function Init()
+	{
+		D();
+	}
+
 	/** SmartPhone
 	 *
 	 * @return boolean
