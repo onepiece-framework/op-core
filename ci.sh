@@ -14,9 +14,9 @@
 COMMAND=$(ps -ocommand= -p $PPID)
 
 # Parse
-ARR=(${COMMAND//,/ })
-REMOTE=${ARR[2]}
-BRANCH=${ARR[3]}
+ARRAY=(${COMMAND//,/ })
+REMOTE=${ARRAY[2]}
+BRANCH=${ARRAY[3]}
 
 # Get current branch name
 #BRANCH=`git rev-parse --abbrev-ref HEAD`
