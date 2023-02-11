@@ -59,9 +59,9 @@ $ci->Set('Get', $result, $args);
 //	List
 $args   = [];
 $result = [
+	'git'      => RootPath('git'),
 	'real'     => RootPath('real'),
 	'doc'      => RootPath('doc'),
-	'git'      => RootPath('git'),
 	'app'      => RootPath('app'),
 	'asset'    => RootPath('asset'),
 	'op'       => RootPath('op'),
