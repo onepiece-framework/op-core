@@ -1,6 +1,7 @@
 <?php
 /** op-core:/function/CI.php
  *
+ * @deprecated 2023-02-11
  * @created   2023-01-13
  * @package   op-core
  * @version   1.0
@@ -20,6 +21,7 @@ namespace OP;
 
 /** Get CI Config for that class.
  *
+ * @deprecated 2023-02-10
  * @created    2022-10-12
  * @param      object
  * @throws    \Exception
