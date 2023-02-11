@@ -24,8 +24,7 @@ namespace OP;
  */
 trait OP_UNIT
 {
-
-	/** Load from each unit's template directory.
+	/** Load from current unit's template directory.
 	 *
 	 * @created   2022-10-04
 	 * @return
