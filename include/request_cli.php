@@ -40,7 +40,7 @@ foreach( array_slice($_SERVER['argv'], 1) as $arg ){
 
 	//	https://www.php.net/manual/ja/function.escapeshellarg.php
 	//	https://www.php.net/manual/ja/function.escapeshellcmd.php
-	$_request[$key] = escapeshellcmd($var);
+	$_request[$key] = gettype($var) === 'string' ? escapeshellcmd($var): $var;
 }
 
 //	...
