@@ -49,7 +49,7 @@ trait OP_CI
 	 * @created    2023-02-10
 	 * @return array
 	 */
-	function AllMethods():array
+	function CI_AllMethods():array
 	{
 		return get_class_methods($this);
 	}
@@ -61,7 +61,7 @@ trait OP_CI
 	 * @param      array    ...$args
 	 * @return     mixed
 	 */
-	function Inspection(string $method, ...$args)
+	function CI_Inspection(string $method, ...$args)
 	{
 		return $this->{$method}(...$args);
 	}
