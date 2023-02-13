@@ -1,6 +1,7 @@
 <?php
 /** op-core:/include/CI.php
  *
+ * @deprecated 2023-02-13
  * @created   2023-01-16
  * @version   1.0
  * @package   op-core

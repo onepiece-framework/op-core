@@ -3,6 +3,7 @@
  *
  * Purpose: Generate config to pass to OP_CI.
  *
+ * @deprecated 2023-02-13
  * @created   2022-10-15
  * @version   1.0
  * @package   op-core
@@ -44,6 +45,7 @@ class CI
 
 	/** Set Config.
 	 *
+	 * @deprecated 2023-02-13
 	 * @created   2022-10-15
 	 * @param     string     $method
 	 * @param     array      $args
@@ -59,6 +61,7 @@ class CI
 
 	/** Generate Config.
 	 *
+	 * @deprecated 2023-02-13
 	 * @created   2022-10-15
 	 * @return    array      $config
 	 */

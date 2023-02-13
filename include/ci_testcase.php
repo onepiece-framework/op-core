@@ -1,6 +1,7 @@
 <?php
 /** op-core:/include/ci_testcase.php
  *
+ * @deprecated 2023-02-13
  * @created    2023-01-12
  * @version    1.0
  * @package    op-core
