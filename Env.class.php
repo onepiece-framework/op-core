@@ -98,7 +98,12 @@ class Env
 	 */
 	static function isHttp()
 	{
+		/*
 		return isset($_SERVER['REDIRECT_STATUS']);
+		*/
+
+		//	...
+		return isset($_SERVER['SERVER_NAME']);
 	}
 
 	/** Is HTTPs protocal.
