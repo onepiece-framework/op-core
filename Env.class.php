@@ -133,6 +133,33 @@ class Env
 		return ( basename($_SERVER['SCRIPT_NAME']) === 'ci.php' ) ? true: false;
 	}
 
+	/** Which WebServer doing on?
+	 *
+	 * @created    2023-02-18
+	 * @return     string
+	 */
+	static function WebServer():string
+	{
+		//	...
+		static $_software;
+		if( $_software ){
+			return $_software;
+		}
+
+		//	...
+		$_software = strtolower($_SERVER['SERVER_SOFTWARE'] ?? '');
+
+		//	...
+		foreach( ['php','apache','nginx'] as $key ){
+			if( strpos($_software, $key) === 0 ){
+				$_software = $key;
+			}
+		}
+
+		//	...
+		return $_software;
+	}
+
 	/** Get environment value.
 	 *
 	 * @param  string $key
