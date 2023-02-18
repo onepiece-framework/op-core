@@ -166,5 +166,10 @@ $result = 'info@onepiece-framework.com';
 $args   = null;
 $ci->Set('AdminMail', $result, $args);
 
+//	WebServer
+$result = '';
+$args   = null;
+$ci->Set('WebServer', $result, $args);
+
 //	...
 return $ci->GenerateConfig();
