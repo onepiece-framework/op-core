@@ -119,13 +119,24 @@ class Env
 	 *
 	 * @return boolean
 	 */
-	static function isShell()
+	static function isShell():bool
 	{
 		/*
 		return isset($_SERVER['SHELL']);
 		*/
-		//	Correspond to GitHub action.
+
+		/*
+		//	For GitHub action. --> This is empty PHP built-in server.
 		return empty($_SERVER['REQUEST_SCHEME']);
+		*/
+
+		/*
+		//	For PHP built-in server.
+		return !isset($_SERVER['SERVER_NAME']);
+		*/
+
+		//	...
+		return php_sapi_name() === 'cli' ? true: false;
 	}
 
 	/** Is CI
