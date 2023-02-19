@@ -110,7 +110,7 @@ class Env
 	 *
 	 * @return boolean
 	 */
-	static function isHTTPs()
+	static function isHTTPs():bool
 	{
 		return isset($_SERVER['HTTPS']);
 	}
