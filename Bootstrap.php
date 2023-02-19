@@ -24,9 +24,7 @@ if( version_compare(PHP_VERSION, '7.0.0') < 0 ){
 /** Session management.
  *
  */
-if(!session_id() and isset($_SERVER['REQUEST_SCHEME']) ){
-	require_once(__DIR__.'/include/bootstrap_session.php');
-}
+require_once(__DIR__.'/include/bootstrap_session.php');
 
 /** Include blacklist.
  *
