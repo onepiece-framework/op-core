@@ -22,13 +22,27 @@ declare(strict_types=1);
  */
 namespace OP;
 
+/** Currently is CLI mode.
+ *
+ */
+if( php_sapi_name() === 'cli' ){
+	return;
+}
+
+/** Already started session.
+ *
+ */
+if( session_id() ){
+	return;
+}
+
 /** For SameSite
  *
  */
 //	Get current values.
 $params   = session_get_cookie_params();
 //	Check if https.
-$secure   = $_SERVER['REQUEST_SCHEME']==='https' ? true: false;
+$secure   = ($_SERVER['REQUEST_SCHEME'] ?? null) === 'https' ? true: false;
 //	Always true.
 $httponly = true;
 //	None is required for https.
