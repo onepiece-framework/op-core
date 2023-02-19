@@ -108,9 +108,16 @@ function Hasha1($var, $length=8, $salt=null)
 	return substr(sha1($var . $salt), 0, $length);
 }
 
-/** ifset
+/** ifset is if not set variable, set default value.
  *
- * @deprecated 2020-11-19
+ * <pre>
+ * $var = ifset($_POST['undefine'], '1');
+ * var_dump( $_POST['undefine'] ); // 1
+ * </pre>
+ *
+ * _deprecated 2020-11-19  -->  2023-02-19
+ * @reborned   2023-02-19
+ * @version    2.0
  * @see    http://qiita.com/devneko/items/ee83854eb422c352abc8
  * @param  mixed $check
  * @param  mixed $alternate
@@ -118,7 +125,13 @@ function Hasha1($var, $length=8, $salt=null)
  */
 function ifset(&$check, $alternate=null)
 {
-	return isset($check) ? $check : $alternate;
+	//	...
+	if(!isset($check) ){
+		$check = $alternate;
+	}
+
+	//	...
+	return $check;
 }
 
 /** Parse html tag attribute from string to array.
