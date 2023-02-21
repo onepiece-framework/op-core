@@ -23,7 +23,7 @@ $core = OP::MetaPath('core:/');
 $core = str_replace('/', '\\/', $core);
 
 //	...
-$ci = new CI();
+$ci = OP::Unit('CI');
 
 //	Get
 $result =  null;

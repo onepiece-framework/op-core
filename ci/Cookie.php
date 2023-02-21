@@ -19,7 +19,7 @@ declare(strict_types=1);
 namespace OP;
 
 //	...
-$ci = new CI();
+$ci = OP::Unit('CI');
 
 //	Get
 $result = 'Notice: Cookie can not be used in the shell environment.';

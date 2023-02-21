@@ -19,7 +19,7 @@ declare(strict_types=1);
 namespace OP;
 
 //	...
-$ci = new CI();
+$ci = OP::Unit('CI');
 
 //	init
 $user_name = get_current_user();
