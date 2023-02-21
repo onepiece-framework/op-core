@@ -19,7 +19,7 @@ declare(strict_types=1);
 namespace OP;
 
 //	...
-$ci = new CI();
+$ci = OP::Unit('CI');
 
 //	Set - Not exists directory
 $result = 'Exception: This directory not exists. (/foo/bar/)';
