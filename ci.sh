@@ -4,7 +4,7 @@
  # Call from git pre-push
  #
  # @created   2022-10-31
- # @changed   2023-02-09 v2.0
+ # @updated   2023-02-09 v2.0
  # @version   2.0
  # @package   op-core
  # @author    Tomoaki Nagahara <tomoaki.nagahara@gmail.com>
