@@ -1,10 +1,20 @@
 CI/CD
 ===
 
+ The gist of each file is as follows.
+
  * ci.sh  - Call from "git push". Check saved commit id.
  * ci.php - Do inspect and save commit id.
  * cd.php - Do "git push" if correct commit id.
  * cicd   - First run "ci.php", followed by "cd.php".
+
+# cicd
+
+ Run ci.php and cd.php in succession.
+
+```sh
+./cicd
+```
 
 # ci.sh
 
@@ -36,12 +46,4 @@ php ci.php
 
 ```php
 php cd.php
-```
-
-# cc
-
- Run ci.php and cd.php in succession.
-
-```sh
-./cicd
 ```
