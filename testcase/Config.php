@@ -18,15 +18,9 @@ declare(strict_types=1);
  */
 namespace OP;
 
-//	get target from URL Query.
-if( empty($target = OP::Request('target')) ){
-	$target = 'app_id';
-}
-Html("A target config file is '{$target}'.");
-
-//	Get
+//	...
+$target = 'testcase';
 $config = OP::Config($target);
-D($config);
 
 //	Check
 if( $config !== Config::Get($target) ){
@@ -45,4 +39,23 @@ if( ($config + $plus) !== OP::Config($target) ){
 //	Check
 if( OP::Config($target) !== Config::Get($target) ){
 	throw new \Exception("OP::Config({$target}) is broken.");
+}
+
+//	get target from URL Query.
+if( empty($target = OP::Request('target')) ){
+	$target = 'app_id';
+}
+
+//	...
+$target = OP::Request('target') ?? 'app_id';
+
+//	...
+foreach( glob( OP::MetaPath('asset:/config').'*.php' ) as $path ){
+	$file = OP::ParseURL($path)['file'];
+	$name = substr($file, 0, -4);
+	echo "<p><a href='?target={$name}'>{$name}</a></p>";
+	if( $target === $name ){
+		$config = OP::Config($target);
+		D($config);
+	}
 }
