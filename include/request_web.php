@@ -53,7 +53,9 @@ foreach( getallheaders() as $key => $var ){
 		case 'content-type':
 		case 'X-Hub-Signature':
 		case 'X-Hub-Signature-256':
+		/*
 		case 'sec-ch-ua-platform':
+		*/
 			$_request[$key] = $var;
 		break;
 	}
