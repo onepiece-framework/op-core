@@ -40,6 +40,9 @@ function CompressPath($path)
 		$path = rtrim($path, '/').'/';
 	}
 
+	//	real --> app
+	$path = str_replace(RootPath('real'), RootPath('app'), $path);
+
 	//	...
 	foreach( array_reverse(RootPath()) as $meta => $root ){
 		//	...
