@@ -10,9 +10,16 @@ CI technical information
 | display     | integer | Display progress information.                                   |
 | debug       | integer | Display debug information.                                      |
 
+<!-- Does not work yet
 # Config
 
 | Option name     | type    | Gist |
 | ---             | ---     | ---  |
 | testcase        | string  | Access from the web to each testcase directory. |
 | testcase > port | string  | Can specify port number.                        |
+-->
+
+# Routine
+
+ 1. In each submodule directory, ci.php is executed.
+ 1. Every time ci.php is executed, CI::Auto() executed.
