@@ -142,7 +142,7 @@ $ci->Set('Request', $result, $args);
 
 //	AppID
 $args   = null;
-$result = 'self-check';
+$result = 'CI';
 $ci->Set('AppID', $result, $args);
 
 //	Time
