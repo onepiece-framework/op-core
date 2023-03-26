@@ -43,7 +43,7 @@ function Template(string $file, array $args=[], $throw_exception=true)
 	}
 
 	//	Check if meta path.
-	if( strpos($file, ':') ){
+	if( strpos($file, ':/') ){
 		if(!$file = ConvertPath($file, $throw_exception) ){
 			return;
 		}
