@@ -97,6 +97,19 @@ class Config
 			}
 		}
 
+        /* Very difficult.
+        //  Layout default config.
+        if( $layout = self::$_config['layout']['name'] ?? null ){
+            $path   = "asset:/layout/{$layout}/config/{$name}.php";
+            if( file_exists($path) ){
+                $config = $include($path);
+                foreach( $config as $index => $value ){
+                    self::$_config[$name][$index] = $value;
+                }
+            }
+        }
+        */
+
 		//	Get current directory.
 		$save_directory = getcwd();
 
