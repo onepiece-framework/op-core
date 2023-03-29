@@ -456,37 +456,14 @@ class Env
 
 	/** Get frozen unix time.
 	 *
+	 * @deprecated 2023-03-29  OP::Time()
 	 * @param  boolean $utc
 	 * @param  string  $time
 	 * @return integer $time
 	 */
 	static function Time(?bool $utc=false, ?string $time=''):int
 	{
-		//	...
-		if( $time ){
-			//	...
-			if( self::$_env['time'] ?? null ){
-				Notice::Set("Frozen time has already set.");
-			};
-
-			//	...
-			self::$_env['time'] = strtotime($time);
-
-			//	...
-			if(!$utc ){
-				//	Add timezone offset at php.ini timezone.
-				self::$_env['time'] -= date('Z');
-			}
-		};
-
-		//	...
-		if( empty(self::$_env['time']) ){
-			//	Always UTC.
-			self::$_env['time'] = time() - date('Z');
-		};
-
-		//	...
-		return $utc ? self::$_env['time'] : self::$_env['time'] + date('Z');
+        return OP::Time($utc, $time);
 	}
 
 	/** Get local timezone timestamp.
