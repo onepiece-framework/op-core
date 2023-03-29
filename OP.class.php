@@ -524,4 +524,18 @@ trait OP_ENV
 	{
 		return Env::AppID($app_id);
 	}
+
+    /** Get frozen unix time.
+     *
+     * @created  ????-??-??
+     * @moved    2023-03-29  \OP\Env::Time()
+     * @param    boolean     $utc
+     * @param    string      $time
+     * @return   integer     $time
+     */
+    static function Time(?bool $utc=false, ?string $time=''):int
+    {
+        require_once(__DIR__.'/function/Time.php');
+        return Time($utc, $time);
+    }
 } // OP_ENV
