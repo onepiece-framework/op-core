@@ -538,4 +538,24 @@ trait OP_ENV
         require_once(__DIR__.'/function/Time.php');
         return Time($utc, $time);
     }
+
+    /** Get local timezone timestamp.
+     *
+     * <pre>
+     * $localtime = Env::Timestamp();
+     * $utc       = Env::Timestamp(true);
+     * $offset    = Env::Timestamp(true, '-1 month');
+     * </pre>
+     *
+     * @created  2019-09-24
+     * @moved    2023-03-29  \OP\Env::Timestamp()
+     * @param    boolean     $utc
+     * @param    string      $offset
+     * @return   string      $timestamp
+     */
+    static function Timestamp(?bool $utc=false, $offset=null):string
+    {
+        require_once(__DIR__.'/function/Timestamp.php');
+        return Timestamp($utc, $offset);
+    }
 } // OP_ENV
