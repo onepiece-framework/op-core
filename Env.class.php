@@ -474,6 +474,7 @@ class Env
 	 * $offset    = Env::Timestamp(true, '-1 month');
 	 * </pre>
 	 *
+	 * @deprecated 2023-03-29  OP::Timestamp()
 	 * @created  2019-09-24
 	 * @param    boolean     $utc
 	 * @param    string      $offset
@@ -481,16 +482,7 @@ class Env
 	 */
 	static function Timestamp(?bool $utc=false, $offset=null):string
 	{
-		//	...
-		$time = self::Time($utc);
-
-		//	...
-		if( $offset ){
-			$time = strtotime($offset, $time);
-		}
-
-		//	...
-		return date(_OP_DATE_TIME_, $time);
+        return OP::Timestamp($utc, $offset);
 	}
 
 	/** Get/Set App ID.
