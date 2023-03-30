@@ -119,5 +119,15 @@ $args   = null;
 $result = 'self-check';
 $ci->Set('AppID', $result, $args);
 
+//	Time
+$args   = null;
+$result = \OP\Time();
+$ci->Set('Time', $result, $args);
+
+//	Timestamp
+$args   = null;
+$result = date('Y-m-d H:i:s', \OP\Time());
+$ci->Set('Timestamp', $result, $args);
+
 //	...
 return $ci->GenerateConfig();
