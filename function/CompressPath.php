@@ -50,7 +50,10 @@ function CompressPath($path)
 	}
 
 	//	real --> app
-	$path = str_replace(RootPath('real'), RootPath('app'), $path);
+//  $path = str_replace(RootPath('real'), RootPath('app'), $path);
+    if( strpos($path, RootPath('real')) === 0 ){
+        $path = str_replace(RootPath('real'), RootPath('app'), $path);
+    }
 
 	//	...
 	foreach( array_reverse(RootPath()) as $meta => $root ){
