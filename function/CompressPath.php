@@ -38,6 +38,12 @@ function CompressPath($path)
     //  ...
     $path = trim($path);
 
+    //  ...
+    if( $path[0] !== '/' ){
+        Notice("This path is not full path. ($path)");
+        return false;
+    }
+
 	//	...
 	if( is_dir($path) ){
 		$path = rtrim($path, '/').'/';
