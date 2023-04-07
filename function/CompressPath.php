@@ -35,6 +35,9 @@ function CompressPath($path)
 	}
 	 */
 
+    //  ...
+    $path = trim($path);
+
 	//	...
 	if( is_dir($path) ){
 		$path = rtrim($path, '/').'/';
