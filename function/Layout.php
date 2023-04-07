@@ -19,6 +19,17 @@ namespace OP;
 
 /** Get/Set Layout config value.
  *
+ * <pre>
+ * //  Disable layout.
+ * OP()->Layout(false);
+ *
+ * //  Set layout name.
+ * OP()->Layout('onepiece');
+ *
+ * //  Get layout name.
+ * $layout_name = OP()->Layout();
+ * </pre>
+ *
  * @created   2021-01-10
  * @param     null|boolean|string $value  is execute flag or layout name.
  * @return    boolean|string      $result is execute flag or layout name.
@@ -30,7 +41,7 @@ function Layout($value=null){
 		if( is_string($value) ){
 			//	...
 			Config::Set('layout',['name'=>$value]);
-			$value = true;
+			$value = true; // Automatically execute is true.
 		}
 
 		//	...
