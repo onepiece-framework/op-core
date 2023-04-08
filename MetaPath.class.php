@@ -35,6 +35,7 @@ class MetaPath
 
 	/** Meta root path list.
 	 *
+	 * @deprecated  2023-04-08  Use RootPath()
 	 * @created   2022-06-11
 	 * @var array
 	 */
