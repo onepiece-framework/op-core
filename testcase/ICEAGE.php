@@ -1,7 +1,7 @@
 <?php
 /** op-core:/testcase/ICEAGE.php
  *
- * @creation  2020-04-10
+ * @created   2020-04-10
  * @version   1.0
  * @package   op-core
  * @author    Tomoaki Nagahara <tomoaki.nagahara@gmail.com>
@@ -38,22 +38,22 @@ $temp['manual']['jpn'] =   date(_OP_DATE_TIME_, $time);
 $temp['manual']['gmt'] = gmdate(_OP_DATE_TIME_, $time);
 
 //	...
-Env::Time(false, $iceage);
+OP::Time(false, $iceage);
 $temp['iceage']['target'] = $iceage;
 /*
 $temp['iceage']['time']['jpn'] = date(_OP_DATE_TIME_, Env::Time(false));
 $temp['iceage']['time']['gmt'] = date(_OP_DATE_TIME_, Env::Time(true));
 */
-$temp['iceage']['Timestamp']['jpn']  = Env::Timestamp(false);
-$temp['iceage']['Timestamp']['gmt']  = Env::Timestamp(true);
+$temp['iceage']['Timestamp']['jpn']  = OP::Timestamp(false);
+$temp['iceage']['Timestamp']['gmt']  = OP::Timestamp(true);
 
 //	...
-if( $temp['manual']['jpn'] !== Env::Timestamp(false) ){
+if( $temp['manual']['jpn'] !== OP::Timestamp(false) ){
 	Notice::Set("Env::Timestamp() is broken.");
 }
 
 //	...
-if( $temp['manual']['jpn'] !== date(_OP_DATE_TIME_, Env::Time(false)) ){
+if( $temp['manual']['jpn'] !== date(_OP_DATE_TIME_, OP::Time(false)) ){
 	Notice::Set("Env::Time() is broken.");
 }
 
