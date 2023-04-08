@@ -46,7 +46,9 @@ function CompressPath($path)
 
 	//	...
 	if( is_dir($path) ){
-		$path = rtrim($path, '/').'/';
+    //  $path = rtrim($path, '/').'/';
+    //  In case of duplicate slash, It will be removed by next process.
+        $path .= '/';
 	}
 
 	//	Replace duplicate slash.
