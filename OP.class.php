@@ -373,12 +373,11 @@ trait OP_FUNCTION
 	 * $document_root_url = OP::ConvertURL('app:/foo/bar');
 	 * </pre>
 	 *
-	 * @deprecated 2022-10-16
 	 * @created    2022-10-08
 	 * @param      string     $meta_path
 	 * @return     string     $full_path
 	 */
-	static function MetaToURL(string $path)
+	static function MetaURL(string $path)
 	{
 		return self::_Function('ConvertURL', $path);
 	}
