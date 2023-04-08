@@ -49,6 +49,9 @@ function CompressPath($path)
 		$path = rtrim($path, '/').'/';
 	}
 
+	//	Replace duplicate slash.
+	$path = preg_replace('|/+|', '/', $path);
+
 	//	real --> app
 //  $path = str_replace(RootPath('real'), RootPath('app'), $path);
     if( strpos($path, RootPath('real')) === 0 ){
