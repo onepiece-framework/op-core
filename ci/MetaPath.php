@@ -80,7 +80,12 @@ $ci->Set('Encode', $result, $args);
 
 //	Encode - Not registered.
 $args   = 'not:/';
-$result = false;
+$result = 'Notice: This path is not full path. (not:/)';
+$ci->Set('Encode', $result, $args);
+
+//	Encode - Duplicate slash and add slash to tail.
+$args   = RootPath('core').'////ci';
+$result = 'core:/ci/';
 $ci->Set('Encode', $result, $args);
 
 //	Decode

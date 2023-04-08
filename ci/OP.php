@@ -87,11 +87,6 @@ $args   = 'core';
 $result = OP()->ConvertAlias( dirname(__DIR__) ) . '/';
 $ci->Set('MetaRoot', $result, $args);
 
-//	MetaToURL
-$args   = 'app:/';
-$result = '/';
-$ci->Set('MetaToURL', $result, $args);
-
 //	MetaToPath
 $args   = 'op:/';
 $result = $str; // dirname(__DIR__).'/';
@@ -102,15 +97,10 @@ $args   = __FILE__;
 $result = 'core:/ci/OP.php';
 $ci->Set('MetaFromPath', $result, $args);
 
-//	Sandbox
-$args   = 'core:/function/AppID.php';
-$result =  1;
-$ci->Set('Sandbox', $result, $args);
-
-//	SandboxArgs
-$args   = [[]];
-$result = [];
-$ci->Set('SandboxArgs', $result, $args);
+//	MetaURL
+$args   = 'app:/';
+$result = '/'; // CIL is always '/'.
+$ci->Set('MetaURL', $result, $args);
 
 //	ParseURL
 $args   = '//localhost/index.html?1';
