@@ -121,6 +121,7 @@ class MetaPath
 		require_once(__DIR__.'/function/CompressPath.php');
 		return CompressPath($path);
 
+		/*
 		//	Replace duplicate slash.
 		$path = preg_replace('|//|', '/', $path);
 
@@ -145,6 +146,7 @@ class MetaPath
 
 		//	...
 		return $label . ':/' . trim($trim,'/') . is_dir($path) ? '/':'';
+		*/
 	}
 
 	/** Restore to the full-path from the meta-path.
