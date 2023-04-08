@@ -84,6 +84,17 @@ trait OP_OBJECT
 
 	/** Layout unit.
 	 *
+	 * <pre>
+	 * //  Disable layout.
+	 * OP()->Layout(false);
+	 *
+	 * //  Set layout name.
+	 * OP()->Layout('onepiece');
+	 *
+	 * //  Get layout name.
+	 * $layout_name = OP()->Layout();
+	 * </pre>
+	 *
 	 * @created   2022-10-04
 	 * @return    UNIT\Layout
 	 */
