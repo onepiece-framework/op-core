@@ -28,7 +28,7 @@ namespace OP;
 //  ...
 class Config
 {
-	//  
-	use OP_CORE, OP_CI;
+    //  use
+    use OP_CORE, OP_CI;
 }
 ```
