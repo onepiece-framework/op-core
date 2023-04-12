@@ -151,6 +151,7 @@ class Env
 
 	/** Which WebServer doing on?
 	 *
+	 * @deprecated 2023-04-12
 	 * @created    2023-02-18
 	 * @return     string
 	 */
@@ -178,6 +179,7 @@ class Env
 
 	/** Get environment value.
 	 *
+	 * @deprecated 2023-04-12  Config::Get()
 	 * @param  string $key
 	 * @return mixed  $var
 	 */
@@ -199,6 +201,7 @@ class Env
 
 	/** Set environment value.
 	 *
+	 * @deprecated 2023-04-12  Config::Get()
 	 * @param string $key
 	 * @param mixed  $var
 	 */
@@ -236,7 +239,7 @@ class Env
 
 	/** Get/Set language code.
 	 *
-	 * @deprecated 2020-10-31
+	 * @deprecated 2020-10-31  self::Language()
 	 * @param      string       $lang
 	 * @return     string       $lang
 	 */
