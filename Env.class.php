@@ -413,7 +413,7 @@ class Env
 	 * @param  string  $time
 	 * @return integer $time
 	 */
-	static function Time(?bool $utc=false, ?string $time=''):int
+	static function Time(      $utc=false,  string $time=''):int
 	{
 		require_once(__DIR__.'/function/Time.php');
 		return Time($utc, $time);
@@ -437,7 +437,7 @@ class Env
 	 * @param    string      $offset
 	 * @return   string      $timestamp
 	 */
-	static function Timestamp(?bool $utc=false, $offset=null):string
+	static function Timestamp(      $utc=false, $offset=null):string
 	{
 		require_once(__DIR__.'/function/Timestamp.php');
 		return Timestamp($utc, $offset);
