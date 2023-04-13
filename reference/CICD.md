@@ -26,6 +26,8 @@ CI/CD
 sh ci.sh
 ```
 
+ For "ci.sh" there is more deep information. See "For maintainer information".
+
 # ci.php
 
  1. Inspection of Code.
@@ -47,3 +49,8 @@ php ci.php
 ```php
 php cd.php
 ```
+
+# For maintainers information
+
+ "ci.sh" is check the Commit ID you are about to push.
+ If you were using the PHP version as the branch name, for example "php70", you would have to do something like this: `php70 cicd`
