@@ -24,3 +24,9 @@ php action.php config=./config.php display=1
 ```sh
 php action.php config=./config.php display=1 debug=1
 ```
+
+## Run multiple configs
+
+```sh
+php actions.php config_dir=/var/workspace/config/
+```
