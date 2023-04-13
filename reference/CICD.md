@@ -50,6 +50,16 @@ php ci.php
 php cd.php
 ```
 
+# Trouble Shooting
+
+## Can not delete branch
+
+ The following commands are rejected: `git push origin :branch_name`
+
+ 1. `git switch branch_name`
+ 2. `php ci.php`
+ 3. `git push origin branch_name --delete`
+
 # For maintainers information
 
  "ci.sh" is check the Commit ID you are about to push.
