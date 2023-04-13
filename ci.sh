@@ -6,7 +6,7 @@
  # @created    2022-10-31
  # @updated    2023-02-09 v2.0
  # @updated    2023-02-14 v2.1
- # @version    2.1
+ # @version    2.2.0
  # @package    op-core
  # @author     Tomoaki Nagahara <tomoaki.nagahara@gmail.com>
  # @copyright  Tomoaki Nagahara All right reserved.
@@ -23,8 +23,15 @@ PHP=`php -r "echo PHP_MAJOR_VERSION.PHP_MINOR_VERSION;"`
 # Get current branch name
 #BRANCH=`git rev-parse --abbrev-ref HEAD`
 if [ ! $BRANCH ]; then
-  echo "Empty branch name."
+  echo "ci.sh: Empty branch name."
   exit 1
+fi
+
+# Check if branch name
+if [[  $BRANCH =~ ^php([0-9]{2})$ ]]; then
+    PHP=${BASH_REMATCH[1]}
+else
+    PHP=`php -r "echo PHP_MAJOR_VERSION.PHP_MINOR_VERSION;"`
 fi
 
 # Set CI saved commit id file name
@@ -33,7 +40,7 @@ CI_FILE=".ci_commit_id_"$BRANCH"_php"$PHP
 
 # Check if file exists
 if [ ! -f $CI_FILE ]; then
-  echo "Does not file exists. ($CI_FILE)"
+  echo "ci.sh: Does not file exists. ($CI_FILE)"
   exit 1
 fi
 
