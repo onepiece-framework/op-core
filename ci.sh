@@ -6,6 +6,7 @@
  # @created    2022-10-31
  # @updated    2023-02-09 v2.0
  # @updated    2023-02-14 v2.1
+ # @updated    2023-04-13 v2.2
  # @version    2.2.0
  # @package    op-core
  # @author     Tomoaki Nagahara <tomoaki.nagahara@gmail.com>
