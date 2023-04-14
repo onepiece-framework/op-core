@@ -21,10 +21,6 @@ $app_root = ConvertURL('app:/');
 Html("app:/ --> $app_root");
 
 //	...
-$testcase_root = ConvertURL('testcase:/');
-Html("testcase:/ --> $testcase_root");
-
-//	...
 $asset_root = ConvertURL('asset:/');
 Html("asset:/ --> $asset_root");
 if(!Notice::Has() ){
