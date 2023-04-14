@@ -78,6 +78,12 @@ function ConvertURL($url)
 		return;
 	}
 
+    //	Check if asset path.
+    if( strpos($full_path, RootPath('asset')) === 0 ){
+        OP::Notice("This is asset root path. ($url)");
+        return;
+    }
+
 	//	Document root.
 	$doc_root = rtrim($_SERVER['DOCUMENT_ROOT'], '/');
 
