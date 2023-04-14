@@ -1,2 +1,0 @@
-Show `OP::MetaRoot()` result
-===
