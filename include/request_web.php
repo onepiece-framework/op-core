@@ -45,7 +45,13 @@ switch( $_SERVER['REQUEST_METHOD'] ?? null ){
 	default:
 }
 
-//	Request headers
+/** Request headers
+ *
+ * PHP 7.3.0 - This function became available in the FPM SAPI.
+ *
+ * @see https://www.php.net/manual/en/function.getallheaders.php
+ */
+if( function_exists('getallheaders') ){
 foreach( getallheaders() as $key => $var ){
 	//	Save is specify only.
 	switch($key){
@@ -59,6 +65,7 @@ foreach( getallheaders() as $key => $var ){
 			$_request[$key] = $var;
 		break;
 	}
+}
 }
 
 //	...
