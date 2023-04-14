@@ -1,5 +1,5 @@
 <?php
-/** op-core:/D.php
+/** op-core:/function/D.php
  *
  * Separate from Functions.php.
  * The "D" is a being that transcends at namespace.
@@ -13,6 +13,9 @@
 
 /** Dump of value are displayed only for developers.
  *
+ * <pre>
+ * D( $_SESSION );
+ * </pre>
  */
 function D()
 {
