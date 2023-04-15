@@ -129,5 +129,20 @@ $args   = null;
 $result = date('Y-m-d H:i:s', \OP\Time());
 $ci->Set('Timestamp', $result, $args);
 
+//	MIME
+$args   = null;
+$result = 'text/plain';
+$ci->Set('MIME', $result, $args);
+
+//	MIME - Replace
+$args   = 'text/html';
+$result = 'text/html';
+$ci->Set('MIME', $result, $args);
+
+//	MIME - Replace
+$args   = 'text/plain';
+$result = 'text/plain';
+$ci->Set('MIME', $result, $args);
+
 //	...
 return $ci->GenerateConfig();
