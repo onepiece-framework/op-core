@@ -1,4 +1,4 @@
-Notice is notice for developer
+The Notice is notice to developer
 ===
 
  All errors are caught. And will developer notice.
