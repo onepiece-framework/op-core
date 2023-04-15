@@ -558,4 +558,15 @@ trait OP_ENV
         require_once(__DIR__.'/function/Timestamp.php');
         return Timestamp($utc, $offset);
     }
+
+    /** Get / Set MIME
+     *
+     * @created     2023-04-15
+     * @param      ?string      $mime
+     * @return      string
+     */
+    static function MIME(?string $mime=null) : string
+    {
+        return Env::Mime($mime);
+    }
 } // OP_ENV
