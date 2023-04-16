@@ -514,7 +514,7 @@ trait OP_ENV
      * @param    string      $time
      * @return   integer     $time
      */
-    static function Time(?bool $utc=false, ?string $time=''):int
+    static function Time(      $utc=false,  string $time=''):int
     {
 		return Env::Time($utc, $time);
     }
@@ -539,7 +539,7 @@ trait OP_ENV
      * @param    string      $offset
      * @return   string      $timestamp
      */
-    static function Timestamp(?bool $utc=false, $offset=null):string
+    static function Timestamp(      $utc=false, $offset=null):string
     {
 		return Env::Timestamp($utc, $offset);
     }
@@ -551,7 +551,7 @@ trait OP_ENV
      * @param      ?string      $mime
      * @return      string
      */
-    static function MIME(?string $mime=null) : string
+    static function MIME( string $mime=null) : string
     {
         return Env::MIME($mime);
     }
