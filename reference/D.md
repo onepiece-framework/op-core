@@ -31,4 +31,4 @@ D($_SESSION);
  1. Pass the variable you want to display on the screen to the D function.
  2. The D function checks if you are the admin.
  3. If you are not admin, does not display anything.
- 4. If you are an admin, takes over to OP\UNIT\Dump.
+ 4. If you are an admin, takes over to "OP\UNIT\Dump".
