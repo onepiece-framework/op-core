@@ -3,16 +3,16 @@ Cookie of onepiece-framework
 
  Cookie of onepiece-framework is very secure.
 
-1. Cookie name is encrypted. Yes, End user is not understand.
-1. Cookie value is encrypted. Yes, End user is not modified.
-1. Cookie is separate other app. Yes, Not access other app.
+1. Cookie name is encrypted. To end user is uncertain.
+2. Cookie value is encrypted. End users can not change it.
+3. Cookie is separate other app. Can not access from other app.
 
-## Usage
+# Usage
 
 ```php
 //  Set cookie value.
 Cookie::Set('count', 1);
 
 //  Get cookie value.
-Cookie::Get('count');
+$count = Cookie::Get('count');
 ```
