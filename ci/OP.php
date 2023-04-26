@@ -51,6 +51,11 @@ $args   = null;
 $result = 'OP\Config';
 $ci->Set('Config', $result, $args);
 
+//	Env
+$args   = '';
+$result = 'OP\Env';
+$ci->Set('Env', $result, $args);
+
 //	_Function
 $args   = ['IsInt',1];
 $result =  true;
@@ -108,6 +113,11 @@ $ci->Set('ParseURL', $result, $args);
 $args   = debug_backtrace(DEBUG_BACKTRACE_PROVIDE_OBJECT, 1);
 $result = 'core:/function/Template.php          95 - include(N;)';
 $ci->Set('DebugBacktraceToString', $result, $args);
+
+//	GetTemplate
+$args   = 'core:/testcase/email.txt';
+$result = 'email.txt';
+$ci->Set('GetTemplate', $result, $args);
 
 //	Request
 $args   = null;
