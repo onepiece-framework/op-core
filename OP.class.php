@@ -225,6 +225,20 @@ trait OP_OBJECT
 			return $_config;
 		}
 	}
+
+    /** Env
+     *
+     * @created     2023-04-26
+     * @return      Env
+     */
+    static function Env()
+    {
+        static $_env;
+        if(!$_env ){
+            $_env = new Env();
+        }
+        return $_env;
+    }
 } // OP_OBJECT
 
 /** OP_FUNCTION
