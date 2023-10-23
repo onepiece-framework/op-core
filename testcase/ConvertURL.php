@@ -13,42 +13,45 @@
  */
 namespace OP;
 
-$doc_root = ConvertURL('doc:/');
-Html("doc:/ --> $doc_root");
-
-//	...
-$app_root = ConvertURL('app:/');
-Html("app:/ --> $app_root");
-
-//	...
-$asset_root = ConvertURL('asset:/');
-Html("asset:/ --> $asset_root");
+//  ...
+$meta = 'op:/';
+$temp[$meta] = ConvertURL($meta);
 if(!Notice::Has() ){
-	throw new \Exception('ConvertURL(asset:/) is broken.');
+    throw new \Exception("ConvertURL('{$meta}') is broken.");
 }else{
-	$notice = Notice::Get();
-	Html($notice['message']);
+    $notice = Notice::Get();
+    $temp[$meta] = $notice['message'];
 }
 
-//	...
-$core_root = ConvertURL('core:/');
-Html("core:/ --> $core_root");
+//  ...
+$meta = 'doc:/';
+$temp[$meta] = ConvertURL($meta);
+
+//  ...
+$meta = 'app:/';
+$temp[$meta] = ConvertURL($meta);
+
+//  ...
+$meta = 'core:/';
+$temp[$meta] = ConvertURL($meta);
 if(!Notice::Has() ){
-	throw new \Exception('ConvertURL(core:/) is broken.');
+    throw new \Exception("ConvertURL('{$meta}') is broken.");
 }else{
-	$notice = Notice::Get();
-	Html($notice['message']);
+    $notice = Notice::Get();
+    $temp[$meta] = $notice['message'];
 }
 
-//	...
-$op_root = ConvertURL('op:/');
-Html("op:/ --> $op_root");
+//  ...
+$meta = 'asset:/';
+$temp[$meta] = ConvertURL($meta);
 if(!Notice::Has() ){
-	throw new \Exception('ConvertURL(op:/) is broken.');
+    throw new \Exception("ConvertURL('{$meta}') is broken.");
 }else{
-	$notice = Notice::Get();
-	Html($notice['message']);
+    $notice = Notice::Get();
+    $temp[$meta] = $notice['message'];
 }
+
+D($temp);
 
 //	...
 return;
