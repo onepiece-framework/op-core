@@ -31,8 +31,8 @@ namespace OP;
 function ConvertAlias(string $path) : string
 {
     //  static
-    static $git_path  = RootPath('git');
-    static $real_path = RootPath('real');
+    /* static */ $git_path  = RootPath('git');
+    /* static */ $real_path = RootPath('real');
 
     //  Check if conversion is required.
     if( strpos($path, $git_path) === 0 ){
