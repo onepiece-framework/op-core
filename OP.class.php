@@ -502,7 +502,10 @@ trait OP_FUNCTION
 	 */
 	static function DebugBacktraceToString(array $trace) : string
 	{
+        /*
 		return include(__DIR__.'/include/DebugBacktraceToString.php');
+        */
+        return DebugBacktrace::Numerator($trace);
 	}
 
     /** Get template.
