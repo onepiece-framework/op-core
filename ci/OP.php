@@ -66,9 +66,25 @@ $args   = 'Dump';
 $result = 'OP\UNIT\Dump';
 $ci->Set('Unit', $result, $args);
 
-//	RootPath
+//  ...
+$git_path  = RootPath('git');
+$real_path = RootPath('real');
+$core_path = dirname(__DIR__).'/';
+
+if( strpos($core_path, $real_path) === 0 ){
+    $pos = strlen($real_path) - strlen($core_path);
+    $tmp = substr($core_path, $pos);
+    $str = $git_path . $tmp;
+}
+
+//	MetaRoot
 $args   = 'op';
-$result = dirname(__DIR__).'/';
+$result = OP()->ConvertAlias( dirname(__DIR__) ) . '/';
+$ci->Set('MetaRoot', $result, $args);
+
+//	MetaRoot
+$args   = 'core';
+$result = OP()->ConvertAlias( dirname(__DIR__) ) . '/';
 $ci->Set('MetaRoot', $result, $args);
 
 //	MetaToURL
@@ -78,7 +94,7 @@ $ci->Set('MetaToURL', $result, $args);
 
 //	MetaToPath
 $args   = 'op:/';
-$result = dirname(__DIR__).'/';
+$result = $str; // dirname(__DIR__).'/';
 $ci->Set('MetaToPath', $result, $args);
 
 //	MetaFromPath
@@ -111,7 +127,7 @@ $ci->Set('ParseURL', $result, $args);
 
 //	DebugBacktraceToString
 $args   = debug_backtrace(DEBUG_BACKTRACE_PROVIDE_OBJECT, 1);
-$result = 'core:/function/Template.php          95 - include(N;)';
+$result = 'core:/function/Template.php  95 - include()';
 $ci->Set('DebugBacktraceToString', $result, $args);
 
 //	GetTemplate
