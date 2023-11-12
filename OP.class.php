@@ -32,6 +32,7 @@ class OP
 	 *
 	 */
 	use OP_CORE, OP_OBJECT, OP_FUNCTION, OP_ENV, OP_CI {
+        OP_FUNCTION::__call       insteadof OP_CORE;
 		OP_FUNCTION::__callstatic insteadof OP_CORE;
 	}
 }
@@ -253,6 +254,18 @@ trait OP_OBJECT
  */
 trait OP_FUNCTION
 {
+    /** An undefined method was called.
+     *
+     * @created     2022-11-12
+     * @param       string      $method_name
+     * @param       array       $args
+     * @return      mixed
+     */
+    function __call($method_name, $args)
+    {
+        return self::_Function($method_name, ...$args);
+    }
+
 	/** An undefined method was called.
 	 *
 	 * @created   2022-10-11
