@@ -94,7 +94,7 @@ function ConvertURL($url)
 
 	//	Check whether document root path.
 	if( strpos($full_path, $doc_root) !== 0 ){
-		OP::Notice("This path is not the document root path. ({$full_path} !== {$doc_root})");
+		OP::Notice("This path is not the document root path. (doc={$doc_root}, full={$full_path})");
 		return false;
 	};
 
