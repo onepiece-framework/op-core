@@ -113,7 +113,7 @@ $ci->Set('Ext', $result, $args);
 
 //	Mime
 $result = 'text/plain';
-$args   = null;
+$args   = '';
 $ci->Set('Mime', $result, $args);
 
 //	Time - Ice Age
