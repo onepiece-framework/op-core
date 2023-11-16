@@ -25,12 +25,12 @@ $ci = OP::Unit('CI');
 $backtraces = debug_backtrace();
 $args   = [];
 $result = 'core:/trait/OP_CI.php  66 - OP\DebugBacktrace::Auto()'.
-          'unit:/ci/CI.class.php 399 - OP\DebugBacktrace->CI_Inspection("Auto")'.
-          'unit:/ci/CI.class.php 315 - OP\UNIT\CI::CI_Args(Unknow(object),"Auto",Unknow(array),null,null)'.
-          'unit:/ci/CI.class.php 286 - OP\UNIT\CI::CI_Method(Unknow(object),"Auto",Unknow(array))'.
-          'unit:/ci/CI.class.php 222 - OP\UNIT\CI::CI_Class(Unknow(object))'.
+          'unit:/ci/CI.class.php 403 - OP\DebugBacktrace->CI_Inspection("Auto")'.
+          'unit:/ci/CI.class.php 319 - OP\UNIT\CI::CI_Args(Unknow(object),"Auto",Unknow(array),null,null)'.
+          'unit:/ci/CI.class.php 290 - OP\UNIT\CI::CI_Method(Unknow(object),"Auto",Unknow(array))'.
+          'unit:/ci/CI.class.php 226 - OP\UNIT\CI::CI_Class(Unknow(object))'.
           'unit:/ci/CI.class.php 146 - OP\UNIT\CI->CI()'.
-          'app:/ci.php            50 - OP\UNIT\CI->Auto()';
+          'app:/ci.php            53 - OP\UNIT\CI->Auto()';
 $ci->Set('Auto', $result, $args);
 
 //  Numerator
