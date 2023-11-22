@@ -18,7 +18,7 @@ declare(strict_types=1);
  */
 namespace OP;
 
-//	...
+/* @var $ci UNIT\CI */
 $ci = OP::Unit('CI');
 
 //	_Init
