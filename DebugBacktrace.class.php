@@ -135,11 +135,16 @@ class DebugBacktrace
                 break;
 
             case 'integer':
+            case 'double':
                 $arg = (string)$arg;
                 break;
 
             case 'string':
                 $arg = '"'.$arg.'"';
+                break;
+
+            case 'object':
+                $arg = get_class($arg);
                 break;
 
             default:
