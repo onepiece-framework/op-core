@@ -9,6 +9,8 @@ CI technical information
 | force       | integer | Delete the inspected Commit ID files and re-inspect it.         |
 | display     | integer | Display progress information.                                   |
 | debug       | integer | Display debug information.                                      |
+| test        | integer | So-called dry-run feature. That skip git stash save.            |
+| all         | integer | Inspect all repositories, including main repository.            |
 
 <!-- Does not work yet
 # Config
