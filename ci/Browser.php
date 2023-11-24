@@ -23,12 +23,12 @@ $ci = OP::Unit('CI');
 
 //	_Init
 $args   = '';
-$result = "core:/Browser.class.php # 34 - ";
+$result = "core:/Browser.class.php # 34 - \n";
 $ci->Set('_Init', $result, $args);
 
 //	Init
 $args   = '';
-$result = "core:/Browser.class.php # 39 - ";
+$result = "core:/Browser.class.php # 39 - \n";
 $ci->Set('Init', $result, $args);
 
 //	Mac
