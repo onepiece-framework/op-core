@@ -419,16 +419,16 @@ class Env
 	{
 		//	...
 		if( $mime ){
-			/* @var $file null */
-			/* @var $line null */
-			if( headers_sent($file, $line) ){
-				$meta    =  OP::MetaFromPath($file);
-				$message = "Header has already sent. ($meta, $line)";
-				Notice::Set($message);
-			}
-
 			//	...
 			if( self::isHttp() ){
+				/* @var $file null */
+				/* @var $line null */
+				if( headers_sent($file, $line) ){
+					$meta    =  OP::MetaFromPath($file);
+					$message = "Header has already sent. ($meta, $line)";
+					Notice::Set($message);
+				}
+
 				//	...
 				$header = "Content-type: $mime";
 
