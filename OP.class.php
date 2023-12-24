@@ -543,11 +543,12 @@ trait OP_ENV
 	 *
 	 * @created    2022-10-28
 	 * @param      string     $key
+	 * @param      mixed      $default
 	 * @return
 	 */
-	static function Request(?string $key=null)
+	static function Request(?string $key=null, $default=null)
 	{
-		return Env::Request($key);
+		return Env::Request($key, $default);
 	}
 
 	/** Get AppID and Can set AppID only 1st time.
