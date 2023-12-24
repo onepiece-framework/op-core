@@ -29,7 +29,7 @@ trait OP_UNIT
 	 * @created   2022-10-04
 	 * @return
 	 */
-	function Template(string $file_path, array $args=[])
+	static function Template(string $file_path, array $args=[])
 	{
 		//	...
 		if( strpos($file_path, '..') !== false ){
@@ -37,8 +37,11 @@ trait OP_UNIT
 		}
 
 		//	...
+		/*
 		$unit_name = get_class($this);
-		$unit_name = substr($unit_name, 8);
+		*/
+		$unit_name = __CLASS__;
+		$unit_name = substr($unit_name, 8); // OP\UNIT\App --> App
 		$unit_name = strtolower($unit_name);
 		$meta_path = "unit:/{$unit_name}/template/{$file_path}";
 
