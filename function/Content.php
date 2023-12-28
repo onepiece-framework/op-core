@@ -8,6 +8,11 @@
  * @copyright Tomoaki Nagahara All right reserved.
  */
 
+ /** Declare strict
+ *
+ */
+declare(strict_types=1);
+
 /** namespace
  *
  */
@@ -18,7 +23,6 @@ namespace OP;
  * @created   2021-04-21
  * @param     string       $function
  * @param     array        $args
- * @throws   \Exception
  * @return   ?string       $hash of $_content
  */
 function Content(?string $path=null, array $args=[]) : ?string
