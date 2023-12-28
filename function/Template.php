@@ -21,10 +21,9 @@ namespace OP;
  * @copyright Tomoaki Nagahara All right reserved.
  * @param     string       $file
  * @param     array        $args
- * @throws   \Exception    $e
  * @return    NULL|mixed   $result
  */
-function Template(string $file, array $args=[], $throw_exception=true)
+function Template(string $file, array $args=[])
 {
 	//	...
 	$result = null;
@@ -34,17 +33,20 @@ function Template(string $file, array $args=[], $throw_exception=true)
 
 	//	Check if full path.
 	if( $file[0] === '/' ){
-		throw new \Exception("Template function can not specify the full path from root. ($file)");
+		Notice::Set("Template function can not specify the full path from root. ($file)");
+		return;
 	}
 
 	//	Check if parent path include.
 	if( strpos($file, '..') !== false ){
-		throw new \Exception("Does not support specifying parent directory. ($file)");
+		Notice::Set("Does not support specifying parent directory. ($file)");
+		return;
 	}
 
 	//	Check if meta path.
 	if( strpos($file, ':') ){
-		if(!$file = ConvertPath($file, $throw_exception) ){
+		if(!$file = ConvertPath($file, false) ){
+			Notice::Set("This path is could not convert from meta path. ($file)");
 			return;
 		}
 	}
@@ -55,7 +57,8 @@ function Template(string $file, array $args=[], $throw_exception=true)
 	}else if( file_exists($path = RootPath('asset') . 'template/' . $file) ){
 		//	Template path.
 	}else{
-		throw new \Exception("File is not found. ($file)");
+		Notice::Set("This file is not located in the template directory. ($file)");
+		return;
 	}
 
 	//	Check if directory include.
