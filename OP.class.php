@@ -240,6 +240,16 @@ trait OP_OBJECT
         }
         return $_env;
     }
+
+	/** App
+	 *
+	 * @return \OP\UNIT\App
+	 */
+	static function App()
+	{
+		return Unit('App');
+	}
+
 } // OP_OBJECT
 
 /** OP_FUNCTION
