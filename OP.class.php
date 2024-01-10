@@ -348,11 +348,14 @@ trait OP_FUNCTION
 	 *
 	 * @created   2022-10-07
 	 * @param     string     $unit_name
-	 * @return    OP_UNIT
+	 * @return   \OP\Unit
 	 */
-	static function Unit(string $unit_name)
+	static function & Unit(string $unit_name)
 	{
-		return Unit($unit_name);
+		//	...
+		if( $unit_name ){
+			return Unit::Singleton($unit_name);
+		}
 	}
 
 	/** Set / Get meta root path.
