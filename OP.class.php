@@ -422,64 +422,6 @@ trait OP_FUNCTION
 		return self::_Function('CompressPath', $path);
 	}
 
-	/** Sandbox
-	 *
-	 * @deprecated 2023-01-16
-	 * @created   2022-10-10
-	 * @param     string     $path
-	 * @param     mixed      $args
-	 * @return    mixed
-	 */
-	static function Sandbox(string $path, array $args=[])
-	{
-		/*
-		//	...
-		$path = (function($path){
-			$path = OP::MetaPath($path);
-			return $path;
-		})($path);
-		return include($path);
-		*/
-
-		//	Check relative path.
-		if( strpos($path, '../') !== false ){
-			D("Does not support relative path. ($path)");
-			return;
-		}
-
-		//	Current file path.
-		if(!file_exists($path) ){
-			//	...
-			$_path = getcwd() .'/'. $path;
-
-			//	Decode from meta path to full path.
-			if(!$path = OP::MetaPath($path) ){
-				D("This file does not exist. ($_path)");
-				return;
-			}
-		}
-
-		//	...
-		$curd = getcwd();
-
-		//	...
-		chdir( dirname($path) );
-
-		//	...
-		self::SandboxArgs($args);
-
-		//	...
-		$result = (function($_path){
-			return include($_path);
-		})($path);
-
-		//	...
-		chdir($curd);
-
-		//	...
-		return $result;
-	}
-
 	/** Sandbox args
 	 *
 	 * @deprecated 2023-02-01
