@@ -125,11 +125,11 @@ class Unit
 
 	/** Singleton
 	 *
-	 *  Return already instantiated object.
+	 *  Return already instantiated object by reference.
 	 *
 	 * @created  2019-09-18
 	 * @param    string      $name
-	 * @return   IF_UNIT     $unit
+	 * @return  &IF_UNIT     $unit
 	 */
 	static function & Singleton(string $name) : IF_UNIT
 	{
