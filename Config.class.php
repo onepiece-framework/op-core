@@ -143,7 +143,7 @@ class Config
 		chdir($save_directory);
 
 		//	...
-		if( empty(self::$_config[$name]) ){
+		if(!isset(self::$_config[$name]) ){
 			//	...
 			if(!file_exists( RootPath('asset')."config/{$name}.php") ){
 				Notice::Set("This config file does not exists. ($name)");
