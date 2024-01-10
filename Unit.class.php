@@ -48,9 +48,9 @@ class Unit
 	/** Return always new instance.
 	 *
 	 * @param  string $name
-	 * @return object
+	 * @return IF_UNIT
 	 */
-	static function Instantiate(string $name)
+	static function Instantiate(string $name) : IF_UNIT
 	{
 		//	Automatically load unit.
 		if(!self::Load($name)){
