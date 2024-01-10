@@ -125,18 +125,24 @@ class Unit
 
 	/** Singleton
 	 *
-	 * <pre>
-	 * $unit = OP::Unit('unit_name');
-	 * </pre>
+	 *  Return already instantiated object.
 	 *
-	 * @deprecated
 	 * @created  2019-09-18
 	 * @param    string      $name
 	 * @return   IF_UNIT     $unit
 	 */
 	static function & Singleton(string $name) : IF_UNIT
 	{
-		return Unit($name);
+		//	...
+		static $_unit;
+
+		//	...
+		if( empty($_unit[$name]) ){
+			$_unit[$name] = self::Instantiate($name);
+		}
+
+		//	...
+		return $_unit[$name];
 	}
 
 	/** Check if that unit is installed.
