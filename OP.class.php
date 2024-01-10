@@ -356,6 +356,13 @@ trait OP_FUNCTION
 		if( $unit_name ){
 			return Unit::Singleton($unit_name);
 		}
+
+		//	...
+		static $_unit;
+		if(!$_unit ){
+			$_unit = new Unit();
+		}
+		return $_unit;
 	}
 
 	/** Set / Get meta root path.
