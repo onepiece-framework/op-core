@@ -54,7 +54,7 @@ trait OP_OBJECT
 	 */
 	static function & Router()
 	{
-		return Unit('Router');
+		return Unit::Singleton('Router');
 	}
 
 	/** Template is Sandbox.
