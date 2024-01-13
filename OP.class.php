@@ -50,9 +50,9 @@ trait OP_OBJECT
 	/** Router unit.
 	 *
 	 * @created   2022-09-30
-	 * @return    UNIT\Router
+	 * @return   &UNIT\Router
 	 */
-	static function Router()
+	static function & Router()
 	{
 		return Unit('Router');
 	}
