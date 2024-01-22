@@ -28,4 +28,18 @@ namespace OP;
  */
 interface IF_WEBPACK
 {
+	/** Automatically processes of depending on the argument.
+	 *
+	 *  <pre>
+	 *  //  Register files to pack.
+	 *  OP()->WebPack()->Auto('target.js');
+	 *
+	 *  //  Registration of directory.
+	 *  OP()->WebPack()->Auto('./');
+	 *
+	 *  //  Output packed file.
+	 *  OP()->WebPack()->Auto();
+	 *  </pre>
+	 */
+	static public function Auto();
 }
