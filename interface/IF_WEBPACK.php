@@ -42,4 +42,12 @@ interface IF_WEBPACK
 	 *  </pre>
 	 */
 	static public function Auto();
+
+	/** Returns the hash value of the packed files.
+	 *
+	 *  <pre>
+	 *  $hash = OP()->WebPack()->Hash();
+	 *  </pre>
+	 */
+	static public function Hash();
 }
