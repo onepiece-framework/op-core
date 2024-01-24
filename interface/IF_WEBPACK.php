@@ -32,7 +32,7 @@ interface IF_WEBPACK
 	 *
 	 *  <pre>
 	 *  //  Register files to pack.
-	 *  OP()->WebPack()->Auto('target.js');
+	 *  OP()->WebPack()->Auto('index.js', 'index.css');
 	 *
 	 *  //  Registration of directory.
 	 *  OP()->WebPack()->Auto('./');
