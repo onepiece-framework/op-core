@@ -247,7 +247,7 @@ trait OP_OBJECT
 	 */
 	static function & App()
 	{
-		return Unit('App');
+		return Unit::Singleton('App');
 	}
 
 } // OP_OBJECT
