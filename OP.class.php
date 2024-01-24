@@ -79,7 +79,7 @@ trait OP_OBJECT
 		}
 
 		//	...
-		return Unit('Template');
+		return Unit::Singleton('Template');
 	}
 
 	/** Layout unit.
