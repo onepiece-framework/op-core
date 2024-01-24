@@ -240,6 +240,15 @@ trait OP_OBJECT
         }
         return $_env;
     }
+
+	/** App
+	 *
+	 * @return \OP\UNIT\App
+	 */
+	static function & App()
+	{
+		return Unit::Singleton('App');
+	}
 } // OP_OBJECT
 
 /** OP_FUNCTION
