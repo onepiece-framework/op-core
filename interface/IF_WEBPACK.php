@@ -50,5 +50,5 @@ interface IF_WEBPACK
 	 *  echo "<script src='/js/?hash={$hash}'></script>";
 	 *  </pre>
 	 */
-	static public function Hash();
+	static public function Hash(string $extension) : string;
 }
