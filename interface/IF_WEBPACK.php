@@ -47,6 +47,7 @@ interface IF_WEBPACK
 	 *
 	 *  <pre>
 	 *  $hash = OP()->WebPack()->Hash();
+	 *  echo "<script src='/js/?hash={$hash}'></script>";
 	 *  </pre>
 	 */
 	static public function Hash();
