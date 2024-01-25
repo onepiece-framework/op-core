@@ -64,7 +64,7 @@ function Template(string $file_name, array $args=[])
 	}
 
 	//	Check file exists.
-	if( file_exists($path = realpath($file)) ){
+	if( file_exists($path = $file /* (string)realpath($file)) */) ){
 		//	Relative path.
 	}else if( file_exists($path = RootPath('asset') . 'template/' . $file) ){
 		//	Template path.
