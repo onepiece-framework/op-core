@@ -125,5 +125,5 @@ function Template(string $file_name, array $args=[])
 	}
 
 	//	Return result.
-	return ($result === 1) ? null : $result;
+	return ($result === 1) ? '' : $result;
 }
