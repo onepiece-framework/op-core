@@ -152,7 +152,7 @@ class MetaPath
 	 * @param     string     $path
 	 * @return    string|boolean|null
 	 */
-	static function Decode(string $path)
+	static function Decode(string $path, &$error_message='')
 	{
 		//	...
 		require_once(__DIR__.'/function/ConvertPath.php');
@@ -186,6 +186,7 @@ class MetaPath
 		//	...
 		return $root . substr($path, $len);
 		*/
+		return ConvertPath($path, false, false, $error_message);
 	}
 
 	/** Convert to Document root URL from meta path and full path.
