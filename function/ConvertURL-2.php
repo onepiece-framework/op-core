@@ -78,8 +78,9 @@ function ConvertURL($url)
 	};
 
 	//	Convert to full path.
-	if(!$full_path = ConvertPath($url, false, false) ){
-		OP::Notice("ConvertPath() is return false.");
+	/* @var $error_message string */
+	if(!$full_path = ConvertPath($url, false, false, $error_message) ){
+		OP::Notice("ConvertPath() is return false. ($error_message)");
 		return;
 	}
 
