@@ -68,6 +68,9 @@ function Template(string $file_name, array $args=[])
 		//	Relative path.
 	}else if( file_exists($path = RootPath('asset') . 'template/' . $file) ){
 		//	Template path.
+	}else if( strpos($file, ':/') ){
+		Notice::Set("Please check the file path. Is this a meta path? ($file_name)");
+		return;
 	}else{
 		Notice::Set("This file is not located in the template directory. ($file)");
 		return;
