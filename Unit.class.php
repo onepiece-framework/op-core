@@ -120,7 +120,12 @@ class Unit
 		};
 
 		//	...
-		return require_once($path);
+		if(!$io = require_once($path) ){
+			OP()->Notice("include() function returned false. ($path)\n");
+		}
+
+		//	...
+		return $io;
 	}
 
 	/** Singleton
