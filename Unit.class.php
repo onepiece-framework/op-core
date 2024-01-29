@@ -54,7 +54,7 @@ class Unit
 	{
 		//	Automatically load unit.
 		if(!self::Load($name)){
-			return false;
+			throw new \Exception("This UNIT could not be loaded. ($name)");
 		}
 
 		//	Generate name space path.
