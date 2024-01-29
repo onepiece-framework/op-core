@@ -173,6 +173,7 @@ register_shutdown_function(function(){
 		Unit('Notice')->Auto();
 
 	}catch( \Exception $e ){
+		/*
 		//	...
 		html($e->getMessage());
 
@@ -189,5 +190,9 @@ register_shutdown_function(function(){
 				}
 			}
 		};
+		*/
+
+		//	...
+		OP()->Notice($e);
 	};
 });
