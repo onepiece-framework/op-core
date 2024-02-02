@@ -78,7 +78,7 @@ class Env
 	 *
 	 * @return boolean
 	 */
-	static function isLocalhost()
+	static function isLocalhost() : bool
 	{
 		//	Keep calced value.
 		static $_is_localhost;
