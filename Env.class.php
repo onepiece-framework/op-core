@@ -96,13 +96,8 @@ class Env
 	 *
 	 * @return boolean
 	 */
-	static function isHttp()
+	static function isHttp() : bool
 	{
-		/*
-		return isset($_SERVER['REDIRECT_STATUS']);
-		*/
-
-		//	...
 		return isset($_SERVER['SERVER_NAME']);
 	}
 
