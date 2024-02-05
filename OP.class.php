@@ -87,7 +87,7 @@ trait OP_OBJECT
 	 * @created   2022-10-04
 	 * @return    UNIT\Layout
 	 */
-	static function & Layout($value=null)
+	static function /* & */ Layout($value=null)
 	{
 		//	...
 		if( $value !== null ){
