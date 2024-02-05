@@ -43,10 +43,22 @@ function CompressPath($path)
 	//	real --> git
 	$path = str_replace(RootPath('real'), RootPath('git'), $path);
 
+	/*
+	//	For xdebug break point.
+	if( strpos($path, '/module/develop/index.php') ){
+		echo '';
+	}
+	*/
+
 	//	...
 	foreach( array_reverse(RootPath()) as $meta => $root ){
-		//	...
-		$pos = strpos($path, $root);
+
+		//	Registered path.
+		if(!$pos  = strpos($path, $root) ){
+			//	Convert to real path.
+			$root = realpath($root).'/';
+			$pos  = strpos($path, $root);
+		}
 
 		//	...
 		if( $pos === 0 ){
