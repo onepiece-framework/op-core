@@ -149,6 +149,7 @@ class MetaPath
 	{
 		//	...
 		require_once(__DIR__.'/function/ConvertPath.php');
+		return ConvertPath($path, false, false, $error_message);
 		return ConvertPath($path, false);
 
 		/*
@@ -179,7 +180,6 @@ class MetaPath
 		//	...
 		return $root . substr($path, $len);
 		*/
-		return ConvertPath($path, false, false, $error_message);
 	}
 
 	/** Convert to Document root URL from meta path and full path.
