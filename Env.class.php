@@ -248,6 +248,12 @@ class Env
 
 	/** Get/Set Language.
 	 *
+	 * <pre>
+	 * //  Saved selected locale by Cookie.
+	 * OP()->Env()->Locale();
+	 * </pre>
+	 *
+	 * @deprecated 2024-02-09
 	 * @created 2019-04-27
 	 * @param   string     $lang
 	 * @return  string     $lang
