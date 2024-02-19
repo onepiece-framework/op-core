@@ -1,9 +1,18 @@
 AppID
 ===
 
- AppID is Unique Application ID.
+ AppID is Unique App ID.
  It is used for Session, Cookie, Crypt, etc.
- An Application running on the same physical server is need to split by AppID.
+ AppID is split at each App running on the same physical server.
+ AppID is set by `asset:/config/app_id.php`.
+
+# Usage
+
+```php
+$app_id = OP()->Env()->AppID();
+```
+
+# Conceptual code
 
 ```php
 OP::AppID(){
