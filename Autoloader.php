@@ -29,7 +29,9 @@ spl_autoload_register( function($class_name)
 		if( 2 === mb_substr_count($class_name, '\\', 'utf-8') ){
 			$pos  = strrpos($class_name, '\\');
 			$name = substr($class_name, $pos+1);
-			OP\Unit::Load($name);
+			if(!OP\Unit::Load($name) ){
+				return;
+			}
 		};
 	};
 
