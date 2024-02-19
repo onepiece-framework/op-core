@@ -84,6 +84,18 @@ class Config
 		//	Include closure function.
 		$include = function($path){ return include($path); };
 
+		//	Each layout default config.
+		if( $name === Layout() ){
+			//	Generate file path.
+			$path = $_asset_root . "layout/{$name}/config.php";
+
+			//	Check exists.
+			if( file_exists($path) ){
+				//	Load the config file that each unit has by default.
+				self::$_config[$name] = $include($path);
+			}
+		}
+
 		//	Ignore "unit" config. --> Got to infinity loop.
 		if( $name !== 'unit' ){
 
