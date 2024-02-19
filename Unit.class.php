@@ -108,7 +108,8 @@ class Unit
 
 		//	...
 		if(!$asset_root = RootPath('asset') ){
-			throw new \Exception("The asset:/ is empty.");
+			OP::Notice("The asset:/ is empty.");
+			return false;
 		}
 
 		//	...
@@ -116,12 +117,14 @@ class Unit
 
 		//	...
 		if(!file_exists($path) ){
-			throw new Exception("Does not exists index.php file. ($path)");
+			OP::Notice("Does not exists index.php file. ($path)");
+			return false;
 		};
 
 		//	...
 		if(!$io = require_once($path) ){
-			OP()->Notice("include() function returned false. ($path)\n");
+			OP::Notice("include() function returned false. ($path)\n");
+			return false;
 		}
 
 		//	...
