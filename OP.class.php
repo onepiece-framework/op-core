@@ -569,6 +569,7 @@ trait OP_ENV
 
     /** Get / Set MIME
      *
+     * @deprecated  2024-02-09
      * @created     2023-04-15
      * @param      ?string      $mime
      * @return      string
