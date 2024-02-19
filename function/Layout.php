@@ -44,5 +44,5 @@ function Layout($value=null){
 	$config = Config::Get('layout');
 
 	//	...
-	return $config['execute'] ? $config['name'] : false;
+	return ($config['execute'] ?? null) ? $config['name'] : false;
 }
