@@ -250,6 +250,15 @@ trait OP_OBJECT
 		return Unit::Singleton('App');
 	}
 
+	/** Api
+	 *
+	 * @return \OP\UNIT\Api
+	 */
+	static function & Api() : IF_API
+	{
+		return Unit::Singleton('Api');
+	}
+
 	/** WebPack
 	 *
 	 * @return IF_WEBPACK
