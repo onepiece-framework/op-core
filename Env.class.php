@@ -385,6 +385,7 @@ class Env
 
 	/** Get mime from extension.
 	 *
+	 * @deprecated 2024-02-09
 	 * @created   2019-12-16
 	 * @param     string       $ext
 	 * @return    string       $mime
