@@ -24,8 +24,7 @@ namespace OP;
  */
 use function OP\Encode;
 
-/**
- * Env
+/** Env
  *
  * @created   2016-06-09
  * @version   1.0
