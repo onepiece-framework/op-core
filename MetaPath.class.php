@@ -33,13 +33,6 @@ class MetaPath
 	 */
 	use OP_CORE, OP_CI;
 
-	/** Meta root path list.
-	 *
-	 * @created   2022-06-11
-	 * @var array
-	 */
-	static $_ROOTS = [];
-
 	/** Set meta root path.
 	 *
 	 * @created   2022-06-11
