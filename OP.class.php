@@ -455,6 +455,11 @@ trait OP_FUNCTION
 
 	/** DebugBacktrace array is convert to string.
 	 *
+	 * <pre>
+	 * DebugBacktrace::Numerator($trace);
+	 * </pre>
+	 *
+	 * @deprecated 2024-02-09
 	 * @created    2022-10-31
 	 * @param      array
 	 * @return     string
