@@ -151,6 +151,9 @@ class Env
 	 */
 	static function WebServer():string
 	{
+		return PHP_SAPI;
+
+		/*
 		//	...
 		static $_software;
 		if( $_software ){
@@ -169,6 +172,7 @@ class Env
 
 		//	...
 		return $_software;
+		*/
 	}
 
 	/** Get environment value.
