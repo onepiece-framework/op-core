@@ -102,7 +102,7 @@ class Unit
 	static function Load(string $name)
 	{
 		//	...
-		if( class_exists("\OP\UNIT\{$name}", false) ){
+		if( class_exists("\OP\UNIT\\{$name}", false) ){
 			return true;
 		}
 
