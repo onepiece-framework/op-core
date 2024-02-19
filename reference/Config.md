@@ -3,9 +3,9 @@ Config
 
 # Directory
 
-Files placed in `asset:/config/*.php` will be loaded automatically.
-Dot files is not load.
-Underbar files is private file.
+ Files placed in `asset:/config/*.php` will be loaded automatically.
+ Dot files is not load.
+ Underbar files is private file.
 
 # Usage
 
@@ -25,7 +25,15 @@ Set the layout name to use.
 OP()->Config('Layout', ['name'=>'develop']);
 ```
 
-# Structure
+# Technical information
+
+## Load order
+
+ 1. Local default config: Each unit config.php
+ 1. App default config: asset:/config/*.php
+ 1. Customize config: asset:/config/_*.php
+
+## Structure
 
 ```php
 $config = OP()->Config(string $name, ?array $config=null) : array {
