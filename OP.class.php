@@ -245,7 +245,7 @@ trait OP_OBJECT
 	 *
 	 * @return \OP\UNIT\App
 	 */
-	static function & App()
+	static function & App() : IF_APP
 	{
 		return Unit::Singleton('App');
 	}
