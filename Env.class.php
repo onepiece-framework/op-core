@@ -543,11 +543,8 @@ class Env
 
 	/** Get request value.
 	 *
-	 * <pre>
-	 * Use to OP::Request().
-	 * </pre>
+	 *  Handles automatically GET, POST, JSON and CLI arguments.
 	 *
-	 * @deprecated 2022-10-28 <- Why? <- Move to OP::Request()
 	 * @created   2020-05-04
 	 * @param     string       $_key
 	 * @param     mixed        $_default
