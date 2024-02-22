@@ -22,7 +22,7 @@ namespace OP;
 $config = [];
 
 //	...
-$app_id = 'self-check';
+$app_id = 'CI';
 
 //	...
 $config['_Init'][]  = ['result' => 'ci', 'args' => 'CI'];
