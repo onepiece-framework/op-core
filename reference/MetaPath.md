@@ -5,8 +5,34 @@
 
 # Usage
 
+  Register Meta-Path by Meta-Label.
+
 ```php
-$path = OP()->MetaPath('app:/index.phtml');
+OP()->MetaPath()->Set('test', __DIR__);
+```
+
+  Get registerd Meta-Path by Meta-Label.
+
+```php
+$real_path = OP()->MetaPath()->Get('test');
+```
+
+  Convert from Meta-Path to real path.
+
+```php
+$path = OP()->MetaPath('test:/foo/bar');
+```
+
+  In case of use to URL.
+
+```php
+$ = OP()->MetaPath('test:/foo/bar', true);
+```
+
+  Convert to Meta-Path from real path.
+
+```php
+$meta_path = OP()->MetaPath(__DIR__);
 ```
 
  To "Template" function can pass meta path.

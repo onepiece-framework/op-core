@@ -52,6 +52,7 @@ class MetaPath
 		}
 		*/
 
+		/*
 		//	Deny upper directory specify.
 		if( strpos($path, '../') !== false ){
 			throw new \Exception("Deny upper directory specify.");
@@ -68,6 +69,7 @@ class MetaPath
 
 		//	Succeeded.
 		return self::$_ROOTS[$meta];
+		*/
 	}
 
 	/** Get path by meta label.
@@ -82,8 +84,10 @@ class MetaPath
 		require_once(__DIR__.'/function/RootPath.php');
 		return RootPath($meta);
 
+		/*
 		//	...
 		return self::$_ROOTS[$meta] ?? null;
+		*/
 	}
 
 	/** Get meta root path list.
@@ -97,8 +101,10 @@ class MetaPath
 		require_once(__DIR__.'/function/RootPath.php');
 		return RootPath();
 
+		/*
 		//	...
 		return self::$_ROOTS;
+		*/
 	}
 
 	/** Convert to the meta-path from the full-path.
@@ -113,6 +119,7 @@ class MetaPath
 		require_once(__DIR__.'/function/CompressPath.php');
 		return CompressPath($path);
 
+		/*
 		//	Replace duplicate slash.
 		$path = preg_replace('|//|', '/', $path);
 
@@ -137,6 +144,7 @@ class MetaPath
 
 		//	...
 		return $label . ':/' . trim($trim,'/') . is_dir($path) ? '/':'';
+		*/
 	}
 
 	/** Restore to the full-path from the meta-path.
@@ -150,7 +158,9 @@ class MetaPath
 		//	...
 		require_once(__DIR__.'/function/ConvertPath.php');
 		return ConvertPath($path, false, false, $error_message);
+		/*
 		return ConvertPath($path, false);
+		*/
 
 		/*
 		//	Replace duplicate slash.
