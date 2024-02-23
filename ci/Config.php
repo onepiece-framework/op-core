@@ -43,7 +43,8 @@ $config['Set'][]    = [
 ];
 
 //	...
-$ci = OP::Unit('CI');
+//$ci = OP::Unit('CI');
+$ci = new \OP\UNIT\CI;
 
 //	...
 $key = md5(__FILE__);
