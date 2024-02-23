@@ -1,6 +1,9 @@
 <?php
 /** op-core:/trait/OP_CI.php
  *
+ *  The OP Gang class must always "trait" this file.
+ *  Otherwise, Definitely will be done flicked by "CI".
+ *
  * @created   2022-10-12
  * @version   1.0
  * @package   op-core
