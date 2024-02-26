@@ -73,7 +73,9 @@ class DebugBacktrace
 
         //  ...
         if( $file ){
-            $file = CompressPath($file);
+            if( $temp = CompressPath($file) ){
+                $file = $temp;
+            }
         }
         $file = str_pad($file, self::$_file_path_padding, ' ', STR_PAD_RIGHT);
         if( self::$_file_path_padding < $len = strlen($file) ){
