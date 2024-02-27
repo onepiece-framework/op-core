@@ -186,6 +186,7 @@ class Env
 		//	...
 		switch( $key ){
 			case _OP_APP_ID_:
+				Notice("This function was deprecated.");
 				return self::AppID();
 
 			case self::_ADMIN_IP_:
@@ -500,21 +501,21 @@ class Env
 	/** Get/Set App ID.
 	 *
 	 * @created  2019-09-13
+	 * @rebuild  2024-02-27
 	 * @param    string      $app_id
 	 * @return   string      $app_id
 	 */
 	static function AppID($app_id=null)
 	{
+		/** 2024-02-27
 	//	There can not initialize AppID.
 	//	return OP::Sandbox('asset:/config/app_id.php')['app_id'];
 	//	return Config::Get( strtolower(_OP_APP_ID_) )['app_id'];
 
 		//	Can initialize AppID only 1st call.
 		if( $app_id ){
-			//	...
-			/* Need. CI is in use.
-			Notice("Overwrite AppID is will deprecated.");
-			*/
+			// Need. CI is in use.
+		//	Notice("Overwrite AppID is will deprecated.");
 
 			//	...
 			if( isset(self::$_env[_OP_APP_ID_]) ){
@@ -539,6 +540,30 @@ class Env
 
 		//	...
 		return self::$_env[_OP_APP_ID_] ?? null;
+		*/
+
+		//	static
+		static $_AppID;
+
+		//	Setup AppID if passed.
+		if( $app_id ){
+			//	Already set.
+			if( $_AppID ){
+				throw new \Exception("AppID is already set. ($_AppID)");
+			}
+
+			//	Set AppID.
+			$_AppID = $app_id;
+		}
+
+		//	Do initialize if empty.
+		if( empty($_AppID) ){
+			$config  = Template("asset:/config/app_id.php");
+			$_AppID = $config['app_id'] ?? substr(md5(__FILE__), 0, 10);
+		}
+
+		//	...
+		return $_AppID;
 	}
 
 	/** Get request value.
