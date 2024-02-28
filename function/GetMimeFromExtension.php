@@ -21,16 +21,24 @@ namespace OP;
 function GetMimeFromExtension(string $ext):string
 {
 	//	...
-	switch( $ext ){
+	switch($ext = strtolower($ext)){
+		case 'php':
+		case 'html':
+		case 'phtml':
+			$mime = 'text/html';
+			break;
+
 		case 'js':
 			$mime = 'text/javascript';
 			break;
+
 		case 'css':
 			$mime = 'text/css';
 			break;
+
 		default:
-			$mime = '';
-	};
+			$mime = 'text/plain';
+	}
 
 	//	...
 	return $mime;
