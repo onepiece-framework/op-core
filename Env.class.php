@@ -393,6 +393,7 @@ class Env
 	 */
 	static function Ext(string $ext)
 	{
+		/*
 		//	...
 		switch($ext = strtolower($ext)){
 			case 'php':
@@ -415,6 +416,11 @@ class Env
 
 		//	...
 		return $mime;
+		*/
+
+		//	...
+		require_once(__DIR__.'/function/GetMimeFromExtension.php');
+		return GetMimeFromExtension($ext);
 	}
 
 	/** Get/Set MIME
