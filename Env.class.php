@@ -308,6 +308,7 @@ class Env
 
 	/** Get/Set Locale.
 	 *
+	 * @deprecated 2024-02-29
 	 * @created 2019-04-27
 	 * @param   string     $locale
 	 * @return  string     $locale
