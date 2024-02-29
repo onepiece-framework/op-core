@@ -51,38 +51,38 @@ $result = true;
 $args   = null;
 $ci->Set('isCI', $result, $args);
 
-//	Get(Config)
-$result = [];
-$args   = 'env';
-$ci->Set('Get', $result, $args);
-
-//	Get(Config)
+//	Get(hoge)
 $args   = 'hoge';
 $result = 'Notice: This config file does not exists. (hoge)';
 $ci->Set('Get', $result, $args);
 
-//	Set(Config)
+//	Get(env)
+$result = file_exists( OP::MetaPath('asset:/config/env.php') ) ? []: 'Notice: This config file does not exists. (env)';
+$args   = 'env';
+$ci->Set('Get', $result, $args);
+
+//	Set(env, ['test'=>true])
 $result = ['test'=>true];
 $args   = ['env',['test'=>true]];
 $ci->Set('Set', $result, $args);
 
 //	Lang is deprecated --> Language
-$result = 'en';
+$result = file_exists( OP::MetaPath('asset:/config/locale.php') ) ? 'en': 'Notice: This config file does not exists. (locale)';
 $args   = null;
 $ci->Set('Lang', $result, $args);
 
 //	Language
-$result = 'en';
+$result = null;
 $args   = null;
 $ci->Set('Language', $result, $args);
 
 //	Country
-$result = 'us';
+$result = null;
 $args   = null;
 $ci->Set('Country', $result, $args);
 
 //	Locale
-$result = 'en:us';
+$result = null;
 $args   = null;
 $ci->Set('Locale', $result, $args);
 
@@ -131,14 +131,16 @@ $args   = null;
 $result = $timestamp;
 $ci->Set('Timestamp', $result, $args);
 
+/*
 //	AppID
 $result = 'self-check';
 $args   = 'self-check';
 $ci->Set('AppID', $result, $args);
+*/
 
 //	AppID - Duplicate
-$result = 'Exception: AppID is already set. (self-check)';
-$args   = 'self-check2';
+$result = 'Exception: AppID is already set. (CI)';
+$args   = 'self-check';
 $ci->Set('AppID', $result, $args);
 
 //	Request
@@ -167,7 +169,7 @@ $args   = null;
 $ci->Set('AdminMail', $result, $args);
 
 //	WebServer
-$result = '';
+$result = 'cli';
 $args   = null;
 $ci->Set('WebServer', $result, $args);
 
