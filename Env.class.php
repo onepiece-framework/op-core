@@ -340,7 +340,14 @@ class Env
 		}
 
 		//	...
-		return "{$language}{$separate}{$country}";
+		if( $language and $country ){
+			$result = "{$language}{$separate}{$country}";
+		}else{
+			$result = null;
+		}
+
+		//	...
+		return $result;
 
 		/*
 		//	...
