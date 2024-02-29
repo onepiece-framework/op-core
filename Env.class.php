@@ -281,6 +281,7 @@ class Env
 
 	/** Get/Set Country.
 	 *
+	 * @deprecated 2024-02-29
 	 * @created 2019-04-29
 	 * @param   string     $country
 	 * @return  string     $country
