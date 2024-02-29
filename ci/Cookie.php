@@ -18,17 +18,17 @@ declare(strict_types=1);
  */
 namespace OP;
 
-//	...
-$ci = OP::Unit('CI');
+/* @var $ci \OP\UNIT\CI */
+$ci = new \OP\UNIT\CI;
 
 //	Get
 $result = 'Notice: Cookie can not be used in the shell environment.';
-$args   =  null;
+$args   = null;
 $ci->Set('Get', $result, $args);
 
 //	Set
 $result = 'Notice: Cookie can not be used in the shell environment.';
-$args   = ['count','1'];
+$args   = ['key','value'];
 $ci->Set('Set', $result, $args);
 
 //	...
