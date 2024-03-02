@@ -140,14 +140,18 @@ class Config
 					 */
 					self::$_config[$name] = isset(self::$_config[$name]) ? array_replace_recursive(self::$_config[$name], $config) : $config;
 
+					/*
 					//	Escape.
 					continue;
+					*/
 				}
 
+				/*
 				//	Check if under score file. --> _config.php
 				if( $file_name[0] === '_'  ){
-					continue;
+					continue; // <-- Why? TODO:
 				}
+				*/
 			}
 		}
 
