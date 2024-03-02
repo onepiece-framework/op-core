@@ -85,6 +85,7 @@ class Config
 		//	Include closure function.
 		$include = function($path){ return include($path); };
 
+		/*
 		//	Each layout default config.
 		if( $name === Unit::Singleton('Layout')->Name() ){
 			//	Generate file path.
@@ -96,6 +97,7 @@ class Config
 				$_config = $include($path);
 			}
 		}
+		*/
 
 		//	Ignore "unit" config. --> Got to infinity loop.
 		if( $name !== 'unit' ){
