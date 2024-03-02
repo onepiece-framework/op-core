@@ -85,7 +85,7 @@ class Config
 		$include = function($path){ return include($path); };
 
 		//	Each layout default config.
-		if( $name === Layout() ){
+		if( $name === Unit::Singleton('Layout')->Name() ){
 			//	Generate file path.
 			$path = $_asset_root . "layout/{$name}/config.php";
 
