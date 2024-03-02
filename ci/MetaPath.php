@@ -69,13 +69,15 @@ $result = [
 	'unit'     => RootPath('unit'),
 	'layout'   => RootPath('layout'),
 	'template' => RootPath('template'),
+	'webpack'  => RootPath('webpack'),
+	'module'   => RootPath('module'),
 	'etc'      => '/etc/',
 ];
 $ci->Set('List', $result, $args);
 
 //	Encode
-$args   = '/etc/';
-$result = 'etc:/';
+$args   = __DIR__;
+$result = 'core:/ci/';
 $ci->Set('Encode', $result, $args);
 
 //	Encode - Not registered.
@@ -90,7 +92,7 @@ $ci->Set('Decode', $result, $args);
 
 //	Decode - Current directory
 $args   = './README.md';
-$result = substr(__DIR__, 0, -2).$args;
+$result = "Exception: Current related path cannot be specified. ({$args})";
 $ci->Set('Decode', $result, $args);
 
 //	Decode - Upper directory
@@ -100,7 +102,7 @@ $ci->Set('Decode', $result, $args);
 
 //	Decode - Relative by current directory.
 $args   = 'not_exist.php';
-$result = '';
+$result = "Exception: Does not exists meta label. ({$args})";
 $ci->Set('Decode', $result, $args);
 
 //	Decode - has query string
@@ -110,7 +112,7 @@ $ci->Set('Decode', $result, $args);
 
 //	Decode - Does not exists
 $args   = 'etc:/foo/bar';
-$result = '';
+$result = '/etc/foo/bar';
 $ci->Set('Decode', $result, $args);
 
 //	URL
