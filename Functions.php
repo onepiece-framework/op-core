@@ -215,6 +215,7 @@ function Json($json, $attr)
  * Html('message', 'span #id .class');
  * </pre>
  *
+ * @deprecated 2024-03-02
  * @param	 string		 $string
  * @param	 string		 $config
  * @param	 boolean	 $escape tag and quote
