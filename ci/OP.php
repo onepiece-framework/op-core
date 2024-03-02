@@ -21,6 +21,21 @@ namespace OP;
 //	...
 $ci = OP::Unit('CI');
 
+//	App
+$args   = null;
+$result = 'OP\UNIT\App';
+$ci->Set('App', $result, $args);
+
+//	Api
+$args   = null;
+$result = 'OP\UNIT\Api';
+$ci->Set('Api', $result, $args);
+
+//	WebPack
+$args   = null;
+$result = 'OP\UNIT\WebPack';
+$ci->Set('WebPack', $result, $args);
+
 //	Router
 $args   = null;
 $result = 'OP\UNIT\Router';
@@ -66,26 +81,30 @@ $args   = 'Dump';
 $result = 'OP\UNIT\Dump';
 $ci->Set('Unit', $result, $args);
 
+/*
 //  ...
 $git_path  = RootPath('git');
 $real_path = RootPath('real');
 $core_path = dirname(__DIR__).'/';
 
 if( strpos($core_path, $real_path) === 0 ){
-    $pos = strlen($real_path) - strlen($core_path);
+	$pos = strlen($real_path) - strlen($core_path);
     $tmp = substr($core_path, $pos);
     $str = $git_path . $tmp;
 }
+*/
 
 //	MetaRoot
 $args   = 'op';
 $result = OP()->ConvertAlias( dirname(__DIR__) ) . '/';
 $ci->Set('MetaRoot', $result, $args);
 
+/*
 //	MetaRoot
 $args   = 'core';
-$result = OP()->ConvertAlias( dirname(__DIR__) ) . '/';
+$result = OP()->ConvertAlias( __DIR__ );
 $ci->Set('MetaRoot', $result, $args);
+*/
 
 //	MetaToURL
 $args   = 'app:/';
@@ -94,7 +113,7 @@ $ci->Set('MetaToURL', $result, $args);
 
 //	MetaToPath
 $args   = 'op:/';
-$result = $str; // dirname(__DIR__).'/';
+$result = dirname(__DIR__).'/';
 $ci->Set('MetaToPath', $result, $args);
 
 //	MetaFromPath
@@ -127,7 +146,7 @@ $ci->Set('ParseURL', $result, $args);
 
 //	DebugBacktraceToString
 $args   = debug_backtrace(DEBUG_BACKTRACE_PROVIDE_OBJECT, 1);
-$result = 'core:/function/Template.php  95 - include()';
+$result = 'core:/function/Template.php 115 - include()'."\n";
 $ci->Set('DebugBacktraceToString', $result, $args);
 
 //	GetTemplate
@@ -142,7 +161,7 @@ $ci->Set('Request', $result, $args);
 
 //	AppID
 $args   = null;
-$result = 'self-check';
+$result = 'CI';
 $ci->Set('AppID', $result, $args);
 
 //	Time
@@ -155,6 +174,7 @@ $args   = null;
 $result = date('Y-m-d H:i:s', \OP\Time());
 $ci->Set('Timestamp', $result, $args);
 
+/* Api::_Init() is set to Env::MIME('text/json');
 //	MIME
 $args   = null;
 $result = 'text/plain';
@@ -164,6 +184,7 @@ $ci->Set('MIME', $result, $args);
 $args   = 'text/html';
 $result = 'text/html';
 $ci->Set('MIME', $result, $args);
+*/
 
 //	MIME - Replace
 $args   = 'text/plain';
