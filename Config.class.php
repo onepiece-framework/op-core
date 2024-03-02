@@ -80,6 +80,7 @@ class Config
 
 		//	Initialize to avoid an infinite loop.
 		self::$_config[$name] = [];
+		$_config = null;
 
 		//	Include closure function.
 		$include = function($path){ return include($path); };
@@ -92,7 +93,7 @@ class Config
 			//	Check exists.
 			if( file_exists($path) ){
 				//	Load the config file that each unit has by default.
-				self::$_config[$name] = $include($path);
+				$_config = $include($path);
 			}
 		}
 
@@ -105,7 +106,7 @@ class Config
 			//	Check exists.
 			if( file_exists($path) ){
 				//	Load the config file that each unit has by default.
-				self::$_config[$name] = $include($path);
+				$_config = $include($path);
 			}
 		}
 
@@ -138,7 +139,7 @@ class Config
 					 *  array_merge_recursive() is number index is renumbering.
 					 *
 					 */
-					self::$_config[$name] = isset(self::$_config[$name]) ? array_replace_recursive(self::$_config[$name], $config) : $config;
+					$_config = isset($_config) ? array_replace_recursive($_config, $config) : $config;
 
 					/*
 					//	Escape.
@@ -159,12 +160,18 @@ class Config
 		chdir($save_directory);
 
 		//	...
-		if(!isset(self::$_config[$name]) ){
+		if( $_config === null ){
+			//	...
+			$_config = [];
+
 			//	...
 			if(!file_exists( RootPath('asset')."config/{$name}.php") ){
 				Notice::Set("This config file does not exists. ($name)");
 			}
 		}
+
+		//	...
+		self::$_config[$name] = $_config;
 	}
 
 	/** Get
