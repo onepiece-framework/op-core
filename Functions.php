@@ -136,6 +136,7 @@ function ifset(&$check, $alternate=null)
 
 /** Parse html tag attribute from string to array.
  *
+ * @deprecated 2024-03-02
  * @param  string $attr
  * @return array  $result
  */
