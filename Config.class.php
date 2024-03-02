@@ -170,6 +170,12 @@ class Config
 	static function Get($name)
 	{
 		//	...
+		if( $name === _OP_APP_ID_ ){
+		//	Notice('Set AppID is use Env::AppID().');
+			return Env::AppID();
+		}
+
+		//	...
 		$name = self::_Init($name);
 
 		//	...
