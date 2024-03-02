@@ -187,6 +187,12 @@ class Config
 	static function Set($name, $config)
 	{
 		//	...
+		if( $name === _OP_APP_ID_ ){
+		//	Notice('Set AppID is use Env::AppID().');
+			return Env::AppID();
+		}
+
+		//	...
 		$name = self::_Init($name);
 
 		/** About array merge.
