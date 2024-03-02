@@ -22,6 +22,10 @@ define('_OP_NAME_SPACE_', 'ONEPIECE', false);
 
 /** App ID
  *
+ *  This define is use only Config::Get(_OP_APP_ID_).
+ *  If you set or get AppID, Use Env::AppID().
+ *
+ * @deprecated 2024-03-02
  * @var string
  */
 define('_OP_APP_ID_', 'APP_ID', false);
