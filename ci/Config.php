@@ -29,7 +29,7 @@ $config['_Init'][]  = ['result' => 'ci', 'args' => 'CI'];
 $config['_Fetch'][] = ['result' => null, 'args' => 'ci'];
 $config['Get'][]    = [
 	'args'   => _OP_APP_ID_,
-	'result' => 'CI',
+	'result' => $app_id,
 	/*
 	'result' => [
 		'app_id' => $app_id,
@@ -39,7 +39,7 @@ $config['Get'][]    = [
 $config['Set'][]    = [
 	'args'   => ['ci', ['test'=>true]],
 	'result' => [
-		'app_id' => 'CI',
+		'app_id' => $app_id,
 		'test'   => true,
 	],
 ];
