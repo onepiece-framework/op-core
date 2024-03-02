@@ -188,6 +188,7 @@ function Attribute(string $attr)
 
 /** Output secure JSON.
  *
+ * @deprecated 2024-03-02
  * @param	 array	 $json
  * @param	 string	 $attr
  */
