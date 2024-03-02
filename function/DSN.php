@@ -15,6 +15,7 @@ namespace OP;
 
 /** DSN
  *
+ * @deprecated 2024-03-02
  * @created   2020-08-24
  * @param     string|array
  * @return    string|array
