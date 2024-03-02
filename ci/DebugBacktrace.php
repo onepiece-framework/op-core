@@ -32,7 +32,7 @@ $backtrace  = [
 ];
 $backtraces[] = $backtrace;
 $args   = [$backtraces];
-$result = 'core:/ci/DebugBacktrace.php  27 - OP\UNIT\CI->Auto("CI",0,1,true,false,null,0.1,-1,OP\OP)';
+$result = 'core:/ci/DebugBacktrace.php  27 - OP\UNIT\CI->Auto("CI",0,1,true,false,null,0.1,-1,OP\OP)'."\n";
 $ci->Set('Auto', $result, $args);
 
 //  Numerator
