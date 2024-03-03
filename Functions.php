@@ -38,37 +38,7 @@ require(__DIR__.'/function/GetTemplate.php');
 require(__DIR__.'/function/Content.php');
 require(__DIR__.'/function/Charset.php');
 require(__DIR__.'/function/CompressPath.php');
-
-/** To hash
- *
- * This function is convert to fixed length unique string from long or short strings.
- *
- * @param   null|integer|float|string|array|object $var
- * @param   integer  $length
- * @param   string   $salt
- * @return  string   $hash
- */
-function Hasha1($var, $length=8, $salt=null)
-{
-	//	Can overwrite salt.
-	if( $salt === null ){
-		$salt = Env::AppID();
-	};
-
-	/** This change affects the hash value.
-	if( is_string($var) ){
-		//	...
-	}else if( is_array($var) or is_object($var) ){
-		$var = json_encode($var);
-	}
-	*/
-
-	//	To json.
-	$var = json_encode($var);
-
-	//	...
-	return substr(sha1($var . $salt), 0, $length);
-}
+require(__DIR__.'/function/Hasha1.php');
 
 /** ifset is if not set variable, set default value.
  *
