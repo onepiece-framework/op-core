@@ -92,7 +92,7 @@ $ci->Set('Decode', $result, $args);
 
 //	Decode - Current directory
 $args   = './README.md';
-$result = "Exception: Current related path cannot be specified. ({$args})";
+$result = "Exception: Current relative path cannot be specified. ({$args})";
 $ci->Set('Decode', $result, $args);
 
 //	Decode - Upper directory
