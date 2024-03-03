@@ -157,23 +157,7 @@ class MetaPath
 	{
 		//	...
 		require_once(__DIR__.'/function/ConvertPath.php');
-		return ConvertPath($path, false, false, $error_message);
-		/*
-		return ConvertPath($path, false);
-		*/
-
-		/*
-		//	Replace duplicate slash.
-		$path = preg_replace('//*', '/', $path);
-		*/
-
-		/* @var $m array */
-		/*
-		if(!preg_match('|^(\w+):/|', $path, $m)){
-			E("Does not match meta label --> `$path`");
-			return false;
-		}
-		*/
+		return ConvertPath($path, false, false /* , $error_message */);
 
 		/*
 		//	Get the meta-label.
