@@ -57,9 +57,11 @@ function Template(string $file_name, array $args=[])
 	//	Check if meta path.
 	if( strpos($file, ':/') ){
 		/* @var $error_message string */
-		if(!$file = ConvertPath($file, false, false, $error_message) ){
+		if(!$file = ConvertPath($file, false, false /* , $error_message */) ){
+			/*
 			Notice::Set($error_message);
 			return;
+			*/
 		}
 	}
 
