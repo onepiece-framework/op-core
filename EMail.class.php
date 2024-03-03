@@ -387,7 +387,7 @@ class EMail
 	 */
 	private function _get_parameters()
 	{
-		if(!$addr = ifset($this->_head['from'][0]['addr']) ){
+		if(!$addr = $this->_head['from'][0]['addr'] ?? null ){
 			$addr = self::GetLocalAddress();
 		}
 
