@@ -38,32 +38,10 @@ require(__DIR__.'/function/GetTemplate.php');
 require(__DIR__.'/function/Content.php');
 require(__DIR__.'/function/Charset.php');
 require(__DIR__.'/function/CompressPath.php');
+require(__DIR__.'/function/Json.php');
 require(__DIR__.'/function/Attribute.php');
 require(__DIR__.'/function/ifset.php');
 require(__DIR__.'/function/Hasha1.php');
-
-/** Output secure JSON.
- *
- * @deprecated 2024-03-02
- * @param	 array	 $json
- * @param	 string	 $attr
- */
-function Json($json, $attr)
-{
-	//	HTML Decode
-	/* Decode is convert to &amp; --> &
-	$json = Decode($json);
-	*/
-
-	//	Convert to json.
-	$json = json_encode($json);
-
-	//	Encode XSS. (Not escape quote)
-	$json = htmlentities($json, ENT_NOQUOTES, 'utf-8');
-
-	//	...
-	Html($json, 'div.'.$attr, false);
-}
 
 /** Display HTML.
  *
