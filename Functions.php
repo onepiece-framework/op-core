@@ -39,58 +39,8 @@ require(__DIR__.'/function/Content.php');
 require(__DIR__.'/function/Charset.php');
 require(__DIR__.'/function/CompressPath.php');
 require(__DIR__.'/function/Json.php');
+require(__DIR__.'/function/Html.php');
 require(__DIR__.'/function/Attribute.php');
 require(__DIR__.'/function/ifset.php');
 require(__DIR__.'/function/Hasha1.php');
 
-/** Display HTML.
- *
- * <pre>
- * Html('message', 'span #id .class');
- * </pre>
- *
- * @deprecated 2024-03-02
- * @param	 string		 $string
- * @param	 string		 $config
- * @param	 boolean	 $escape tag and quote
- */
-function Html($string, $attr=null, $escape=true)
-{
-	//	Escape tag and quote.
-	if( $escape ){
-		$string = Encode($string);
-	}
-
-	//	...
-	if( $attr ){
-		$attr = Attribute($attr);
-	}
-
-	//	...
-	$tag = $id = $class = null;
-	foreach( ['tag','id','class'] as $key ){
-		${$key} = $attr[$key] ?? null;
-	}
-
-	//	...
-	if( empty($tag) ){
-		$tag = 'div';
-	}
-
-	//	...
-	if( $tag === 'a' ){
-		$href = $attr['href'] ?? $string;
-	}
-
-	//	...
-	$attr = $id    ? " id='$id'"      :'';
-	$attr.= $class ? " class='$class'":'';
-
-	//	...
-	if( $tag === 'a' ){
-		$attr = ' href="' . $href . '"';
-		printf('<%s%s>%s</%s>'.PHP_EOL, $tag, $attr, $string, $tag);
-	}else{
-		printf('<%s%s>%s</%s>'.PHP_EOL, $tag, $attr, $string, $tag);
-	}
-}
