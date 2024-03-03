@@ -38,60 +38,9 @@ require(__DIR__.'/function/GetTemplate.php');
 require(__DIR__.'/function/Content.php');
 require(__DIR__.'/function/Charset.php');
 require(__DIR__.'/function/CompressPath.php');
+require(__DIR__.'/function/Attribute.php');
 require(__DIR__.'/function/ifset.php');
 require(__DIR__.'/function/Hasha1.php');
-
-/** Parse html tag attribute from string to array.
- *
- * @deprecated 2024-03-02
- * @param  string $attr
- * @return array  $result
- */
-function Attribute(string $attr)
-{
-	//	...
-	$key = 'tag';
-	$result = null;
-
-	//	...
-	for($i=0, $len=strlen($attr); $i<$len; $i++){
-		//	...
-		switch( $attr[$i] ){
-			case '.':
-				$key = 'class';
-				if(!empty($result[$key]) ){
-					$result[$key] .= ' ';
-				}
-				continue 2;
-
-			case '#':
-				$key = 'id';
-				continue 2;
-
-			case '?':
-				if( $result['tag'] === 'a' ){
-					$key = 'href';
-				}
-				break;
-
-			case ' ':
-				continue 2;
-
-			default:
-		}
-
-		//	...
-		if( empty($result[$key]) ){
-			$result[$key] = '';
-		}
-
-		//	...
-		$result[$key] .= $attr[$i];
-	}
-
-	//	...
-	return Encode($result);
-}
 
 /** Output secure JSON.
  *
