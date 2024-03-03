@@ -79,7 +79,7 @@ function ConvertURL($url)
 
 	//	Convert to full path.
 	/* @var $error_message string */
-	if(!$full_path = ConvertPath($url, false, false, $error_message) ){
+	if(!$full_path = ConvertPath($url, false, false /*, $error_message */) ){
 		OP::Notice("ConvertPath() is return false. ($error_message)");
 		return;
 	}
