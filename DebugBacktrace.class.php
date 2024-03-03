@@ -87,6 +87,14 @@ class DebugBacktrace
         $line = str_pad($line,  3, ' ', STR_PAD_LEFT );
 
         //  ...
+        $args = self::Args($args);
+
+        //  ...
+        if( $function ){
+            $function .= "({$args})";
+        }
+
+        //	...
         if( $type ){
             $bulk = $class.$type.$function;
         }else{
@@ -94,10 +102,7 @@ class DebugBacktrace
         }
 
         //  ...
-        $args = self::Args($args);
-
-        //  ...
-        return "{$file} {$line} - {$bulk}({$args})";
+        return "{$file} {$line} - {$bulk}\n";
     }
 
     /** Converts the argument array to a string and returns it.
