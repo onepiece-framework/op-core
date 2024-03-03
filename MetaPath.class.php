@@ -153,7 +153,7 @@ class MetaPath
 	 * @param     string     $path
 	 * @return    string|boolean|null
 	 */
-	static function Decode(string $path, &$error_message='')
+	static function Decode(string $path /*, &$error_message='' */)
 	{
 		//	...
 		require_once(__DIR__.'/function/ConvertPath.php');
