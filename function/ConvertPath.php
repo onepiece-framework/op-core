@@ -29,7 +29,7 @@ namespace OP;
  * @param  bool   $file_exists
  * @return string
  */
-function ConvertPath(string $path, bool $throw_exception=true, $file_exists=true, &$error_message=''):string
+function ConvertPath(string $path, bool $throw_exception=true, $file_exists=true /*, &$error_message='' */):string
 {
 	//	Trim
 	$path = trim($path);
@@ -40,8 +40,10 @@ function ConvertPath(string $path, bool $throw_exception=true, $file_exists=true
 		$path  = substr($path, 0, $pos);
 	}
 
+	/*
 	//	...
 	try{
+	*/
 
 	//	Root path
 	if( $path[0] === '/' ){
@@ -88,9 +90,11 @@ function ConvertPath(string $path, bool $throw_exception=true, $file_exists=true
 		}
 	}
 
+	/*
 	}catch( \Exception $e ){
 		$error_message = $e->getMessage();
 	}
+	*/
 
 	//	Return calculated value.
 	return $path . ($query ?? null);
