@@ -40,6 +40,9 @@ function ConvertPath(string $path, bool $throw_exception=true, $file_exists=true
 		$path  = substr($path, 0, $pos);
 	}
 
+	//	Replace duplicate slash.
+	$path = preg_replace('|//*|', '/', $path);
+
 	/*
 	//	...
 	try{
