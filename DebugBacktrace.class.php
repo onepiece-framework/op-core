@@ -147,6 +147,7 @@ class DebugBacktrace
                 break;
 
             case 'string':
+                $arg = str_replace(["\r","\n","\t"],['\r','\n','\t'], $arg);
                 $arg = '"'.$arg.'"';
                 break;
 
