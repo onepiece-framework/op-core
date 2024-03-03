@@ -38,33 +38,8 @@ require(__DIR__.'/function/GetTemplate.php');
 require(__DIR__.'/function/Content.php');
 require(__DIR__.'/function/Charset.php');
 require(__DIR__.'/function/CompressPath.php');
+require(__DIR__.'/function/ifset.php');
 require(__DIR__.'/function/Hasha1.php');
-
-/** ifset is if not set variable, set default value.
- *
- * <pre>
- * $var = ifset($_POST['undefine'], '1');
- * var_dump( $_POST['undefine'] ); // 1
- * </pre>
- *
- * _deprecated 2020-11-19  -->  2023-02-19
- * @reborned   2023-02-19
- * @version    2.0
- * @see    http://qiita.com/devneko/items/ee83854eb422c352abc8
- * @param  mixed $check
- * @param  mixed $alternate
- * @return mixed
- */
-function ifset(&$check, $alternate=null)
-{
-	//	...
-	if(!isset($check) ){
-		$check = $alternate;
-	}
-
-	//	...
-	return $check;
-}
 
 /** Parse html tag attribute from string to array.
  *
