@@ -58,12 +58,10 @@ function ConvertPath(string $path, bool $throw_exception=true, $file_exists=true
 		throw new \Exception("Upper directory cannot be specified. ($path)");
 	}
 
-	/*
 	//	Current related path.
 	if( strpos($path, './') !== false ){
-		throw new \Exception("Current related path cannot be specified. ($path)");
+		throw new \Exception("Current relative path cannot be specified. ($path)");
 	}
-	*/
 
 	//	Check meta label
 	if( $pos = strpos($path, ':/') ){
