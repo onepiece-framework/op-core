@@ -27,6 +27,7 @@ require(__DIR__.'/function/Args.php');
 require(__DIR__.'/function/Load.php');
 require(__DIR__.'/function/Unit.php');
 require(__DIR__.'/function/Encode.php');
+require(__DIR__.'/function/Decode.php');
 require(__DIR__.'/function/Notice.php');
 require(__DIR__.'/function/Layout.php');
 require(__DIR__.'/function/RootPath.php');
@@ -37,45 +38,6 @@ require(__DIR__.'/function/GetTemplate.php');
 require(__DIR__.'/function/Content.php');
 require(__DIR__.'/function/Charset.php');
 require(__DIR__.'/function/CompressPath.php');
-
-/** Decode can decode nested array transparent.
- *
- * @param  mixed  $value
- * @param  string $charset
- * @return string $var
- */
-function Decode($value, $charset=null)
-{
-	//	...
-	if(!$charset ){
-		$charset = Env::Charset();
-	}
-
-	//	...
-	switch( gettype($value) ){
-		//	...
-		case 'string':
-			$value = html_entity_decode($value, ENT_QUOTES, $charset);
-			break;
-
-		//	...
-		case 'array':
-			$result = [];
-			foreach( $value as $key => $val ){
-				$key = is_string($key) ? Decode($key, $charset): $key;
-				$val = Decode($val, $charset);
-				$result[$key] = $val;
-			}
-			$value = $result;
-			break;
-
-		//	...
-		default:
-	}
-
-	//	...
-	return $value;
-}
 
 /** To hash
  *
