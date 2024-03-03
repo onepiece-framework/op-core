@@ -168,7 +168,15 @@ class Config
 
 			//	...
 			if(!file_exists( RootPath('asset')."config/{$name}.php") ){
-				Notice::Set("This config file does not exists. ($name)");
+				/** Why this logic exist.
+				 *  WebPack want to set each layout's default config.
+				 *  But, Config class does not load each layout's default config.
+				 *  So, WebPack load config yourself.
+				 *  Therefore, Suppresses the Notice.
+				 */
+				if( $name !== Unit::Singleton('Layout')->Name() ){
+					Notice::Set("This config file does not exist. ($name)");
+				}
 			}
 		}
 
