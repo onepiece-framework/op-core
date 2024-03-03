@@ -53,11 +53,11 @@ $ci->Set('isCI', $result, $args);
 
 //	Get(hoge)
 $args   = 'hoge';
-$result = 'Notice: This config file does not exists. (hoge)';
+$result = 'Notice: This config file does not exist. (hoge)';
 $ci->Set('Get', $result, $args);
 
 //	Get(env)
-$result = file_exists( OP::MetaPath('asset:/config/env.php') ) ? []: 'Notice: This config file does not exists. (env)';
+$result = file_exists( OP::MetaPath('asset:/config/env.php') ) ? []: 'Notice: This config file does not exist. (env)';
 $args   = 'env';
 $ci->Set('Get', $result, $args);
 
@@ -67,7 +67,7 @@ $args   = ['env',['test'=>true]];
 $ci->Set('Set', $result, $args);
 
 //	Lang is deprecated --> Language
-$result = file_exists( OP::MetaPath('asset:/config/locale.php') ) ? 'en': 'Notice: This config file does not exists. (locale)';
+$result = file_exists( OP::MetaPath('asset:/config/locale.php') ) ? 'en': 'Notice: This config file does not exist. (locale)';
 $args   = null;
 $ci->Set('Lang', $result, $args);
 
