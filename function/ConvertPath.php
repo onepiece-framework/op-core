@@ -85,8 +85,12 @@ function ConvertPath(string $path, bool $throw_exception=true, $file_exists=true
 		}
 
 	}else{
+		if( Config::Get('core')['MetaPath']['CanConvertFromFullPath'] ?? null ){
 		//	Add current directory.
 		$path = getcwd() . '/' . $path;
+		}else{
+			throw new \Exception("Does not exists meta label. ($path)");
+		}
 	};
 
 	// Check if file exists.
