@@ -202,6 +202,8 @@ class Env
 
 	/** Set environment value.
 	 *
+	 * OP()->Config('app', ['title'=>'Hello']);
+	 *
 	 * @deprecated 2023-04-12  Config::Get()
 	 * @param string $key
 	 * @param mixed  $var
@@ -210,6 +212,10 @@ class Env
 	{
 		//	...
 		switch( $key ){
+			case _OP_APP_ID_:
+				Notice("This function was deprecated. (OP()->Env()->AppID('my_app_id'))");
+				return self::AppID($var);
+
 			case self::_ADMIN_IP_:
 			case self::_ADMIN_MAIL_:
 
