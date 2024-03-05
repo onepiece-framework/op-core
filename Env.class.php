@@ -177,6 +177,8 @@ class Env
 
 	/** Get environment value.
 	 *
+	 * OP()->Config('app');
+	 *
 	 * @deprecated 2023-04-12  Config::Get()
 	 * @param  string $key
 	 * @return mixed  $var
@@ -186,7 +188,7 @@ class Env
 		//	...
 		switch( $key ){
 			case _OP_APP_ID_:
-				Notice("This function was deprecated.");
+				Notice("This function was deprecated. (OP()->Env()->AppID())");
 				return self::AppID();
 
 			case self::_ADMIN_IP_:
