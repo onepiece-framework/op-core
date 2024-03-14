@@ -78,6 +78,17 @@ class DebugBacktrace
      */
     static function Numerator( array $numerator ) : string
     {
+		//	...
+		if( self::$_is_admin === null ){
+			self::_is_admin();
+		}
+
+		//	...
+		if(!self::$_is_admin ){
+			OP::Notice("Your not is admin.");
+			return;
+		}
+
         //  ...
         $file     = $numerator['file']     ?? '';
         $line     = $numerator['line']     ?? '';
