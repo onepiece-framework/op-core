@@ -109,6 +109,9 @@ class DebugBacktrace
             $backtrace = debug_backtrace();
         }
 
+		//	...
+		self::_file_path_padding_prepare($backtrace);
+
         //  ...
         foreach( $backtrace as $numerator ){
             echo self::Numerator($numerator);
