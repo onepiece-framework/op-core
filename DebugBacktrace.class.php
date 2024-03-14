@@ -73,6 +73,31 @@ class DebugBacktrace
 		}
 	}
 
+	/** Save file path padding length.
+	 *
+	 * @created    2024-03-14
+	 * @param      string     $full_path
+	 * @return     string     $meta_path
+	 */
+	static private function _file_path_padding(string $file)
+	{
+		//	...
+		if( $file ){
+			if( $temp = CompressPath($file) ){
+				$file = $temp;
+			}
+		}
+
+		//	...
+		$file = str_pad($file, self::$_file_path_padding, ' ', STR_PAD_RIGHT);
+		if( self::$_file_path_padding < $len = strlen($file) ){
+			self::$_file_path_padding = $len;
+		}
+
+		//	...
+		return $file;
+	}
+
     /** Automatically display.
      *
      * @param   array   $backtrace
