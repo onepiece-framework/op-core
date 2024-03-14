@@ -147,8 +147,12 @@ class DebugBacktrace
                 $arg = get_class($arg);
                 break;
 
+			case 'array':
+				$arg = json_encode($arg);
+				break;
+
             default:
-                $arg = "Unknow({$type})";
+                $arg = "Undefined:{$type}";
         }
 
         //  ...
