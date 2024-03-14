@@ -49,5 +49,15 @@ $args   = null;
 $result = 'null';
 $ci->Set('Arg', $result, $args);
 
+//  _file_path_padding_prepare
+$args   = [[]];
+$result = null;
+$ci->Set('_file_path_padding_prepare', $result, $args);
+
+//  _file_path_padding
+$args   = __DIR__;
+$result = 'core:/ci/           ';
+$ci->Set('_file_path_padding', $result, $args);
+
 //  ...
 return $ci->GenerateConfig();
