@@ -23,5 +23,21 @@ namespace OP;
  */
 interface IF_BITCOIN
 {
+	/** Challenge to generate block.
+	 *
+	 * <pre>
+	 * //  Address to receive rewards.
+	 * $address  = OP()->Bitcoin()->GetAddress('mining');
+	 *
+	 * //  Challenge to generate block.
+	 * $block_id = OP()->Bitcoin()->GenerateBlock($address);
+	 * </pre>
+	 *
+	 * @created    2024-03-14
+	 * @param      string     $address
+	 * @param      int        $num
+	 * @return     string     $block_id
+	 */
+	static public function GenerateBlock(string $address, int $num=1) : string;
 
 }
