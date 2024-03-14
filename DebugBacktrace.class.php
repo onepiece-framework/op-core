@@ -57,9 +57,9 @@ class DebugBacktrace
 	/** Prepare file path padding length.
 	 *
 	 * @created    2024-03-14
-	 * @param      array      $backtraces
+	 * @param     &array      $backtraces
 	 */
-	static private function _file_path_padding_prepare(array $backtraces)
+	static private function _file_path_padding_prepare(array &$backtraces)
 	{
 		//	...
 		foreach( $backtraces as $backtrace ){
