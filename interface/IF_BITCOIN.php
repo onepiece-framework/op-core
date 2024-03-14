@@ -59,4 +59,21 @@ interface IF_BITCOIN
 	 * @return     string     $address
 	 */
 	static public function GetAddress(string $label=null, string $purpose=null) : string;
+
+	/** Get all balance or each address balance.
+	 *
+	 * <pre>
+	 * //  Get balance of total in wallet.
+	 * $wallet_balance  = OP()->Bitcoin()->GetBalance()
+	 *
+	 * //  Can get balance each address.
+	 * $address         = OP()->Bitcoin()->GetAddress('nickname');
+	 * $address_balance = OP()->Bitcoin()->GetBalance($address);
+	 * </pre>
+	 *
+	 * @created    2024-03-14
+	 * @param      string     $address
+	 * @return     float      $balance
+	 */
+	static public function GetBalance(string $address=null) : float;
 }
