@@ -54,6 +54,25 @@ class DebugBacktrace
 		self::$_is_admin = Env::isAdmin();
 	}
 
+	/** Prepare file path padding length.
+	 *
+	 * @created    2024-03-14
+	 * @param      array      $backtraces
+	 */
+	static private function _file_path_padding_prepare(array $backtraces)
+	{
+		//	...
+		foreach( $backtraces as $backtrace ){
+			//	...
+			if(!$file = $backtrace['file'] ?? null ){
+				continue;
+			}
+
+			//	...
+			self::_file_path_padding($file);
+		}
+	}
+
     /** Automatically display.
      *
      * @param   array   $backtrace
