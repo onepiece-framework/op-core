@@ -39,6 +39,13 @@ class DebugBacktrace
      */
     static private $_file_path_padding = 20;
 
+	/** Result is saved of isAdmin().
+	 *
+	 * @created    2023-11-06
+	 * @var        boolean
+	 */
+	static private $_is_admin;
+
     /** Automatically display.
      *
      * @param   array   $backtrace
