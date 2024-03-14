@@ -129,8 +129,7 @@ class DebugBacktrace
 
 		//	...
 		if(!self::$_is_admin ){
-			OP::Notice("Your not is admin.");
-			return;
+			return 'Your not is admin.';
 		}
 
         //  ...
