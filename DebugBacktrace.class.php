@@ -82,6 +82,7 @@ class DebugBacktrace
         $function = $numerator['function'] ?? '';
         $args     = $numerator['args']     ?? [];
 
+        /*
         //  ...
         if( $file ){
             if( $temp = CompressPath($file) ){
@@ -92,6 +93,8 @@ class DebugBacktrace
         if( self::$_file_path_padding < $len = strlen($file) ){
             self::$_file_path_padding = $len;
         }
+        */
+        $file = self::_file_path_padding($file);
 
         //  ...
         $line = (string)$line;
