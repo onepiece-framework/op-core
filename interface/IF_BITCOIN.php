@@ -76,4 +76,18 @@ interface IF_BITCOIN
 	 * @return     float      $balance
 	 */
 	static public function GetBalance(string $address=null) : float;
+
+	/** Send bitcoin to address from address.
+	 *
+	 * <pre>
+	 * $transaction_id = OP()->Bitcoin()->Send(1, $to_address, $from_address);
+	 * </pre>
+	 *
+	 * @created    2024-03-14
+	 * @param      int        $amount
+	 * @param      string     $to
+	 * @param      string     $from
+	 * @return     string     $transaction_id
+	 */
+	static public function Send(int $amount, string $to, string $from=null) : string;
 }
