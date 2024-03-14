@@ -40,4 +40,23 @@ interface IF_BITCOIN
 	 */
 	static public function GenerateBlock(string $address, int $num=1) : string;
 
+	/** Get address, And can also set label and their purpose.
+	 *
+	 * <pre>
+	 * //  Generate a different address each time.
+	 * $new_address_1    = OP()->Bitcoin()->GetAddress();
+	 * $new_address_2    = OP()->Bitcoin()->GetAddress();
+	 *
+	 * //  Generate a same address each time from label.
+	 * $nickname_address = OP()->Bitcoin()->GetAddress('nickname');
+	 *
+	 * //  Can set purpose label.
+	 * $purpose_address  = OP()->Bitcoin()->GetAddress('nickname','purpose');
+	 * </pre>
+	 *
+	 * @created    2024-03-14
+	 * @param      string     $label
+	 * @return     string     $address
+	 */
+	static public function GetAddress(string $label=null, string $purpose=null) : string;
 }
