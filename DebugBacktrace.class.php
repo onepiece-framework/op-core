@@ -46,6 +46,14 @@ class DebugBacktrace
 	 */
 	static private $_is_admin;
 
+	/** Save result of isAdmin().
+	 *
+	 */
+	static private function _is_admin()
+	{
+		self::$_is_admin = Env::isAdmin();
+	}
+
     /** Automatically display.
      *
      * @param   array   $backtrace
