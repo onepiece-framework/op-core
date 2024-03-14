@@ -1,9 +1,15 @@
 CI/CD
 ===
 
-# How to use
+# Changes in 2024 - A files is hidden now!!
 
- The cicd is run ci.php, to be continued run cd.php.
+ * ci.sh  --> .ci.sh
+ * ci.php --> .ci.php
+ * cd.php --> .cd.php
+
+# Usage
+
+ The cicd is run `php .ci.php`, to be continued run `php .cd.php`.
 
 ```sh
 ./cicd
@@ -12,8 +18,8 @@ CI/CD
  The above is equivalent to:
 
 ```sh
-php ci.php
-php cd.php
+php .ci.php
+php .cd.php
 ```
 
  An arguments of cicd are carried over to ci.php and cd.php.
