@@ -109,6 +109,14 @@ class Config
 			if( file_exists($path) ){
 				//	Load the config file that each unit has by default.
 				$_config = $include($path);
+
+				//	Check if return value is not array.
+				if(!is_array($_config) ){
+					$type  = gettype($_config);
+					$value = $_config ? 'true':'false';
+					$path  = CompressPath($path);
+					throw new \Exception("Return value is not array. ({$type}:{$value}, $path)");
+				}
 			}
 		}
 
