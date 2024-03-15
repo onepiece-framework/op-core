@@ -196,7 +196,7 @@ class Config
 	 *
 	 * @created   2019-12-27
 	 */
-	static function Get($name)
+	static function Get(string $name)
 	{
 		//	...
 		if( $name === _OP_APP_ID_ ){
