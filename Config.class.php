@@ -83,7 +83,7 @@ class Config
 		$_config = null;
 
 		//	Include closure function.
-		$include = function($path){ return include($path); };
+		$include = function($path){ return require_once($path); };
 
 		/*
 		//	Each layout default config.
