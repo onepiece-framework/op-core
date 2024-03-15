@@ -219,7 +219,7 @@ class Config
 	 * @param     mixed        $config
 	 * @return    mixed
 	 */
-	static function Set($name, $config)
+	static function Set(string $name, array $config)
 	{
 		//	...
 		if( $name === _OP_APP_ID_ ){
