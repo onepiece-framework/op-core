@@ -22,19 +22,71 @@ namespace OP;
 $config = [];
 
 //	...
-$app_id = 'CI';
+$core_path = ConvertPath('core:/');
+$core_path = realpath($core_path);
 
 //	...
+$config['_Init'][]  = [
+	'args'   => null,
+	'result' => 'Exception: OP\Config::_Init(): Argument #1 ($name) must be of type string, null given, called in '.$core_path.'/trait/OP_CI.php on line 53',
+];
+//	...
+$config['_Fetch'][]  = [
+	'args'   => null,
+	'result' => 'Exception: OP\Config::_Fetch(): Argument #1 ($name) must be of type string, null given, called in '.$core_path.'/trait/OP_CI.php on line 53',
+];
+//	...
+$config['Get'][]  = [
+	'args'   => null,
+	'result' => 'Exception: OP\Config::Get(): Argument #1 ($name) must be of type string, null given, called in '.$core_path.'/trait/OP_CI.php on line 53',
+];
+//	...
+$config['Set'][]  = [
+	'args'   => null,
+	'result' => 'Exception: OP\Config::Set(): Argument #1 ($name) must be of type string, null given, called in '.$core_path.'/trait/OP_CI.php on line 53',
+];
+//	...
+$config['Get'][]  = [
+	'args'   => 'ci',
+	'result' => [
+		'ci' => true,
+	],
+];
+//	...
+$config['Set'][]  = [
+	'args'   => ['ci',
+		['ci' => false],
+	],
+	'result' => [
+		'ci' => false,
+	],
+];
+//	...
+$config['Set'][]  = [
+	'args'   => ['ci',
+		['test' => true],
+	],
+	'result' => [
+		'ci'   => false,
+		'test' => true,
+	],
+];
+
+/*
 $config['_Init'][]  = ['result' => 'ci', 'args' => 'CI'];
 $config['_Fetch'][] = ['result' => null, 'args' => 'ci'];
+$config['_Fetch'][] = [
+	//	Already included.
+	'result' => 'Exception: Return value is not array. (boolean:true, asset:/unit/ci/config.php)',
+	'args'   => 'ci',
+];
+/*
 $config['Get'][]    = [
 	'args'   => _OP_APP_ID_,
 	'result' => $app_id,
-	/*
 	'result' => [
 		'app_id' => $app_id,
 	],
-	*/
 ];
 $config['Set'][]    = [
 	'args'   => ['ci', ['test'=>true]],
@@ -43,6 +95,7 @@ $config['Set'][]    = [
 		'test'   => true,
 	],
 ];
+*/
 
 //	...
 //$ci = OP::Unit('CI');
