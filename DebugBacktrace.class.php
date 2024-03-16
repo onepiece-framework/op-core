@@ -149,6 +149,7 @@ class DebugBacktrace
 
 			case 'array':
 				$arg = json_encode($arg);
+				$arg = str_replace('\/', '/', $arg);
 				break;
 
             default:
