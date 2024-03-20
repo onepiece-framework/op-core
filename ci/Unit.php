@@ -46,5 +46,20 @@ $args   = 'Failllll';
 $result =  false;
 $ci->Set('isInstall', $result, $args);
 
+//	isInstalled
+$args   = 'App';
+$result =  true;
+$ci->Set('isInstalled', $result, $args);
+
+//	isInstalled - fail
+$args   = 'Fail';
+$result =  false;
+$ci->Set('isInstalled', $result, $args);
+
+//	Instantiated
+$args   = 'App';
+$result = 'OP\UNIT\App';
+$ci->Set('Instantiated', $result, $args);
+
 //	...
 return $ci->GenerateConfig();
