@@ -98,6 +98,9 @@ $config['Set'][]    = [
 */
 
 //	...
+return $config;
+
+//	...
 //$ci = OP::Unit('CI');
 $ci = new \OP\UNIT\CI;
 
