@@ -73,4 +73,28 @@ trait OP_UNIT
 		//	...
 		return OP::Template($meta_path, $args);
 	}
+
+	/** Get current unit config.
+	 *
+	 * @created   2024-03-20
+	 * @param     string     $key
+	 * @param     mixed      $value
+	 * @return    mixed
+	 */
+	static function Config(string $key=null, $value=null)
+	{
+		//	...
+		$unit_name = self::__unit_name();
+
+		//	...
+		if( $value ){
+			\OP\Config::Set($unit_name, [$key => $value]);
+		}
+
+		//	...
+		$config = \OP\Config::Get($unit_name);
+
+		//	...
+		return $key ? ($config[$key] ?? null) : $config;
+	}
 }
