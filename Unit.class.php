@@ -147,6 +147,7 @@ class Unit
 	 *
 	 *  Return already instantiated object by reference.
 	 *
+	 * @deprecated 2024-03-20
 	 * @created  2019-09-18
 	 * @param    string      $name
 	 * @return  &IF_UNIT     $unit
