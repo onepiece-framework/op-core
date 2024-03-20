@@ -55,7 +55,9 @@ trait OP_UNIT
 	/** Load from current unit's template directory.
 	 *
 	 * @created   2022-10-04
-	 * @return
+	 * @param     string     $file_path
+	 * @param     array      $args
+	 * @return    mixed
 	 */
 	static function Template(string $file_path, array $args=[])
 	{
@@ -65,16 +67,7 @@ trait OP_UNIT
 		}
 
 		//	...
-		/*
-		$unit_name = get_class($this);
-		$unit_name = __CLASS__;
-		$unit_name = substr($unit_name, 8); // OP\UNIT\App --> App
-		*/
-		//	OP\UNIT\Foo\Bar --> Foo --> foo
-		$name_space  = __CLASS__;
-		$name_spaces = explode('\\', $name_space);
-		$unit_name   = $name_spaces[2];
-		$unit_name = strtolower($unit_name);
+		$unit_name = self::__unit_name();
 		$meta_path = "unit:/{$unit_name}/template/{$file_path}";
 
 		//	...
