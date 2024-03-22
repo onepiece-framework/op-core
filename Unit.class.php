@@ -168,16 +168,17 @@ class Unit
 
 	/** Check if that unit is installed.
 	 *
+	 * <pre>
+	 * OP()->Unit()->isInstalled('unit_name');
+	 * </pre>
+	 *
+	 * @deprecated 2024-03-20  isInstall() --> isInstalled()
 	 * @created    2022-11-22
 	 * @param      string     $name
 	 * @return     boolean
 	 */
 	static function isInstall(string $name)
 	{
-		//	Generate target path.
-		$path = OP::MetaPath('unit:/').strtolower($name).'/index.php';
-
-		//	Return result.
-		return file_exists($path);
+		return self::isInstalled($name);
 	}
 }
