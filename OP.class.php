@@ -361,12 +361,12 @@ trait OP_FUNCTION
 	 */
 	static function & Unit(string $unit_name=null)
 	{
-		//	...
+		//	Return already instantiated instance that unit name.
 		if( $unit_name ){
-			return Unit::Singleton($unit_name);
+			return Unit::Instantiated($unit_name);
 		}
 
-		//	...
+		//	Return OP\Unit instance.
 		static $_unit;
 		if(!$_unit ){
 			$_unit = new Unit();
