@@ -360,7 +360,7 @@ trait OP_FUNCTION
 	 * @param     string     $unit_name
 	 * @return   \OP\Unit
 	 */
-	static function & Unit(string $unit_name)
+	static function & Unit(string $unit_name=null)
 	{
 		//	...
 		if( $unit_name ){
