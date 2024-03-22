@@ -181,4 +181,20 @@ class Unit
 	{
 		return self::isInstalled($name);
 	}
+
+	/** Check if that unit is installed.
+	 *
+	 * @created    2022-11-22
+	 * @renamed    2024-03-20  isInstall() --> isInstalled()
+	 * @param      string     $name
+	 * @return     boolean
+	 */
+	static function isInstalled(string $name)
+	{
+		//	Generate target path.
+		$path = OP::MetaPath('asset:/unit').strtolower($name).'/index.php';
+
+		//	Return result.
+		return file_exists($path);
+	}
 }
