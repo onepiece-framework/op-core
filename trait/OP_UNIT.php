@@ -94,6 +94,7 @@ trait OP_UNIT
 	 * @param     mixed      $value
 	 * @return    mixed
 	 */
+	/*
 	static function Config(string $key=null, $value=null)
 	{
 		//	...
@@ -110,4 +111,5 @@ trait OP_UNIT
 		//	...
 		return $key ? ($config[$key] ?? null) : $config;
 	}
+	*/
 }
