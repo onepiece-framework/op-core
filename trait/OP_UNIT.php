@@ -29,6 +29,18 @@ namespace OP;
  */
 trait OP_UNIT
 {
+	/** Get current class meta name.
+	 *
+	 * @created   2024-03-25
+	 * @return    string
+	 */
+	static private function __meta_name() : string
+	{
+		//	Get namesapce.
+		$namespace = explode('\\', __CLASS__);
+		return strtolower($namespace[1]);
+	}
+
 	/** Get current unit name.
 	 *
 	 * @created   2024-03-20
