@@ -46,7 +46,7 @@ trait OP_UNIT
 	 * @created   2024-03-20
 	 * @return    string
 	 */
-	static function __unit_name()
+	static private function __unit_name() : string
 	{
 		/*
 		$unit_name = get_class($this);
