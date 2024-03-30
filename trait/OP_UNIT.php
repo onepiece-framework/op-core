@@ -80,7 +80,8 @@ trait OP_UNIT
 
 		//	...
 		$unit_name = self::__unit_name();
-		$meta_path = "unit:/{$unit_name}/template/{$file_path}";
+		$meta_name = self::__meta_name();
+		$meta_path = "{$meta_name}:/{$unit_name}/template/{$file_path}";
 
 		//	...
 		return OP::Template($meta_path, $args);
