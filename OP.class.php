@@ -96,7 +96,7 @@ trait OP_OBJECT
 		}
 
 		//	...
-		return Unit::Singleton('Layout');
+		return Unit::Instantiated('Layout');
 	}
 
 	/** Notice
