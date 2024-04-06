@@ -103,16 +103,21 @@ trait OP_OBJECT
 	 *
 	 * @created    2022-10-06
 	 * @param      string     $message
-	 * @return     \OP\Notice
+	 * @param      array      $backtrace
+	 * @return    \OP\Notice
 	 */
-	static function Notice($message=null)
+	static function Notice($message=null, $backtrace=null)
 	{
 		//	...
 		static $_notice;
 
 		//	...
 		if( $message ){
-			return Notice::Set($message);
+			if(!$backtrace ){
+				$backtrace = debug_backtrace();
+			}
+			Notice::Set($message, $backtrace);
+			return;
 		}
 
 		//	...
