@@ -145,7 +145,12 @@ class Env
 
 	/** Which WebServer doing on?
 	 *
-	 * @deprecated 2023-04-12
+	 * <pre>
+	 * apache, apache2handler, cgi(PHP 5.3), cgi-fcgi, cli, cli-server, embed, fpm-fcgi, litespeed, phpdbg
+	 * </pre>
+	 *
+	 * @see        https://www.php.net/manual/ja/function.php-sapi-name.php
+	 * _deprecated 2023-04-12 --> 2024-04-07
 	 * @created    2023-02-18
 	 * @return     string
 	 */
