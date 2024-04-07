@@ -54,7 +54,7 @@ function CompressPath($path)
 	foreach( array_reverse(RootPath()) as $meta => $root ){
 
 		//	Registered path.
-		if(!$pos  = strpos($path, $root) ){
+		if(($pos  = strpos($path, $root)) === false ){
 			//	Convert to real path.
 			$root = realpath($root).'/';
 			$pos  = strpos($path, $root);
