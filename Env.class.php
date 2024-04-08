@@ -419,6 +419,12 @@ class Env
 	{
 		//	...
 		if( $mime ){
+			//	Convert to MIME from extension.
+			if( strpos($mime, '/') === false ){
+				Load('GetMimeFromExtension');
+				$mime = GetMimeFromExtension($mime);
+			}
+
 			//	...
 			if( self::isHttp() ){
 				/* @var $file null */
