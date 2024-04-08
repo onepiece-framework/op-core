@@ -134,7 +134,7 @@ class Unit
 	 * @param    string      $name
 	 * @return   object      $unit
 	 */
-	static function Singleton(string $name)
+	static function & Singleton(string $name)
 	{
 		return Unit($name);
 	}
