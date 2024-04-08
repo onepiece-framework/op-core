@@ -128,16 +128,16 @@ trait OP_OBJECT
 	 *
 	 * <pre>
 	 * // Set meta path.
-	 * OP::MetaPath()->Set('doc', '/var/www/htdocs');
+	 * OP()->MetaPath()->Set('hoge', '/var/www/htdocs/hoge/');
 	 *
 	 * // Get meta path to full path.
-	 * $full_path = OP::MetaPath('doc:/foo/bar'); -> /var/www/htdocs/foo/bar/
+	 * $full_path = OP()->MetaPath('hoge:/foo/bar'); -> /var/www/htdocs/hoge/foo/bar/
 	 *
 	 * // Get full path to meta path.
-	 * $meta_path = OP::MetaPath('/var/www/htdocs/foo/bar'); -> doc:/foo/bar/
+	 * $meta_path = OP()->MetaPath('/var/www/htdocs/hoge/foo/bar'); -> hoge:/foo/bar/
 	 *
-	 * // Get meta path to document root path.
-	 * $url_path  = OP::MetaPath('app:/foo/bar?hoge', true); -> /foo/bar/?hoge
+	 * // Get document root path from meta path.
+	 * $url_path  = OP()->MetaPath('hoge:/foo/bar?key=value', true); -> /hoge/foo/bar/?key=value
 	 * </pre>
 	 *
 	 * @created    2022-10-16
