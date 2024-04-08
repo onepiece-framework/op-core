@@ -415,7 +415,7 @@ class Env
 	 * @param  string $mime
 	 * @return string $mime
 	 */
-	static function Mime($mime=null)
+	static function MIME($mime=null)
 	{
 		//	...
 		if( $mime ){
