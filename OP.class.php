@@ -622,12 +622,13 @@ trait OP_ENV
 
     /** Get / Set MIME
      *
+     * @deprecated  2024-04-08  OP()->Env()->MIME();
      * @created     2023-04-15
      * @param      ?string      $mime
      * @return      string
      */
     static function MIME(?string $mime=null) : string
     {
-        return Env::Mime($mime);
+        return Env::MIME($mime);
     }
 } // OP_ENV
