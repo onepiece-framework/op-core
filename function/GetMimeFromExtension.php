@@ -36,10 +36,12 @@ function GetMimeFromExtension(string $ext):string
 			$mime = 'text/css';
 			break;
 
-		default:
 		case 'txt':
 			$mime = 'text/plain';
 			break;
+
+		default:
+			exit("This extension is not registerd. ({$ext})");
 	}
 
 	//	...
