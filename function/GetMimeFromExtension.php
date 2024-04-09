@@ -40,6 +40,14 @@ function GetMimeFromExtension(string $ext):string
 			$mime = 'text/plain';
 			break;
 
+		case 'jpeg':
+			$ext = 'jpg';
+		case 'jpg':
+		case 'png':
+		case 'gif':
+			$mime = "image/{$ext}";
+			break;
+
 		default:
 			exit("This extension is not registerd. ({$ext})");
 	}
