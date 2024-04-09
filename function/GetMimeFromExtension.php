@@ -41,5 +41,5 @@ function GetMimeFromExtension(string $ext):string
 	}
 
 	//	...
-	return $mime;
+	return $mime ?? false;
 }
