@@ -37,7 +37,9 @@ function GetMimeFromExtension(string $ext):string
 			break;
 
 		default:
+		case 'txt':
 			$mime = 'text/plain';
+			break;
 	}
 
 	//	...
