@@ -115,7 +115,10 @@ class DebugBacktrace
         }
 
         //  ...
-        return "{$file} {$line} - {$bulk}\n";
+        $args = self::Args($args);
+
+        //  ...
+        return "{$file} {$line} - {$bulk}({$args})\n";
     }
 
     /** Converts the argument array to a string and returns it.
