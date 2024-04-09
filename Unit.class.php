@@ -132,9 +132,9 @@ class Unit
 	 * @deprecated
 	 * @created  2019-09-18
 	 * @param    string      $name
-	 * @return   object      $unit
+	 * @return   IF_UNIT     $unit
 	 */
-	static function & Singleton(string $name)
+	static function & Singleton(string $name) : IF_UNIT
 	{
 		return Unit($name);
 	}
