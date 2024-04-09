@@ -37,7 +37,7 @@ $ci->Set('Auto', $result, $args);
 
 //  Numerator
 $args   = [$backtraces[0]];
-$result = 'core:/function/Template.php  95 - include()';
+$result = 'core:/ci/DebugBacktrace.php  27 - OP\UNIT\CI->Auto("CI",0,1,true,false,null,0.1,-1,OP\OP)'."\n";
 $ci->Set('Numerator', $result, $args);
 
 //  Args
