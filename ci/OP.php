@@ -127,7 +127,7 @@ $ci->Set('ParseURL', $result, $args);
 
 //	DebugBacktraceToString
 $args   = debug_backtrace(DEBUG_BACKTRACE_PROVIDE_OBJECT, 1);
-$result = 'core:/function/Template.php  95 - include()';
+$result = 'core:/function/Template.php  98 - include()'."\n";
 $ci->Set('DebugBacktraceToString', $result, $args);
 
 //	GetTemplate
@@ -169,6 +169,18 @@ $ci->Set('MIME', $result, $args);
 $args   = 'text/plain';
 $result = 'text/plain';
 $ci->Set('MIME', $result, $args);
+
+//	...
+$method = 'App';
+$result = 'OP\UNIT\App';
+$args   =  null;
+$ci->Set($method, $result, $args);
+
+//	...
+$method = 'WebPack';
+$result = 'OP\UNIT\WebPack';
+$args   =  null;
+$ci->Set($method, $result, $args);
 
 //	...
 return $ci->GenerateConfig();
