@@ -32,7 +32,7 @@ $backtrace  = [
 ];
 $backtraces[] = $backtrace;
 $args   = [$backtraces];
-$result = 'core:/ci/DebugBacktrace.php  27 - OP\UNIT\CI->Auto("CI",0,1,true,false,null,0.1,-1,OP\OP)';
+$result = 'core:/ci/DebugBacktrace.php  27 - OP\UNIT\CI->Auto("CI",0,1,true,false,null,0.1,-1,OP\OP)'."\n";
 $ci->Set('Auto', $result, $args);
 
 //  Numerator
@@ -48,6 +48,18 @@ $ci->Set('Args', $result, $args);
 $args   = null;
 $result = 'null';
 $ci->Set('Arg', $result, $args);
+
+//	...
+$method = '_file_path_padding_prepare';
+$args   = [['file'=>'']];
+$result = null;
+$ci->Set($method, $result, $args);
+
+//	...
+$method = '_file_path_padding';
+$args   = __FILE__;
+$result = 'core:/ci/DebugBacktrace.php';
+$ci->Set($method, $result, $args);
 
 //  ...
 return $ci->GenerateConfig();
