@@ -48,25 +48,47 @@ $ci = OP::Unit('CI');
 //	...
 $key = md5(__FILE__);
 
+//	...
+$method = '_Init';
+$result = 'ci';
+$args   = 'CI';
+$ci->Set($method, $result, $args);
+
+//	...
+$method = '_Fetch';
+$result =  null;
+$args   = 'ci';
+$ci->Set($method, $result, $args);
+
+//	...
+$method = 'Get';
+$result = ['app_id' => 'self-check'];
+$args   = 'app_id';
+$ci->Set($method, $result, $args);
+
 //	Get - Key name is empty.
-$result = '';
+$core   = OP::MetaPath('core:/');
+$core   = realpath($core);
+$result = 'Exception: OP\Config::_Init(): Argument #1 ($name) must be of type string, null given, called in '.$core.'/Config.class.php on line 161';
 $args   = null;
 $ci->Set('Get', $result, $args);
 
 //	Get
-$result = '';
+$result = "Notice: This config file does not exists. ({$key})";
 $args   = $key;
 $ci->Set('Get', $result, $args);
 
 //	Set - Init
-$result = '';
+$method = 'Set';
 $args   = [$key, ['a' => 'A', 'b' => 'B']];
-$ci->Set('Set', $result, $args);
+$result = ['a' => 'A', 'b' => 'B'];
+$ci->Set($method, $result, $args);
 
 //	Set - Add
+$method = 'Set';
 $result = ['a' => 'A', 'b' => 'B', 'c' => 'C'];
 $args   = [$key, ['c' => 'C']];
-$ci->Set('Set', $result, $args);
+$ci->Set($method, $result, $args);
 
 //	...
-return $config;
+return $ci->GenerateConfig();
