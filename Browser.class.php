@@ -31,12 +31,12 @@ class Browser
 
 	static private function _Init()
 	{
-		D();
+
 	}
 
 	static public function Init()
 	{
-		D();
+
 	}
 
 	/** SmartPhone
