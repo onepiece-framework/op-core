@@ -47,4 +47,16 @@ $result =  false;
 $ci->Set('isInstall', $result, $args);
 
 //	...
+$method = 'isInstalled';
+$args   = 'App';
+$result =  true;
+$ci->Set($method, $result, $args);
+
+//	...
+$method = 'isInstalled';
+$args   = 'Core';
+$result =  false;
+$ci->Set($method, $result, $args);
+
+//	...
 return $ci->GenerateConfig();
