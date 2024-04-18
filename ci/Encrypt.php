@@ -22,23 +22,23 @@ namespace OP;
 $ci = OP::Unit('CI');
 
 //	_iv
-$result = '45c1881935b90f0d';
+$result = '3ba0f40775d6d6ac';
 $args   = null;
 $ci->Set('_iv', $result, $args);
 
 //	_password
-$result = '45c1881935b90f0d3f0ba2c18ab864e0';
+$result = '3ba0f40775d6d6ace27ef929f5be3cdf';
 $args   = null;
 $ci->Set('_password', $result, $args);
 
 //	Enc
-$result = 'cl3Nz/lbpMk7UlevAVy/Lw==';
+$result = 'PINL3C+1XaiCb/1QZNdGZA==';
 $args   = 'self-check';
 $ci->Set('Enc', $result, $args);
 
 //	Dec
 $result = 'self-check';
-$args   = 'cl3Nz/lbpMk7UlevAVy/Lw==';
+$args   = 'PINL3C+1XaiCb/1QZNdGZA==';
 $ci->Set('Dec', $result, $args);
 
 //	...
