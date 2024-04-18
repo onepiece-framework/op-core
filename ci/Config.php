@@ -62,7 +62,7 @@ $ci->Set($method, $result, $args);
 
 //	...
 $method = 'Get';
-$result = ['app_id' => 'self-check'];
+$result = ['app_id' => 'CI'];
 $args   = 'app_id';
 $ci->Set($method, $result, $args);
 
