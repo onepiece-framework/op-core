@@ -137,13 +137,15 @@ $args   = null;
 $result = $timestamp;
 $ci->Set('Timestamp', $result, $args);
 
+/*
 //	AppID
 $result = 'self-check';
 $args   = 'self-check';
 $ci->Set('AppID', $result, $args);
+*/
 
 //	AppID - Duplicate
-$result = 'Exception: AppID is already set. (self-check)';
+$result = 'Exception: AppID is already set. (CI)';
 $args   = 'self-check2';
 $ci->Set('AppID', $result, $args);
 
