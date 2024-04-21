@@ -18,6 +18,7 @@ declare(strict_types=1);
  */
 namespace OP;
 
+/*
 //	...
 $config = [];
 
@@ -41,6 +42,7 @@ $config['Set'][]    = [
 		'execute' => false,
 	],
 ];
+*/
 
 //	...
 $ci = OP::Unit('CI');
@@ -67,11 +69,18 @@ $args   = 'app_id';
 $ci->Set($method, $result, $args);
 
 //	Get - Key name is empty.
+$method = 'Get';
 $core   = OP::MetaPath('core:/');
 $core   = realpath($core);
-$result = 'Exception: OP\Config::_Init(): Argument #1 ($name) must be of type string, null given, called in '.$core.'/Config.class.php on line 161';
+switch( PHP_MAJOR_VERSION.PHP_MINOR_VERSION ){
+	case '74':
+		$result = 'Exception: Argument 1 passed to OP\Config::_Init() must be of the type string, null given, called in '.$core.'/Config.class.php on line 161';
+		break;
+	default:
+		$result = 'Exception: OP\Config::_Init(): Argument #1 ($name) must be of type string, null given, called in '.$core.'/Config.class.php on line 161';
+}
 $args   = null;
-$ci->Set('Get', $result, $args);
+$ci->Set($method, $result, $args);
 
 //	Get
 $result = "Notice: This config file does not exists. ({$key})";
