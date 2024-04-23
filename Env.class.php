@@ -318,18 +318,18 @@ class Env
 		if( $locale ){
 			/* @var $match array */
 			if( preg_match('/([\w]+)([^\w])?([\w]*)/', $locale, $match) ){
-				$config = [
+				$locale = [
 					'language' => $match[0],
 					'separate' => $match[1],
 					'country'  => $match[2],
 				];
-				Config::Set('locale', $config);
+				Config::Set('env', ['locale' => $locale]);
 			}
 		}else{
-			$counfig  = Config::Get('locale');
-			$separate = $counfig['separate'] ?? ':';
-			$language = $counfig['language'] ?? null;
-			$country  = $counfig['country']  ?? null;
+			$locale   = Config::Get('env')['locale'];
+			$separate = $locale['separate'] ?? ':';
+			$language = $locale['language'] ?? null;
+			$country  = $locale['country']  ?? null;
 		}
 
 		//	...
