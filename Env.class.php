@@ -267,11 +267,11 @@ class Env
 		*/
 
 		if( $lang ){
-			Config::Set('locale', ['language'=>$lang]);
+			Config::Set('env', ['locale' => ['language'=>$lang]]);
 		}
 
 		//	...
-		return Config::Get('locale')['language'] ?? null;
+		return Config::Get('env')['locale']['language'] ?? null;
 	}
 
 	/** Get/Set Country.
