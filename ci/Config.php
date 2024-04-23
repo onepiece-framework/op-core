@@ -74,10 +74,10 @@ $core   = OP::MetaPath('core:/');
 $core   = realpath($core);
 switch( PHP_MAJOR_VERSION.PHP_MINOR_VERSION ){
 	case '74':
-		$result = 'Exception: Argument 1 passed to OP\Config::_Init() must be of the type string, null given, called in '.$core.'/Config.class.php on line 161';
+		$result = 'Exception: Argument 1 passed to OP\Config::_Init() must be of the type string, null given, called in '.$core.'/Config.class.php on line 164';
 		break;
 	default:
-		$result = 'Exception: OP\Config::_Init(): Argument #1 ($name) must be of type string, null given, called in '.$core.'/Config.class.php on line 161';
+		$result = 'Exception: OP\Config::_Init(): Argument #1 ($name) must be of type string, null given, called in '.$core.'/Config.class.php on line 164';
 }
 $args   = null;
 $ci->Set($method, $result, $args);
