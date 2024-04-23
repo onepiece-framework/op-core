@@ -139,13 +139,16 @@ class Config
 			}
 		}
 
-		//	Recovery save direcotry.
+		//	Recovery save directory.
 		chdir($save_directory);
 
 		//	...
 		if( empty(self::$_config[$name]) ){
 			//	...
-			if(!file_exists( RootPath('asset')."config/{$name}.php") ){
+			$asset_root = RootPath('asset');
+			if( !file_exists( "{$asset_root}config/{$name}.php") and
+				!file_exists( "{$asset_root}layout/{$name}/config.php") and
+				!file_exists( "{$asset_root}unit/{$name}/config.php") ){
 				Notice::Set("This config file does not exists. ($name)");
 			}
 		}
