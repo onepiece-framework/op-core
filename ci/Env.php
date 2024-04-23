@@ -52,19 +52,22 @@ $args   = null;
 $ci->Set('isCI', $result, $args);
 
 //	Get(Config)
-$result = [];
-$args   = 'env';
-$ci->Set('Get', $result, $args);
-
-//	Get(Config)
 $args   = 'hoge';
 $result = 'Notice: This config file does not exists. (hoge)';
 $ci->Set('Get', $result, $args);
 
-//	Set(Config)
-$result = ['test'=>true];
+//	Set('env')
+$method = 'Set';
+$result = [
+	'locale' => [
+		'country'  => 'us',
+		'language' => 'en',
+		'separate' => ':',
+	],
+	'test' => true,
+];
 $args   = ['env',['test'=>true]];
-$ci->Set('Set', $result, $args);
+$ci->Set($method, $result, $args);
 
 //	Lang is deprecated --> Language
 $result = 'en';
