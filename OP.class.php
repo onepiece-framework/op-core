@@ -258,6 +258,16 @@ trait OP_OBJECT
 	{
 		return Unit::Singleton('WebPack');
 	}
+
+	/** Form unit already instantiaged return.
+	 *
+	 * @created    2024-04-24
+	 * @return     IF_FORM
+	 */
+	static function & Form() : IF_FORM
+	{
+		return Unit::Singleton('Form');
+	}
 } // OP_OBJECT
 
 /** OP_FUNCTION
