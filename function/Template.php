@@ -56,7 +56,7 @@ function Template(string $file_name, array $args=[])
 
 	//	Check if meta path.
 	if( strpos($file, ':') ){
-		if(!$file = ConvertPath($file, false) ){
+		if(!$file = ConvertPath($file, false, false) ){
 			Notice::Set("This path is could not convert from meta path. ($file)");
 			return;
 		}
