@@ -642,12 +642,18 @@ trait OP_ENV
 
     /** Get local timezone timestamp.
      *
-     * <pre>
-     * $localtime = Env::Timestamp();
-     * $utc       = Env::Timestamp(true);
-     * $offset    = Env::Timestamp(true, '-1 month');
-     * </pre>
+	 * <pre>
+	 * // Local time timestamp
+	 * $local_timestamp = OP()->Env()->Timestamp();
+	 *
+	 * // UTC time timestamp
+	 * $utc       = OP()->Env()->Timestamp(true);
+	 *
+	 * // 1 month ago timestamp
+	 * $offset    = OP()->Env()->Timestamp(true, '-1 month');
+	 * </pre>
      *
+     * @deprecated 2024-05-16
      * @created  2019-09-24
      * @moved    2023-03-29  \OP\Env::Timestamp()
      * @param    boolean     $utc
@@ -656,8 +662,7 @@ trait OP_ENV
      */
     static function Timestamp(?bool $utc=false, $offset=null):string
     {
-        require_once(__DIR__.'/function/Timestamp.php');
-        return Timestamp($utc, $offset);
+		return Env::Timestamp($utc, $offset);
     }
 
     /** Get / Set MIME
