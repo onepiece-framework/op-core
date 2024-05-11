@@ -615,8 +615,20 @@ trait OP_ENV
 		return Env::AppID($app_id);
 	}
 
-    /** Get frozen unix time.
+    /** Get/Set frozen unix time.
      *
+	 * <pre>
+	 * // Get local unix time
+	 * $local_unit_time = OP()->Env()->Time();
+	 *
+	 * // Get UTC unix time
+	 * $utc_unit_time = OP()->Env()->Time(true);
+	 *
+	 * // Set local unix time
+	 * OP()->Env()->Time(false, strtotime('2024-01-01'));
+	 * </pre>
+     *
+     * @deprecated 2024-05-16
      * @created  ????-??-??
      * @moved    2023-03-29  \OP\Env::Time()
      * @param    boolean     $utc
@@ -625,8 +637,7 @@ trait OP_ENV
      */
     static function Time(?bool $utc=false, ?string $time=''):int
     {
-        require_once(__DIR__.'/function/Time.php');
-        return Time($utc, $time);
+		return Env::Time($utc, $time);
     }
 
     /** Get local timezone timestamp.
