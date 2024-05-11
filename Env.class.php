@@ -460,16 +460,27 @@ class Env
 		return self::$_env['mime'] ?? null;
 	}
 
-	/** Get frozen unix time.
+	/** Get/Set frozen unix time.
 	 *
-	 * @deprecated 2023-03-29  OP::Time()
+	 * <pre>
+	 * // Get local unix time
+	 * $local_unit_time = OP()->Env()->Time();
+	 *
+	 * // Get UTC unix time
+	 * $utc_unit_time = OP()->Env()->Time(true);
+	 *
+	 * // Set local unix time
+	 * OP()->Env()->Time(false, strtotime('2024-01-01'));
+	 * </pre>
+	 *
 	 * @param  boolean $utc
 	 * @param  string  $time
 	 * @return integer $time
 	 */
 	static function Time(?bool $utc=false, ?string $time=''):int
 	{
-        return OP::Time($utc, $time);
+		require_once(__DIR__.'/function/Time.php');
+		return Time($utc, $time);
 	}
 
 	/** Get local timezone timestamp.
