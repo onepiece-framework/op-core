@@ -81,7 +81,7 @@ class EMail
 	 * @param string $addr
 	 * @param string $name
 	 */
-	function Bcc($addr)
+	function Bcc(string $addr)
 	{
 		$this->_set_addr($addr, '', 'bcc');
 	}
