@@ -71,7 +71,7 @@ class EMail
 	 * @param string $addr
 	 * @param string $name
 	 */
-	function Cc($addr, $name=null)
+	function Cc(string $addr, ?string $name=null)
 	{
 		$this->_set_addr($addr, $name, 'cc');
 	}
