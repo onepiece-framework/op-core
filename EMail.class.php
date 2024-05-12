@@ -131,7 +131,7 @@ class EMail
 	 * @param string $addr
 	 * @param string $name
 	 */
-	function Content($content, $mime='text/plain')
+	function Content(string $content, string $mime='text/plain')
 	{
 		if( preg_match('|[^-_a-z0-9/]|', $mime) ){
 			$this->_SetError("Mime was wrong. ($mime)");
