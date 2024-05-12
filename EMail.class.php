@@ -111,7 +111,7 @@ class EMail
 	 * @param string $addr
 	 * @param string $name
 	 */
-	function ReturnPath($addr, $name=null)
+	function ReturnPath(string $addr, ?string $name=null)
 	{
 		$this->_set_addr($addr, $name, 'return-path');
 	}
