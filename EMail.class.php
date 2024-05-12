@@ -121,7 +121,7 @@ class EMail
 	 * @param string $addr
 	 * @param string $name
 	 */
-	function Subject($subject)
+	function Subject(string $subject)
 	{
 		$this->_head['subject'] = $subject;
 	}
