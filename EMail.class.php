@@ -516,7 +516,7 @@ class EMail
 	 * @param string $name
 	 * @param string $key
 	 */
-	private function _set_addr($addr, $name, $key)
+	private function _set_addr(string $addr, ?string $name, string $key)
 	{
 		$key  = strtolower($key);
 		$addr = preg_replace('/\n/', '\n', $addr);
