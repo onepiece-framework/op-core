@@ -27,7 +27,7 @@ interface IF_FORM
 	/** Set configuration.
 	 *
 	 * @created   2018-04-20
-	 * @param     array|null  $config
+	 * @param     array|string config array or config file path
 	 * @return    array       $config
 	 */
 	public function Config($config);
