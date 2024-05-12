@@ -101,7 +101,7 @@ class EMail
 	 * @param string $addr
 	 * @param string $name
 	 */
-	function ErrorsTo($addr, $name=null)
+	function ErrorsTo(string $addr, ?string $name=null)
 	{
 		$this->_set_addr($addr, $name, 'errors-to');
 	}
