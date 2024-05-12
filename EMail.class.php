@@ -61,7 +61,7 @@ class EMail
 	 * @param string $addr
 	 * @param string $name
 	 */
-	function To($addr, $name=null)
+	function To(string $addr, ?string $name=null)
 	{
 		$this->_set_addr($addr, $name, 'to');
 	}
