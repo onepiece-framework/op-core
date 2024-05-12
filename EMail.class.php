@@ -51,7 +51,7 @@ class EMail
 	 * @param string $addr
 	 * @param string $name
 	 */
-	function From($addr, $name=null)
+	function From(string $addr, ?string $name=null)
 	{
 		$this->_set_addr($addr, $name, 'from');
 	}
