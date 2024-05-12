@@ -91,7 +91,7 @@ class EMail
 	 * @param string $addr
 	 * @param string $name
 	 */
-	function ReplyTo($addr, $name=null)
+	function ReplyTo(string $addr, ?string $name=null)
 	{
 		$this->_set_addr($addr, $name, 'reply-to');
 	}
