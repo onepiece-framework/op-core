@@ -183,7 +183,7 @@ class EMail
 	 * @param  string $type mta, socket, php
 	 * @return boolean
 	 */
-	function Send($type=null, $language='uni', $charset='utf-8')
+	function Send(?string $type=null, string $language='uni', string $charset='utf-8')
 	{
 		//	...
 		if( empty($this->_debug['sent']) ){
