@@ -348,7 +348,7 @@ class EMail
 		$join = [];
 		foreach($this->_head['to'] as $temp){
 			$addr = $temp['addr'];
-			$name = $temp['name'];
+			$name = $temp['name'] ?? '';
 			$join[] = $this->_get_full_name($addr, $name);
 		}
 		return join(', ',$join);
