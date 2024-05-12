@@ -530,7 +530,7 @@ class EMail
 	 *
 	 * @param string $message
 	 */
-	private function _set_error($message)
+	private function _set_error(string $message)
 	{
 		$error = [];
 		$error['message'] = $message;
