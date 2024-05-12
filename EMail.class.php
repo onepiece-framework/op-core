@@ -360,7 +360,7 @@ class EMail
 	 * @param  string $name
 	 * @return string
 	 */
-	private function _get_full_name($addr, $name)
+	private function _get_full_name(string $addr, ?string $name)
 	{
 		$addr = trim($addr);
 		if( $name ){
