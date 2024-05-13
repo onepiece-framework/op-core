@@ -19,11 +19,16 @@ declare(strict_types=1);
 namespace OP;
 
 //	...
-$ci = OP::Unit('CI');
+$subject = 'This is self-check test';
+$content = 'This is self-check test mail.';
+$attach_file_name = 'email.txt';
+
+//	...
+$ci = OP::Unit('CI')::Config();
 
 //	init
 $user_name = get_current_user();
-$file_name = OP::MetaPath('core:/testcase/email.txt');
+$file_name = OP::MetaPath("core:/testcase/{$attach_file_name}");
 
 //	From
 $result =  null;
@@ -60,15 +65,17 @@ $result =  null;
 $args   = ["{$user_name}@localhost", $user_name];
 $ci->Set('ReturnPath', $result, $args);
 
-//	Subject
+//	...
+$method = 'Subject';
 $result =  null;
-$args   = 'This is self-check test';
-$ci->Set('Subject', $result, $args);
+$args   = $subject;
+$ci->Set($method, $result, $args);
 
-//	Content
+//	...
+$method = 'Content';
 $result =  null;
-$args   = 'This is self-check test mail.';
-$ci->Set('Subject', $result, $args);
+$args   = $content;
+$ci->Set($method, $result, $args);
 
 //	Attachment
 $result =  null;
@@ -103,7 +110,7 @@ $ci->Set('_mta', $result, $args);
 //	_get_headers
 $args   = null;
 $result = "MIME-Version: 1.0
-Content-Type: Multipart/Mixed; boundary=\"--onepiece-framework--Boundary--63ab23b20281aa288d47352f732f1c59\"
+Content-Type: Multipart/Mixed; boundary=\"--onepiece-framework--Boundary--ci\"
 Content-Transfer-Encoding: Base64
 X-SENDER: onepiece-framework:EMail
 From: {$user_name} <{$user_name}@localhost>
@@ -148,60 +155,61 @@ $ci->Set('_get_parameters', $result, $args);
 
 //	_get_boundary
 $args   = null;
-$result = '--onepiece-framework--Boundary--63ab23b20281aa288d47352f732f1c59';
+$result = '--onepiece-framework--Boundary--ci';
 $ci->Set('_get_boundary', $result, $args);
 
 //	_get_content_type
 $args   = null;
 $result = "MIME-Version: 1.0
-Content-Type: Multipart/Mixed; boundary=\"--onepiece-framework--Boundary--63ab23b20281aa288d47352f732f1c59\"
+Content-Type: Multipart/Mixed; boundary=\"--onepiece-framework--Boundary--ci\"
 Content-Transfer-Encoding: Base64
 ";
 $ci->Set('_get_content_type', $result, $args);
 
-//	_get_content
+//	...
+$method = '_get_content';
 $args   = null;
-$result = "----onepiece-framework--Boundary--63ab23b20281aa288d47352f732f1c59
+$result = "----onepiece-framework--Boundary--ci
 Content-Type: text/plain; charset=\"utf-8\"
 Content-Transfer-Encoding: 7bit
 
-
-----onepiece-framework--Boundary--63ab23b20281aa288d47352f732f1c59
+$content
+----onepiece-framework--Boundary--ci
 Content-Type: text/plain; charset=\"utf-8\"
 Content-Transfer-Encoding: 7bit
 
-email.txt
-----onepiece-framework--Boundary--63ab23b20281aa288d47352f732f1c59--
+$attach_file_name
+----onepiece-framework--Boundary--ci--
 ";
-$ci->Set('_get_content', $result, $args);
+$ci->Set($method, $result, $args);
 
 //	_get_content_multipart
 $args   = null;
 $result = "MIME-Version: 1.0
-Content-Type: Multipart/Mixed; boundary=\"--onepiece-framework--Boundary--63ab23b20281aa288d47352f732f1c59\"
+Content-Type: Multipart/Mixed; boundary=\"--onepiece-framework--Boundary--ci\"
 Content-Transfer-Encoding: Base64
 ";
 $ci->Set('_get_content_type', $result, $args);
 
 //	_get_content
 $args   = null;
-$result = "----onepiece-framework--Boundary--63ab23b20281aa288d47352f732f1c59
+$result = "----onepiece-framework--Boundary--ci
 Content-Type: text/plain; charset=\"utf-8\"
 Content-Transfer-Encoding: 7bit
 
-
-----onepiece-framework--Boundary--63ab23b20281aa288d47352f732f1c59
+$content
+----onepiece-framework--Boundary--ci
 Content-Type: text/plain; charset=\"utf-8\"
 Content-Transfer-Encoding: 7bit
 
-email.txt
-----onepiece-framework--Boundary--63ab23b20281aa288d47352f732f1c59--
+$attach_file_name
+----onepiece-framework--Boundary--ci--
 ";
 $ci->Set('_get_content_multipart', $result, $args);
 
 //	_get_subject
 $args   = null;
-$result = 'This is self-check test mail.';
+$result = $subject;
 $ci->Set('_get_subject', $result, $args);
 
 //	_set_addr
@@ -209,10 +217,12 @@ $args   = ["{$user_name}@localhost",$user_name,'to'];
 $result = null;
 $ci->Set('_set_addr', $result, $args);
 
-//	_set_error
-$result = null;
+//	...
+$core_path = \OP\RootPath('asset').'core/trait/OP_CI.php';
+$method = '_set_error';
+$result = 'Exception: OP\EMail::_set_error(): Argument #1 ($message) must be of type string, null given, called in '.$core_path.' on line 66';
 $args   = null;
-$ci->Set('_set_error', $result, $args);
+$ci->Set($method, $result, $args);
 
 //	...
-return $ci->GenerateConfig();
+return $ci->Get();
