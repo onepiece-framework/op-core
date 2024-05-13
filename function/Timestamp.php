@@ -25,9 +25,14 @@ namespace OP;
 /** Get local timezone timestamp.
  *
  * <pre>
- * $localtime = Env::Timestamp();
- * $utc       = Env::Timestamp(true);
- * $offset    = Env::Timestamp(true, '-1 month');
+ * // Local time timestamp
+ * $local_timestamp = \OP\Timestamp();
+ *
+ * // UTC time timestamp
+ * $utc       = \OP\Timestamp(true);
+ *
+ * // 1 month ago timestamp
+ * $offset    = \OP\Timestamp(false, '-1 month');
  * </pre>
  *
  * @created  2019-09-24
