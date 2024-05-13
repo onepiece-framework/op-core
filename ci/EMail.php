@@ -110,7 +110,7 @@ $ci->Set('_mta', $result, $args);
 //	_get_headers
 $args   = null;
 $result = "MIME-Version: 1.0
-Content-Type: Multipart/Mixed; boundary=\"--onepiece-framework--Boundary--ci\"
+Content-Type: Multipart/Mixed; boundary=\"--boundary--ci\"
 Content-Transfer-Encoding: Base64
 X-SENDER: onepiece-framework:EMail
 From: {$user_name} <{$user_name}@localhost>
@@ -155,13 +155,13 @@ $ci->Set('_get_parameters', $result, $args);
 
 //	_get_boundary
 $args   = null;
-$result = '--onepiece-framework--Boundary--ci';
+$result = '--boundary--ci';
 $ci->Set('_get_boundary', $result, $args);
 
 //	_get_content_type
 $args   = null;
 $result = "MIME-Version: 1.0
-Content-Type: Multipart/Mixed; boundary=\"--onepiece-framework--Boundary--ci\"
+Content-Type: Multipart/Mixed; boundary=\"--boundary--ci\"
 Content-Transfer-Encoding: Base64
 ";
 $ci->Set('_get_content_type', $result, $args);
@@ -169,41 +169,41 @@ $ci->Set('_get_content_type', $result, $args);
 //	...
 $method = '_get_content';
 $args   = null;
-$result = "----onepiece-framework--Boundary--ci
+$result = "----boundary--ci
 Content-Type: text/plain; charset=\"utf-8\"
 Content-Transfer-Encoding: 7bit
 
 $content
-----onepiece-framework--Boundary--ci
+----boundary--ci
 Content-Type: text/plain; charset=\"utf-8\"
 Content-Transfer-Encoding: 7bit
 
 $attach_file_name
-----onepiece-framework--Boundary--ci--
+----boundary--ci--
 ";
 $ci->Set($method, $result, $args);
 
 //	_get_content_multipart
 $args   = null;
 $result = "MIME-Version: 1.0
-Content-Type: Multipart/Mixed; boundary=\"--onepiece-framework--Boundary--ci\"
+Content-Type: Multipart/Mixed; boundary=\"--boundary--ci\"
 Content-Transfer-Encoding: Base64
 ";
 $ci->Set('_get_content_type', $result, $args);
 
 //	_get_content
 $args   = null;
-$result = "----onepiece-framework--Boundary--ci
+$result = "----boundary--ci
 Content-Type: text/plain; charset=\"utf-8\"
 Content-Transfer-Encoding: 7bit
 
 $content
-----onepiece-framework--Boundary--ci
+----boundary--ci
 Content-Type: text/plain; charset=\"utf-8\"
 Content-Transfer-Encoding: 7bit
 
 $attach_file_name
-----onepiece-framework--Boundary--ci--
+----boundary--ci--
 ";
 $ci->Set('_get_content_multipart', $result, $args);
 
@@ -218,7 +218,8 @@ $result = null;
 $ci->Set('_set_addr', $result, $args);
 
 //	...
-$core_path = \OP\RootPath('asset').'core/trait/OP_CI.php';
+$core_path = \OP\RootPath('git').'asset/core/trait/OP_CI.php';
+$core_path = realpath($core_path);
 $method = '_set_error';
 $result = 'Exception: OP\EMail::_set_error(): Argument #1 ($message) must be of type string, null given, called in '.$core_path.' on line 66';
 $args   = null;
