@@ -411,7 +411,7 @@ class EMail
 			*/
 			$subject  = $this->_get_subject();
 			$unique   = Env::isCi() ? 'ci': md5($subject);
-			$boundary = "--onepiece-framework--Boundary--" . $unique;
+			$boundary = "--boundary--" . $unique;
 		}
 		return $boundary;
 	}
