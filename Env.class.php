@@ -483,15 +483,19 @@ class Env
 		return Time($utc, $time);
 	}
 
-	/** Get local timezone timestamp.
+	/** Return Y-m-d H:i:s timestamp.
 	 *
 	 * <pre>
-	 * $localtime = Env::Timestamp();
-	 * $utc       = Env::Timestamp(true);
-	 * $offset    = Env::Timestamp(true, '-1 month');
+	 * // Local time timestamp
+	 * $local_timestamp = OP()->Env()->Timestamp();
+	 *
+	 * // UTC time timestamp
+	 * $utc       = OP()->Env()->Timestamp(true);
+	 *
+	 * // 1 month ago timestamp
+	 * $offset    = OP()->Env()->Timestamp(true, '-1 month');
 	 * </pre>
 	 *
-	 * @deprecated 2023-03-29  OP::Timestamp()
 	 * @created  2019-09-24
 	 * @param    boolean     $utc
 	 * @param    string      $offset
@@ -499,7 +503,8 @@ class Env
 	 */
 	static function Timestamp(?bool $utc=false, $offset=null):string
 	{
-        return OP::Timestamp($utc, $offset);
+		require_once(__DIR__.'/function/Timestamp.php');
+		return Timestamp($utc, $offset);
 	}
 
 	/** Get/Set App ID.
