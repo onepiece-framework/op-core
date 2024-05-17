@@ -184,7 +184,7 @@ $ci->Set($method, $result, $args);
 
 //	...
 $method = 'Form';
-$result = 'OP\UNIT\Form';
+$result = 'Exception: OP\OP::Form(): Return value must be of type OP\IF_FORM, null returned';
 $args   =  null;
 $ci->Set($method, $result, $args);
 
