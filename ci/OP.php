@@ -87,11 +87,6 @@ $args   = 'core';
 $result = OP()->ConvertAlias( dirname(__DIR__) ) . '/';
 $ci->Set('MetaRoot', $result, $args);
 
-//	MetaToPath
-$args   = 'op:/';
-$result = $str; // dirname(__DIR__).'/';
-$ci->Set('MetaToPath', $result, $args);
-
 //	MetaFromPath
 $args   = __FILE__;
 $result = 'core:/ci/OP.php';
