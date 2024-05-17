@@ -87,11 +87,6 @@ $args   = 'core';
 $result = OP()->ConvertAlias( dirname(__DIR__) ) . '/';
 $ci->Set('MetaRoot', $result, $args);
 
-//	MetaFromPath
-$args   = __FILE__;
-$result = 'core:/ci/OP.php';
-$ci->Set('MetaFromPath', $result, $args);
-
 //	Sandbox
 $args   = 'core:/function/AppID.php';
 $result =  1;
