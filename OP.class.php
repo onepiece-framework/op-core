@@ -259,13 +259,24 @@ trait OP_OBJECT
 		return Unit::Singleton('WebPack');
 	}
 
-	/** Form unit already instantiaged return.
+	/** Form unit already instantiated return.
 	 *
 	 * @created    2024-04-24
 	 * @return     IF_FORM
 	 */
 	static function & Form() : IF_FORM
 	{
+		//	For CI
+		if( Env::isCI() ){
+			return null;
+		}
+
+		//	Installed check
+		if(!Unit::isInstalled('Form') ){
+			throw new \Exception("Form unit is not installed.");
+		}
+
+		//	...
 		return Unit::Singleton('Form');
 	}
 } // OP_OBJECT
