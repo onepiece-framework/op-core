@@ -87,11 +87,6 @@ $args   = 'core';
 $result = OP()->ConvertAlias( dirname(__DIR__) ) . '/';
 $ci->Set('MetaRoot', $result, $args);
 
-//	SandboxArgs
-$args   = [[]];
-$result = [];
-$ci->Set('SandboxArgs', $result, $args);
-
 //	ParseURL
 $args   = '//localhost/index.html?1';
 $result = [
