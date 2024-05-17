@@ -414,22 +414,6 @@ trait OP_FUNCTION
 		return self::_Function('RootPath', $meta_label, $full_path);
 	}
 
-	/** Convert to document root path from meta path.
-	 *
-	 * <pre>
-	 * $document_root_url = OP::ConvertURL('app:/foo/bar');
-	 * </pre>
-	 *
-	 * @deprecated 2022-10-16
-	 * @created    2022-10-08
-	 * @param      string     $meta_path
-	 * @return     string     $full_path
-	 */
-	static function MetaToURL(string $path)
-	{
-		return self::_Function('ConvertURL', $path);
-	}
-
 	/** Convert to full path from meta path.
 	 *
 	 * <pre>
