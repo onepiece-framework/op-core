@@ -87,11 +87,6 @@ $args   = 'core';
 $result = OP()->ConvertAlias( dirname(__DIR__) ) . '/';
 $ci->Set('MetaRoot', $result, $args);
 
-//	MetaToURL
-$args   = 'app:/';
-$result = '/';
-$ci->Set('MetaToURL', $result, $args);
-
 //	MetaToPath
 $args   = 'op:/';
 $result = $str; // dirname(__DIR__).'/';
