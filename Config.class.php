@@ -103,7 +103,7 @@ class Config
 		//	Check if config directory exists.
 		if( file_exists($_config_dir) ){
 
-			//	Chenge config direcotry.
+			//	Change config directory.
 			chdir($_config_dir);
 
 			//	Correspond to overwrite public config at privete local config.
