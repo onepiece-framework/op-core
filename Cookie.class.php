@@ -80,7 +80,7 @@ class Cookie
 		}
 
 		//	Cache feature
-		$_SESSION['OP']['CORE']['COOKIE'][$key] = $val;
+		$_SESSION[_OP_NAME_SPACE_]['CORE']['COOKIE'][$key] = $val;
 
 		//	...
 		$file = $line = null;
