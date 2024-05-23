@@ -36,7 +36,7 @@ require_once(__DIR__.'/include/bootstrap_blacklist.php');
  */
 require_once(__DIR__.'/Autoloader.php');
 
-/** Include Error hendler.
+/** Include Error handler.
  *
  */
 require_once(__DIR__.'/Error.php');
@@ -46,7 +46,7 @@ require_once(__DIR__.'/Error.php');
  */
 require_once(__DIR__.'/Defines.php');
 
-/** Include custome functions.
+/** Include custom functions.
  *
  */
 require_once(__DIR__.'/Functions.php');
