@@ -52,7 +52,13 @@ if( empty($_SERVER['HTTP_USER_AGENT']) ){
  * @created   2020-05-11
  */
 if( $_SESSION[_OP_CORE_BLACKLIST_] ?? null ){
+	//	...
 	echo "Your IP-Address in blacklist. ({$_SERVER['REMOTE_ADDR']})\n";
-//	echo "{$_SESSION[_OP_CORE_BLACKLIST_]}";
+	//	...
+	if( $_GET['debug'] ?? null ){
+		//	...
+		echo "{$_SESSION[_OP_CORE_BLACKLIST_]}\n";
+	}
+	//	...
 	exit(__LINE__);
 }
