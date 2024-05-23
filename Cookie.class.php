@@ -52,8 +52,8 @@ class Cookie
 		}
 
 		//	Cache feature
-		if( isset( $_SESSION['OP']['CORE']['COOKIE'][$key] ) ){
-			return $_SESSION['OP']['CORE']['COOKIE'][$key];
+		if( isset( $_SESSION[_OP_NAME_SPACE_]['CORE']['COOKIE'][$key] ) ){
+			return $_SESSION[_OP_NAME_SPACE_]['CORE']['COOKIE'][$key];
 		}
 
 		//	...
