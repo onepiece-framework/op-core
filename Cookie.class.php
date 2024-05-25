@@ -174,9 +174,7 @@ class Cookie
 			self::Set($key, $user_id);
 
 			//	...
-			if( isset($init) ){
-				$init = true;
-			}
+			$init = true;
 		}
 
 		//	...
