@@ -66,6 +66,7 @@ $args   = 'Dump';
 $result = 'OP\UNIT\Dump';
 $ci->Set('Unit', $result, $args);
 
+/*
 //  ...
 $git_path  = RootPath('git');
 $real_path = RootPath('real');
@@ -76,6 +77,7 @@ if( strpos($core_path, $real_path) === 0 ){
     $tmp = substr($core_path, $pos);
     $str = $git_path . $tmp;
 }
+*/
 
 //	MetaRoot
 $args   = 'op';
@@ -158,8 +160,15 @@ $args   =  null;
 $ci->Set($method, $result, $args);
 
 //	...
+if( version_compare(PHP_VERSION, '8.0.0') >= 0 ){
+	// PHP version is 8.0 over.
+	$error = 'OP\OP::Form(): Return value must be of type';
+}else{
+	// PHP version is 8.0 under.
+	$error = 'Return value of OP\OP::Form() must be an instance of';
+}
 $method = 'Form';
-$result = 'Exception: OP\OP::Form(): Return value must be of type OP\IF_FORM, null returned';
+$result = "Exception: {$error} OP\IF_FORM, null returned";
 $args   =  null;
 $ci->Set($method, $result, $args);
 
