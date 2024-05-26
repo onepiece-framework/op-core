@@ -218,10 +218,17 @@ $result = null;
 $ci->Set('_set_addr', $result, $args);
 
 //	...
+if( version_compare(PHP_VERSION, '8.0.0') >= 0 ){
+	// PHP version is 8.0 over.
+	$error = 'OP\EMail::_set_error(): Argument #1 ($message) must be of';
+}else{
+	// PHP version is 8.0 under.
+	$error = 'Argument 1 passed to OP\EMail::_set_error() must be of the';
+}
 $core_path = \OP\RootPath('git').'asset/core/trait/OP_CI.php';
 $core_path = realpath($core_path);
 $method = '_set_error';
-$result = 'Exception: OP\EMail::_set_error(): Argument #1 ($message) must be of type string, null given, called in '.$core_path.' on line 66';
+$result = "Exception: {$error} type string, null given, called in {$core_path} on line 66";
 $args   = null;
 $ci->Set($method, $result, $args);
 
