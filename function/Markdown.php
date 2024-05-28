@@ -16,6 +16,7 @@ namespace OP;
 
 /** Markdown
  *
+ * @deprecated 2024-05-28
  * @created   2020-09-05   Born at uqunie.com
  * @version   1.0
  * @package   op-core
@@ -32,7 +33,13 @@ function Markdown($file, $throw_exception=true)
 	}
 
 	//	Get plain text.
-	$text = OP::Encode( file_get_contents( OP::MetaPath($file) ) );
+	$path = OP::MetaPath($file);
+	$text = file_get_contents($path);
+	$text = OP::Encode($text);
+	/*
+	$text = preg_replace('!&gt;!', '>', $text);
+	$text = preg_replace('!&lt;img|div!', '<img', $text);
+	*/
 
 	//	...
 	if( Env::isShell() ){
