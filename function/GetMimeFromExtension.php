@@ -28,6 +28,12 @@ function GetMimeFromExtension(string $ext):string
 		case 'css':
 			$mime = 'text/css';
 			break;
+		case 'txt':
+			$mime = 'text/plain';
+			break;
+		case 'html':
+			$mime = 'text/html';
+			break;
 		default:
 			$mime = '';
 	};
