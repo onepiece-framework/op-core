@@ -25,10 +25,11 @@ namespace OP;
  * ConvertURL('doc:/index.html'); --> /index.html
  * ConvertURL('app:/index.php');  --> /onepiece-app/index.php
  *
+ * @deprecated 2024-05-30
  * @param     string       $meta_url
  * @return    string       $document_root_url
  */
-function ConvertURL($url)
+function ConvertURL_1($url)
 {
 	//	...
 	$root = RootPath();
