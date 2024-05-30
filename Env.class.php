@@ -155,6 +155,7 @@ class Env
 	 * @created    2023-02-18
 	 * @return     string
 	 */
+	/*
 	static function WebServer():string
 	{
 		//	...
@@ -176,6 +177,7 @@ class Env
 		//	...
 		return $_software;
 	}
+	*/
 
 	/** Get environment value.
 	 *
