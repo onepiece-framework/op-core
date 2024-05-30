@@ -40,7 +40,7 @@ function ConvertURL($url)
 	if( $url[0] === '/' and $url[1] !== '/' ){
 
 		//	Calc document root.
-		foreach(['doc','link'] as $key){
+		foreach(['doc','real'] as $key){
 			//	...
 			$doc_root = RootPath()[$key];
 
