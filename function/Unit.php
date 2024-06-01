@@ -18,15 +18,17 @@ namespace OP;
  * This method that I thought of seems to be called the singleton pattern in the world.
  *
  * <pre>
- * $unit= Unit('unit_name');
+ * $unit= OP()->Unit('unit_name');
  * </pre>
  *
+ * @deprecated 2024-06-01
  * @created   2020-03-06
  * @param     string       $unit_name
  * @return    IF_UNIT
  */
 function & Unit(string $name):IF_UNIT
 {
+	/*
 	//	...
 	static $_unit;
 
@@ -37,4 +39,8 @@ function & Unit(string $name):IF_UNIT
 
 	//	...
 	return $_unit[$name];
+	*/
+
+	//	...
+	return OP::Unit($name);
 }

@@ -326,15 +326,34 @@ trait OP_FUNCTION
 		return self::_Function(__FUNCTION__, $value);
 	}
 
-	/** Return unit instance (Singleton)
+	/** Return already instantiated unit object. (Singleton)
+	 *
+	 * This method that I thought of seems to be called the singleton pattern in the world.
+	 *
+	 * <pre>
+	 * $unit= OP()->Unit('unit_name');
+	 * </pre>
 	 *
 	 * @created   2022-10-07
-	 * @param     string     $unit_name
-	 * @return    OP_UNIT
+	 * @param     string     $name
+	 * @return   &IF_UNIT
 	 */
-	static function Unit(string $unit_name)
+	static function & Unit(string $name) : IF_UNIT
 	{
+		/*
 		return Unit($unit_name);
+		*/
+
+		//	...
+		static $_unit;
+
+		//	...
+		if( empty($_unit[$name]) ){
+			$_unit[$name] = Unit::Instantiate($name);
+		}
+
+		//	...
+		return $_unit[$name];
 	}
 
 	/** Set / Get meta root path.
