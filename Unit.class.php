@@ -112,7 +112,14 @@ class Unit
 		}
 
 		//	...
-		$path = $asset_root . 'unit/' . strtolower($name) . '/index.php';
+		$dir  = $asset_root . 'unit/' . strtolower($name) . '/';
+		$path = $dir . 'index.php';
+
+		//	...
+		if(!file_exists($dir) ){
+			$meta_path = 'git:/asset/unit/' . strtolower($name);
+			throw new Exception("Does not install \"{$name}\" unit. ({$meta_path})");
+		}
 
 		//	...
 		if(!file_exists($path) ){
