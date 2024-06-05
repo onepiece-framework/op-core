@@ -346,38 +346,6 @@ class Env
 		return self::$_env['charset'];
 	}
 
-	/** Get mime from extension.
-	 *
-	 * @created   2019-12-16
-	 * @param     string       $ext
-	 * @return    string       $mime
-	 */
-	static function Ext(string $ext)
-	{
-		//	...
-		switch($ext = strtolower($ext)){
-			case 'php':
-			case 'html':
-			case 'phtml':
-				$mime = 'text/html';
-				break;
-
-			case 'js':
-				$mime = 'text/javascript';
-				break;
-
-			case 'css':
-				$mime = 'text/css';
-				break;
-
-			default:
-				$mime = 'text/plain';
-		}
-
-		//	...
-		return $mime;
-	}
-
 	/** Get/Set MIME
 	 *
 	 * @param  string $mime
