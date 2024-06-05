@@ -319,6 +319,7 @@ class Env
 	 * For developers charset is not yet consider.
 	 * Source code is always UTF-8.
 	 *
+	 * @deprecated 2024-06-05
 	 * @param  string $charset
 	 * @return string $charset
 	 */
