@@ -21,11 +21,10 @@ namespace OP;
 /** Content
  *
  * @created   2021-04-21
- * @param     string       $function
- * @param     array        $args
+ * @param     string       $path
  * @return   ?string       $hash of $_content
  */
-function Content(?string $path=null, array $args=[]) : ?string
+function Content(?string $path=null) : ?string
 {
 	//	...
 	static $_content;
@@ -42,8 +41,14 @@ function Content(?string $path=null, array $args=[]) : ?string
 		return null;
 	}
 
-	//	Append conent.
-	$_content .= GetTemplate($path, $args);
+	//	...
+	ob_start();
+
+	//	...
+	require_once($path);
+
+	//	...
+	$_content = ob_get_clean();
 
 	//	For ETag.
 	return $_content ? md5($_content): null;
