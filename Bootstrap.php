@@ -14,6 +14,11 @@
  */
 declare(strict_types=1);
 
+/** namespace
+ *
+ */
+namespace OP;
+
 /** Checking PHP version.
  *
  */
@@ -69,16 +74,4 @@ require_once(__DIR__.'/include/json.php');
 /** Set default MIME
  *
  */
-if( \OP\Env::isShell() ){
-	$mime = 'text/plain';
-}else{
-	//	Get extension by URL. If not extension, to php.
-	if(!$ext = \OP\OP::ParseURL($_SERVER['REQUEST_URI'])['ext']){
-		$ext = 'php';
-	}
-
-	//	...
-	$mime = \OP\Env::Ext($ext);
-}
-//	...
-\OP\Env::Mime($mime);
+Env::Mime( Env::isShell() ? 'text/plain': 'text/html' );
