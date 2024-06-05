@@ -106,7 +106,7 @@ class Env
 		return isset($_SERVER['SERVER_NAME']);
 	}
 
-	/** Is HTTPs protocal.
+	/** Is HTTPs protocol.
 	 *
 	 * @return boolean
 	 */
@@ -258,16 +258,7 @@ class Env
 	 */
 	static function Language($lang=null)
 	{
-		/*
 		//	...
-		if( $lang ){
-			$cont = self::Country();
-			self::$_env['locale'] = $lang.':'.$cont;
-		}else{
-			return explode(':', self::Locale())[0];
-		};
-		*/
-
 		if( $lang ){
 			Config::Set('env', ['locale' => ['language'=>$lang]]);
 		}
@@ -284,16 +275,7 @@ class Env
 	 */
 	static function Country($country=null)
 	{
-		/*
 		//	...
-		if( $country ){
-			$lang = self::Language();
-			self::$_env['locale'] = $lang.':'.$country;
-		}else{
-			return strtoupper(explode(':',self::Locale())[1] ?? null);
-		};
-		*/
-
 		if( $country ){
 			Config::Set('env', ['locale' => ['country'=>$country]]);
 		}
@@ -310,13 +292,6 @@ class Env
 	 */
 	static function Locale($locale=null)
 	{
-		/*
-		//	...
-		if( $locale ){
-			self::$_env['locale'] = $locale;
-		};
-		*/
-
 		if( $locale ){
 			/* @var $match array */
 			if( preg_match('/([\w]+)([^\w])?([\w]*)/', $locale, $match) ){
@@ -336,16 +311,6 @@ class Env
 
 		//	...
 		return "{$language}{$separate}{$country}";
-
-		/*
-		//	...
-		if( empty(self::$_env['locale']) ){
-			$locale = Cookie::Get('locale') ?? self::$_env['g11n']['default'] ?? 'en:US';
-		};
-
-		//	...
-		return $locale;
-		*/
 	}
 
 	/** Get/Set charset.
@@ -517,17 +482,8 @@ class Env
 	 */
 	static function AppID($app_id=null)
 	{
-	//	There can not initialize AppID.
-	//	return OP::Sandbox('asset:/config/app_id.php')['app_id'];
-	//	return Config::Get( strtolower(_OP_APP_ID_) )['app_id'];
-
 		//	Can initialize AppID only 1st call.
 		if( $app_id ){
-			//	...
-			/* Need. CI is in use.
-			Notice("Overwrite AppID is will deprecated.");
-			*/
-
 			//	...
 			if( isset(self::$_env[_OP_APP_ID_]) ){
 				//	...
