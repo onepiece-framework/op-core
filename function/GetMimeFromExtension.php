@@ -21,6 +21,9 @@ namespace OP;
 function GetMimeFromExtension(string $ext):string
 {
 	//	...
+	$ext = strtolower($ext);
+
+	//	...
 	switch( $ext ){
 		case 'js':
 			$mime = 'text/javascript';
@@ -33,6 +36,17 @@ function GetMimeFromExtension(string $ext):string
 			break;
 		case 'html':
 			$mime = 'text/html';
+			break;
+		//	images
+		case 'jpg':
+			$ext = 'jpeg';
+		case 'gif':
+		case 'png':
+		case 'jpeg':
+			$mime = "image/{$ext}";
+			break;
+		case 'ico':
+			$mime = "image/vnd.microsoft.icon";
 			break;
 		default:
 			$mime = '';
