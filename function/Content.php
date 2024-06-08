@@ -21,16 +21,16 @@ namespace OP;
 /** Content
  *
  * @created   2021-04-21
- * @param     string       $path
+ * @param     string       $end_point
  * @return   ?string       $hash of $_content
  */
-function Content(?string $path=null) : ?string
+function Content(?string $end_point=null) : ?string
 {
 	//	...
 	static $_content;
 
-	//	$path if empty, echo $_content.
-	if( empty($path) ){
+	//	$end_point if empty, echo $_content.
+	if( empty($end_point) ){
 		//	...
 		echo $_content;
 
@@ -44,13 +44,13 @@ function Content(?string $path=null) : ?string
 	//	...
 	ob_start();
 
-	//	...
-	require_once($path);
+	//	Execute end-point.
+	require_once($end_point);
 
 	//	...
 	$_content = ob_get_clean();
 
-	//	For ETag.
+	//	Content hash is for ETag.
 	return $_content ? md5($_content): null;
 }
 
