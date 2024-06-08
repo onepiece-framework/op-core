@@ -42,10 +42,23 @@ function Content(?string $end_point=null) : ?string
 	}
 
 	//	...
+	if(!file_exists($end_point) ){
+		Notice::Set("This end-point is not exists.");
+		return null;
+	}
+
+	//	...
 	ob_start();
+
+	//	Change directory.
+	$save_dir = getcwd();
+	chdir( dirname($end_point) );
 
 	//	Execute end-point.
 	require_once($end_point);
+
+	//	...
+	chdir($save_dir);
 
 	//	...
 	$_content = ob_get_clean();
