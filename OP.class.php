@@ -485,11 +485,10 @@ trait OP_ENV
 	/** Get AppID and Can set AppID only 1st time.
 	 *
 	 * <pre>
-	 * OP::AppID(){
-	 *   return Env::AppID();
-	 * }
+	 * $app_id = OP()->Env()->AppID();
 	 * </pre>
 	 *
+	 * @deprecated 2024-06-08
 	 * @created    2022-11-14
 	 * @param      string     $app_id
 	 * @return     string
