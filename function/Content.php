@@ -64,7 +64,7 @@ function Content(?string $end_point=null) : ?string
 	$_content = ob_get_clean();
 
 	//	Content hash is for ETag.
-	return $_content ? md5($_content): null;
+	return $_content ? md5( Env::AppID() .', '. $_content ): null;
 }
 
 /** If it is not called from anywhere, it will be output here.
