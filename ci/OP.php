@@ -57,7 +57,7 @@ $result = 'OP\Env';
 $ci->Set('Env', $result, $args);
 
 //	_Function
-$args   = ['IsInt',1];
+$args   = ['isInt',1];
 $result =  true;
 $ci->Set('_Function', $result, $args);
 
