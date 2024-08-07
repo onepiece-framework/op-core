@@ -20,6 +20,7 @@ namespace OP;
 
 /** Content
  *
+ * @deprecated 2024-08-07 The functionality to execute the endpoint has been delegated to the unit of App.
  * @created   2021-04-21
  * @param     string       $end_point
  * @return   ?string       $hash of $_content
