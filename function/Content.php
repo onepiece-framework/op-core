@@ -30,6 +30,24 @@ function Content(?string $end_point=null) : ?string
 	//	...
 	static $_content;
 
+	//	If the End-Point argument is empty, content is expected to be output.
+	//	If the content is also empty, it will be execute in the unit of app.
+	if( empty($end_point) and empty($_content) ){
+		/** A great treasure in onepiece
+		 *
+		 *  1. OP() return App object.
+		 *  OP()->App()->Content();
+		 *
+		 *  2. OP() functions Unit() method is always return already instantiated object.
+		 *  OP()->Unit('App')->Content();
+		 *
+		 *  3. OP\Unit is mapping unit.
+		 *  OP()->Unit()->App()->Content();
+		 */
+		OP()->Unit('App')->Content();
+		return null;
+	}
+
 	//	$end_point if empty, echo $_content.
 	if( empty($end_point) ){
 		//	...
