@@ -173,4 +173,16 @@ $args   =  null;
 $ci->Set($method, $result, $args);
 
 //	...
+$method = 'Encode';
+$args   = '<h1 class="test">'."It's test".'</h1>';
+$result = '&lt;h1 class=&quot;test&quot;&gt;It&#039;s test&lt;/h1&gt;';
+$ci->Set($method, $result, $args);
+
+//	...
+$method = 'Decode';
+$args   = '&lt;h1 class=&quot;test&quot;&gt;It&#039;s test&lt;/h1&gt;';
+$result = '<h1 class="test">'."It's test".'</h1>';
+$ci->Set($method, $result, $args);
+
+//	...
 return $ci->GenerateConfig();
