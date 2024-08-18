@@ -32,4 +32,10 @@ $args   = ['count','1'];
 $ci->Set('Set', $result, $args);
 
 //	...
+$method = 'UserID';
+$result =  null;
+$args   =  null;
+$ci->Set($method, $result, $args);
+
+//	...
 return $ci->GenerateConfig();
