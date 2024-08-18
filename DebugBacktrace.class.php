@@ -44,15 +44,19 @@ class DebugBacktrace
 	 * @created    2023-11-06
 	 * @var        boolean
 	 */
+	/*
 	static private $_is_admin;
+	*/
 
 	/** Save result of isAdmin().
 	 *
 	 */
+	/*
 	static private function _is_admin()
 	{
 		self::$_is_admin = Env::isAdmin();
 	}
+	*/
 
 	/** Prepare file path padding length.
 	 *
@@ -125,6 +129,7 @@ class DebugBacktrace
      */
     static function Numerator( array $numerator ) : string
     {
+		/*
 		//	...
 		if( self::$_is_admin === null ){
 			self::_is_admin();
@@ -134,6 +139,13 @@ class DebugBacktrace
 		if(!self::$_is_admin ){
 			return 'Your not is admin.';
 		}
+		*/
+
+		//	...
+		if(!Env::isAdmin() ){
+			return '';
+		}
+
 
         //  ...
         $file     = $numerator['file']     ?? '';
