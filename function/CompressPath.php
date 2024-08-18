@@ -40,11 +40,16 @@ function CompressPath($path)
 		$path = rtrim($path, '/').'/';
 	}
 
+	//	...
+	$root_path = RootPath();
+
 	//	real --> git
-	$path = str_replace(RootPath('real'), RootPath('git'), $path);
+	if( strpos($path, $root_path['real']) === 0 ){
+		$path = str_replace($root_path['real'], $root_path['git'], $path);
+	}
 
 	//	...
-	foreach( array_reverse(RootPath()) as $meta => $root ){
+	foreach( array_reverse($root_path) as $meta => $root ){
 		//	...
 		$pos = strpos($path, $root);
 
