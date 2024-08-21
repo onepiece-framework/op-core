@@ -68,7 +68,6 @@ trait OP_OBJECT
 	 * </pre>
 	 *
 	 * @created   2022-10-04
-	 * @return    UNIT\Template
 	 */
 	static function Template(string $path=null, array $args=[])
 	{
@@ -77,9 +76,6 @@ trait OP_OBJECT
 			require_once('function/Template.php');
 			return Template($path, $args);
 		}
-
-		//	...
-		return Unit('Template');
 	}
 
 	/** Layout unit.
