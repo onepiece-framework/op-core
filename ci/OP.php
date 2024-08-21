@@ -28,7 +28,7 @@ $ci->Set('Router', $result, $args);
 
 //	Template
 $args   = null;
-$result = 'OP\UNIT\Template';
+$result = null;
 $ci->Set('Template', $result, $args);
 
 //	Layout
