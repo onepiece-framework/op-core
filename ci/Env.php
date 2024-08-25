@@ -127,8 +127,12 @@ $ci->Set($method, $result, $args);
 
 //	Time - Ice Age
 $timestamp = '2020-10-10 12:00:01';
-$time      = strtotime($timestamp);
-$result    = $time;
+if( _OP_APP_BRANCH_ < 2025 ){
+	$time      = strtotime($timestamp);
+	$result    = $time;
+}else{
+	$result = 'Notice: Frozen time has already set.';
+}
 $args      = [
 	false,      // timezone support.
 	$timestamp, // timestamp can local timezone.
