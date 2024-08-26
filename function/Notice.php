@@ -15,6 +15,11 @@ namespace OP;
 
 /** Notice
  *
+ * <pre>
+ * OP()->Notice($message, debug_backtrace());
+ * </pre>
+ *
+ * @deprecated 2024-08-26  OP()->Notice()
  * @created   2020-10-07
  * @param     string       $message
  * @param     array        $debug_backtrace
