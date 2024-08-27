@@ -44,7 +44,12 @@ function Content(?string $end_point=null) : ?string
 		 *  3. OP\Unit is mapping unit.
 		 *  OP()->Unit()->App()->Content();
 		 */
-		OP()->Unit('App')->Content();
+		$app = OP()->Unit('App');
+		if( method_exists($app, 'Content') ){
+			$app->Content();
+		} else {
+			Notice::Set("App unit has not been Content() method.");
+		}
 		return null;
 	}
 
