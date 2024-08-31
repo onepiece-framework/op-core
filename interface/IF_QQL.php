@@ -13,6 +13,11 @@
  */
 declare(strict_types=1);
 
+/** namespace
+ *
+ */
+namespace OP;
+
 /** IF_QQL
  *
  * @created   2018-05-14
