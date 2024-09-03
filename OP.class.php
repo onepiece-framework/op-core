@@ -434,18 +434,6 @@ trait OP_FUNCTION
         */
         return DebugBacktrace::Numerator($trace);
 	}
-
-    /** Get template.
-     *
-     * @created     2023-04-26
-     * @param       string      $path
-     * @return      string      $content
-     */
-    static function GetTemplate(string $path) : string
-    {
-        require_once(__DIR__.'/function/GetTemplate.php');
-        return GetTemplate($path);
-    }
 } // OP_FUNCTION
 
 /** OP_ENV
