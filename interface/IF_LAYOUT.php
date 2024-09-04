@@ -23,4 +23,9 @@ namespace OP;
  */
 interface IF_LAYOUT
 {
+	/** Automatically
+	 *
+	 * @created    2024-06-12
+	 */
+	static public function Auto();
 }
