@@ -35,7 +35,9 @@ require(__DIR__.'/function/ConvertURL-2.php');
 require(__DIR__.'/function/Template.php');
 require(__DIR__.'/function/GetTemplate.php');
 require(__DIR__.'/function/Content.php');
+/*
 require(__DIR__.'/function/Charset.php');
+*/
 require(__DIR__.'/function/CompressPath.php');
 
 /** Decode can decode nested array transparent.
