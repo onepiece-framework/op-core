@@ -92,7 +92,7 @@ class MetaPath
 	{
 		//	...
 		require_once(__DIR__.'/function/ConvertPath.php');
-		return ConvertPath($path, false);
+		return ConvertPath($path, false, false);
 	}
 
 	/** Convert to Document root URL from meta path and full path.

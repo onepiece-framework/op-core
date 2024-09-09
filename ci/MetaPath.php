@@ -100,7 +100,7 @@ $ci->Set('Decode', $result, $args);
 
 //	Decode - Relative by current directory.
 $args   = 'not_exist.php';
-$result = '';
+$result = dirname(__DIR__).'/not_exist.php';
 $ci->Set('Decode', $result, $args);
 
 //	Decode - has query string
@@ -110,7 +110,7 @@ $ci->Set('Decode', $result, $args);
 
 //	Decode - Does not exists
 $args   = 'etc:/foo/bar';
-$result = '';
+$result = '/etc/foo/bar';
 $ci->Set('Decode', $result, $args);
 
 //	URL
