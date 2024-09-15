@@ -517,8 +517,27 @@ class Env
 			$_request = Encode($_request);
 		}
 
-		//	...
-		return empty($_key) ? $_request: ($_request[$_key] ?? $_default);
+		//	Under 2024
+		if( _OP_APP_BRANCH_ < 2024 ){
+			return empty($_key) ? $_request: ($_request[$_key] ?? $_default);
+		}
+
+		//	Over equal 2024
+		if( self::isShell() ){
+			if( empty($_key) ){
+				return $_request;
+			}else{
+				if(!isset($_request[$_key]) ){
+					return $_default;
+				}else if( $_request[$_key] === '' and $_default !== null ){
+					return $_default;
+				}else{
+					return $_request[$_key];
+				}
+			}
+		}else{
+			return empty($_key) ? $_request: ($_request[$_key] ?? $_default);
+		}
 	}
 
 	/** Get Admin IP address.
