@@ -21,22 +21,22 @@ namespace OP;
  */
 function IsInt($v)
 {
-	//	...
+	//	Variable type is int.
 	if( is_int($v) ){
 		return true;
 	}
 
-	//	...
+	//	Not numeric string.
 	if(!is_numeric($v) ){
 		return false;
 	}
 
-	//	...
+	//	Variable type is float.
 	if( is_float($v) ){
 		return false;
 	}
 
-	//	...
+	//	Is float string.
 	if( strpos($v, '.') ){
 		return false;
 	}
