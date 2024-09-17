@@ -423,6 +423,7 @@ trait OP_FUNCTION
 
 	/** DebugBacktrace array is convert to string.
 	 *
+	 * @deprecated 2024-09-17
 	 * @created    2022-10-31
 	 * @param      array
 	 * @return     string
