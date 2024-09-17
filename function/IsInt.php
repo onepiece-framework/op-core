@@ -17,9 +17,10 @@ namespace OP;
  *
  * @created   2020-10-31
  * @param     string|integer $v
+ * @param     boolean        true is check if positive
  * @return    boolean
  */
-function IsInt($v)
+function IsInt($v, $p=false)
 {
 	//	Variable type is int.
 	if( is_int($v) ){
@@ -38,6 +39,11 @@ function IsInt($v)
 
 	//	Is float string.
 	if( strpos($v, '.') ){
+		return false;
+	}
+
+	//	Is negative integer.
+	if( $p and $v < 0 ){
 		return false;
 	}
 
