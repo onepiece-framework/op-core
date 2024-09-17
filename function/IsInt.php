@@ -20,7 +20,7 @@ namespace OP;
  * @param     boolean        true is check if positive
  * @return    boolean
  */
-function IsInt($v, $p=false)
+function IsInt($v, $p=false) : bool
 {
 	//	Variable type is int.
 	if( is_int($v) ){
