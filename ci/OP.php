@@ -184,5 +184,10 @@ $args   = '&lt;h1 class=&quot;test&quot;&gt;It&#039;s test&lt;/h1&gt;';
 $result = '<h1 class="test">'."It's test".'</h1>';
 $ci->Set($method, $result, $args);
 
+//	Include sub directory files.
+foreach( glob(__DIR__.'/OP/*.php') as $path ){
+	require_once($path);
+}
+
 //	...
 return $ci->Get();
