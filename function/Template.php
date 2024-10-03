@@ -25,6 +25,7 @@ namespace OP;
  */
 function Template(string $file, array $args=[])
 {
+	/*
 	//	...
 	$result = null;
 
@@ -111,4 +112,8 @@ function Template(string $file, array $args=[])
 
 	//	Return result.
 	return ($result === 1) ? null : $result;
+	*/
+
+	//	...
+	return OP::Template($file, $args);
 }
