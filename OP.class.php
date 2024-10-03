@@ -420,21 +420,6 @@ trait OP_FUNCTION
 	{
 		return include(__DIR__.'/include/ParseURL.php');
 	}
-
-	/** DebugBacktrace array is convert to string.
-	 *
-	 * @deprecated 2024-09-17
-	 * @created    2022-10-31
-	 * @param      array
-	 * @return     string
-	 */
-	static function DebugBacktraceToString(array $trace) : string
-	{
-        /*
-		return include(__DIR__.'/include/DebugBacktraceToString.php');
-        */
-        return DebugBacktrace::Numerator($trace);
-	}
 } // OP_FUNCTION
 
 /** OP_ENV

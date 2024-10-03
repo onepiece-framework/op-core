@@ -97,11 +97,6 @@ $result = [
 ];
 $ci->Set('ParseURL', $result, $args);
 
-//	DebugBacktraceToString
-$args   = debug_backtrace(DEBUG_BACKTRACE_PROVIDE_OBJECT, 1);
-$result = 'core:/function/Template.php  98 - include()'."\n";
-$ci->Set('DebugBacktraceToString', $result, $args);
-
 //	GetTemplate
 $args   = 'core:/testcase/email.txt';
 $result = 'email.txt';
