@@ -21,6 +21,11 @@ namespace OP;
 //	...
 $ci = OP::Unit('CI');
 
+//	Include sub directory files.
+foreach( glob(__DIR__.'/OP/*.php') as $path ){
+	require_once($path);
+}
+
 //	Router
 $args   = null;
 $result = 'OP\UNIT\Router';
