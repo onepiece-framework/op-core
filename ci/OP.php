@@ -18,8 +18,8 @@ declare(strict_types=1);
  */
 namespace OP;
 
-//	...
-$ci = OP::Unit('CI');
+/* @var $ci UNIT\CI\CI_Config */
+$ci = OP::Unit('CI')->Config();
 
 //	Router
 $args   = null;
@@ -185,4 +185,4 @@ $result = '<h1 class="test">'."It's test".'</h1>';
 $ci->Set($method, $result, $args);
 
 //	...
-return $ci->GenerateConfig();
+return $ci->Get();
