@@ -32,9 +32,15 @@ class OP
 	 *
 	 */
 	use OP_CORE, OP_OBJECT, OP_FUNCTION, OP_ENV, OP_CI {
-        OP_FUNCTION::__call       insteadof OP_CORE;
+		OP_FUNCTION::__call       insteadof OP_CORE;
 		OP_FUNCTION::__callstatic insteadof OP_CORE;
 	}
+
+	/** OP_TEMPLATE
+	 *
+	 *  @created    2024-06-28
+	 */
+	use OP_TEMPLATE;
 }
 
 /** OP_OBJECT
@@ -69,6 +75,7 @@ trait OP_OBJECT
 	 *
 	 * @created   2022-10-04
 	 */
+	/*
 	static function Template(string $path=null, array $args=[])
 	{
 		//	...
@@ -77,6 +84,7 @@ trait OP_OBJECT
 			return Template($path, $args);
 		}
 	}
+	*/
 
 	/** Layout unit.
 	 *
