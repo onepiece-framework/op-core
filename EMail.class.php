@@ -51,7 +51,7 @@ class EMail
 	 * @param string $addr
 	 * @param string $name
 	 */
-	function From(string $addr, ?string $name=null)
+	function From(string $addr,  string $name=''  )
 	{
 		$this->_set_addr($addr, $name, 'from');
 	}
@@ -61,7 +61,7 @@ class EMail
 	 * @param string $addr
 	 * @param string $name
 	 */
-	function To(string $addr, ?string $name=null)
+	function To(string $addr,  string $name=''  )
 	{
 		$this->_set_addr($addr, $name, 'to');
 	}
@@ -71,7 +71,7 @@ class EMail
 	 * @param string $addr
 	 * @param string $name
 	 */
-	function Cc(string $addr, ?string $name=null)
+	function Cc(string $addr,  string $name=''  )
 	{
 		$this->_set_addr($addr, $name, 'cc');
 	}
@@ -91,7 +91,7 @@ class EMail
 	 * @param string $addr
 	 * @param string $name
 	 */
-	function ReplyTo(string $addr, ?string $name=null)
+	function ReplyTo(string $addr,  string $name=''  )
 	{
 		$this->_set_addr($addr, $name, 'reply-to');
 	}
@@ -101,7 +101,7 @@ class EMail
 	 * @param string $addr
 	 * @param string $name
 	 */
-	function ErrorsTo(string $addr, ?string $name=null)
+	function ErrorsTo(string $addr,  string $name=''  )
 	{
 		$this->_set_addr($addr, $name, 'errors-to');
 	}
@@ -111,7 +111,7 @@ class EMail
 	 * @param string $addr
 	 * @param string $name
 	 */
-	function ReturnPath(string $addr, ?string $name=null)
+	function ReturnPath(string $addr,  string $name=''  )
 	{
 		$this->_set_addr($addr, $name, 'return-path');
 	}
@@ -149,7 +149,7 @@ class EMail
 	 * @param string $addr
 	 * @param string $name
 	 */
-	function Attachment(string $file_path, ?string $mime=null, ?string $file_name=null)
+	function Attachment(string $file_path,  string $mime=''  , string $file_name='')
 	{
 		if(!file_exists($file_path)){
 			throw OpException("Does not exists this file. ($file_path)");
@@ -183,7 +183,7 @@ class EMail
 	 * @param  string $type mta, socket, php
 	 * @return boolean
 	 */
-	function Send(?string $type=null, string $language='uni', string $charset='utf-8')
+	function Send(        $type=''  , string $language='uni', string $charset='utf-8')
 	{
 		//	...
 		if( empty($this->_debug['sent']) ){
@@ -360,7 +360,7 @@ class EMail
 	 * @param  string $name
 	 * @return string
 	 */
-	private function _get_full_name(string $addr, ?string $name)
+	private function _get_full_name(string $addr,  string $name='')
 	{
 		$addr = trim($addr);
 		if( $name ){
@@ -510,13 +510,13 @@ class EMail
 		return mb_encode_mimeheader($this->_head['subject']);
 	}
 
-	/** Set email addrees with name.
+	/** Set email address with name.
 	 *
 	 * @param string $addr
 	 * @param string $name
 	 * @param string $key
 	 */
-	private function _set_addr(string $addr, ?string $name, string $key)
+	private function _set_addr(string $addr,  string $name, string $key)
 	{
 		$key  = strtolower($key);
 		$addr = preg_replace('/\n/', '\n', $addr);
