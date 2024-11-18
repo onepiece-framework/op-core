@@ -34,6 +34,7 @@ function GetMimeFromExtension(string $ext):string
 		case 'txt':
 			$mime = 'text/plain';
 			break;
+		case 'php':
 		case 'html':
 			$mime = 'text/html';
 			break;
