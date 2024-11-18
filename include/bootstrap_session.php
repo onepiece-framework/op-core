@@ -60,6 +60,7 @@ if( version_compare(PHP_VERSION, '7.3.0') <= 0 ){
 	session_set_cookie_params($params);
 }
 
+/*
 //	Get default session name.
 $name = session_name();
 
@@ -67,10 +68,12 @@ $name = session_name();
 //	OP to hide the PHP version, so hash. But, leave as is for localhost.
 $php_version_id = ($_SERVER['REMOTE_ADDR'] === '::1') ? PHP_VERSION_ID: substr(md5((string)PHP_VERSION_ID), 0, 5);
 session_name($name .'_'. $php_version_id);
+*/
 
 //	Start session.
 if(!session_start() ){
 	$line = __LINE__;
-	echo "asset:/core/Bootstrap.php #{$line} - Session start was failed.\n";
+	$file = __FILE__;
+	echo "{$file} #{$line} - Session start was failed.\n";
 	exit($line);
 }
