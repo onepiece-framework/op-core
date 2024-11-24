@@ -46,4 +46,9 @@ interface IF_CI
  */
 interface IF_CI_Config
 {
+	/** Get config
+	 *
+	 * @created    2024-11-24
+	 */
+	static public function Get();
 }
