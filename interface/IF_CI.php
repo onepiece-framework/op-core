@@ -28,4 +28,10 @@ namespace OP;
  */
 interface IF_CI
 {
+	/** Return IF_CI_Config
+	 *
+	 * @created    2024-11-24
+	 * @return     IF_CI_Config
+	 */
+	static public function Config();
 }
