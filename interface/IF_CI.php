@@ -17,3 +17,15 @@ declare(strict_types=1);
  *
  */
 namespace OP;
+
+/** IF_CI
+ *
+ * @created    2024-11-24
+ * @version    1.0
+ * @package    op-core
+ * @author     Tomoaki Nagahara <tomoaki.nagahara@gmail.com>
+ * @copyright  Tomoaki Nagahara All right reserved.
+ */
+interface IF_CI
+{
+}
