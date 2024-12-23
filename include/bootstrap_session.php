@@ -60,15 +60,30 @@ if( version_compare(PHP_VERSION, '7.3.0') <= 0 ){
 	session_set_cookie_params($params);
 }
 
-/*
 //	Get default session name.
 $name = session_name();
+$sapi = PHP_SAPI;
+$php  = PHP_MAJOR_VERSION . PHP_MINOR_VERSION;
 
+/*
 //	Add PHP version to session name, Because to run different versions of PHP at the same time by PHP-FPM.
 //	OP to hide the PHP version, so hash. But, leave as is for localhost.
 $php_version_id = ($_SERVER['REMOTE_ADDR'] === '::1') ? PHP_VERSION_ID: substr(md5((string)PHP_VERSION_ID), 0, 5);
 session_name($name .'_'. $php_version_id);
 */
+
+//	Check if localhost.
+if( $_SERVER['REMOTE_ADDR'] === '::1' or $_SERVER['REMOTE_ADDR'] === '127.0.0.1' ){
+	//	localhost
+	$sapi = strtoupper($sapi);
+}else{
+	//	Change to hash.
+	$sapi = substr( md5($sapi), 0, 8);
+	$php  = substr( md5($php ), 0, 8);
+}
+
+//	Set session name.
+session_name( $name .'_'. $sapi . $php );
 
 //	Start session.
 if(!session_start() ){
