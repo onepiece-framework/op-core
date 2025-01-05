@@ -29,7 +29,7 @@ define('_OP_CORE_BLACKLIST_', substr(md5(__FILE__), 0, 10), false);
 /** If is shell not do blacklist check.
  *
  */
-if( empty($_SERVER['REQUEST_SCHEME']) ){
+if( strtolower(PHP_SAPI) === 'cli' ){
 	return;
 }
 
