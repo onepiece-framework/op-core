@@ -69,7 +69,7 @@ trait OP_OBJECT
 	 *
 	 * @created   2022-10-04
 	 */
-	static function Template(string $path=null, array $args=[])
+	static function Template(string $path='', array $args=[])
 	{
 		//	...
 		if( $path ){

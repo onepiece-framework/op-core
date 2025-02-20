@@ -27,7 +27,7 @@ $result = 'OP\UNIT\Router';
 $ci->Set('Router', $result, $args);
 
 //	Template
-$args   = null;
+$args   = '';
 $result = null;
 $ci->Set('Template', $result, $args);
 
