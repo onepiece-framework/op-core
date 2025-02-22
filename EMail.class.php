@@ -149,7 +149,7 @@ class EMail
 	 * @param string $addr
 	 * @param string $name
 	 */
-	function Attachment(string $file_path, ?string $mime=null, string $file_name=null)
+	function Attachment(string $file_path, ?string $mime=null, ?string $file_name=null)
 	{
 		if(!file_exists($file_path)){
 			throw OpException("Does not exists this file. ($file_path)");
