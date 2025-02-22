@@ -78,8 +78,8 @@ if( $_SERVER['REMOTE_ADDR'] === '::1' or $_SERVER['REMOTE_ADDR'] === '127.0.0.1'
 	$sapi = strtoupper($sapi);
 }else{
 	//	Change to hash.
-	$sapi = substr( md5($sapi), 0, 8);
-	$php  = substr( md5($php ), 0, 8);
+	$sapi = substr( md5($sapi . __FILE__), 0, 4);
+	$php  = substr( md5($php  . __FILE__), 0, 4);
 }
 
 //	Set session name.
